@@ -591,6 +591,53 @@ Source: AVX .. aphvc.pdf</description>
 <text x="-10.541" y="-2.921" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
 <text x="-7.493" y="-0.635" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
 </package>
+<package name="SO16">
+<description>&lt;b&gt;Small Outline Package&lt;/b&gt;</description>
+<wire x1="4.699" y1="1.9558" x2="-4.699" y2="1.9558" width="0.1524" layer="21"/>
+<wire x1="4.699" y1="-1.9558" x2="5.08" y2="-1.5748" width="0.1524" layer="21" curve="90"/>
+<wire x1="-5.08" y1="1.5748" x2="-4.699" y2="1.9558" width="0.1524" layer="21" curve="-90"/>
+<wire x1="4.699" y1="1.9558" x2="5.08" y2="1.5748" width="0.1524" layer="21" curve="-90"/>
+<wire x1="-5.08" y1="-1.5748" x2="-4.699" y2="-1.9558" width="0.1524" layer="21" curve="90"/>
+<wire x1="-4.699" y1="-1.9558" x2="4.699" y2="-1.9558" width="0.1524" layer="21"/>
+<wire x1="5.08" y1="-1.5748" x2="5.08" y2="1.5748" width="0.1524" layer="21"/>
+<wire x1="-5.08" y1="1.5748" x2="-5.08" y2="-1.5748" width="0.1524" layer="21"/>
+<wire x1="-5.08" y1="0.508" x2="-5.08" y2="-0.508" width="0.1524" layer="21" curve="-180"/>
+<wire x1="-5.08" y1="-1.6002" x2="5.08" y2="-1.6002" width="0.0508" layer="21"/>
+<smd name="1" x="-4.445" y="-3.0734" dx="0.6604" dy="2.032" layer="1"/>
+<smd name="16" x="-4.445" y="3.0734" dx="0.6604" dy="2.032" layer="1"/>
+<smd name="2" x="-3.175" y="-3.0734" dx="0.6604" dy="2.032" layer="1"/>
+<smd name="3" x="-1.905" y="-3.0734" dx="0.6604" dy="2.032" layer="1"/>
+<smd name="15" x="-3.175" y="3.0734" dx="0.6604" dy="2.032" layer="1"/>
+<smd name="14" x="-1.905" y="3.0734" dx="0.6604" dy="2.032" layer="1"/>
+<smd name="4" x="-0.635" y="-3.0734" dx="0.6604" dy="2.032" layer="1"/>
+<smd name="13" x="-0.635" y="3.0734" dx="0.6604" dy="2.032" layer="1"/>
+<smd name="5" x="0.635" y="-3.0734" dx="0.6604" dy="2.032" layer="1"/>
+<smd name="12" x="0.635" y="3.0734" dx="0.6604" dy="2.032" layer="1"/>
+<smd name="6" x="1.905" y="-3.0734" dx="0.6604" dy="2.032" layer="1"/>
+<smd name="7" x="3.175" y="-3.0734" dx="0.6604" dy="2.032" layer="1"/>
+<smd name="11" x="1.905" y="3.0734" dx="0.6604" dy="2.032" layer="1"/>
+<smd name="10" x="3.175" y="3.0734" dx="0.6604" dy="2.032" layer="1"/>
+<smd name="8" x="4.445" y="-3.0734" dx="0.6604" dy="2.032" layer="1"/>
+<smd name="9" x="4.445" y="3.0734" dx="0.6604" dy="2.032" layer="1"/>
+<text x="-4.064" y="-0.635" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
+<text x="-5.461" y="-1.778" size="1.2" layer="25" font="vector" ratio="15" rot="R90">&gt;NAME</text>
+<rectangle x1="-0.889" y1="1.9558" x2="-0.381" y2="3.0988" layer="51"/>
+<rectangle x1="-4.699" y1="-3.0988" x2="-4.191" y2="-1.9558" layer="51"/>
+<rectangle x1="-3.429" y1="-3.0988" x2="-2.921" y2="-1.9558" layer="51"/>
+<rectangle x1="-2.159" y1="-3.0734" x2="-1.651" y2="-1.9304" layer="51"/>
+<rectangle x1="-0.889" y1="-3.0988" x2="-0.381" y2="-1.9558" layer="51"/>
+<rectangle x1="-2.159" y1="1.9558" x2="-1.651" y2="3.0988" layer="51"/>
+<rectangle x1="-3.429" y1="1.9558" x2="-2.921" y2="3.0988" layer="51"/>
+<rectangle x1="-4.699" y1="1.9558" x2="-4.191" y2="3.0988" layer="51"/>
+<rectangle x1="0.381" y1="-3.0988" x2="0.889" y2="-1.9558" layer="51"/>
+<rectangle x1="1.651" y1="-3.0988" x2="2.159" y2="-1.9558" layer="51"/>
+<rectangle x1="2.921" y1="-3.0988" x2="3.429" y2="-1.9558" layer="51"/>
+<rectangle x1="4.191" y1="-3.0988" x2="4.699" y2="-1.9558" layer="51"/>
+<rectangle x1="0.381" y1="1.9558" x2="0.889" y2="3.0988" layer="51"/>
+<rectangle x1="1.651" y1="1.9558" x2="2.159" y2="3.0988" layer="51"/>
+<rectangle x1="2.921" y1="1.9558" x2="3.429" y2="3.0988" layer="51"/>
+<rectangle x1="4.191" y1="1.9558" x2="4.699" y2="3.0988" layer="51"/>
+</package>
 </packages>
 <symbols>
 <symbol name="ATMEGA328">
@@ -769,7 +816,7 @@ Source: AVX .. aphvc.pdf</description>
 <wire x1="3.6322" y1="0.5842" x2="3.5814" y2="0.635" width="0.1016" layer="94"/>
 <wire x1="3.5814" y1="0.635" x2="3.7846" y2="0.635" width="0.1016" layer="94"/>
 </symbol>
-<symbol name="SN54HC148">
+<symbol name="SN74HC148">
 <pin name="IN7" x="-6.35" y="19.05" length="short"/>
 <pin name="IN6" x="-6.35" y="15.24" length="short"/>
 <pin name="IN5" x="-6.35" y="11.43" length="short"/>
@@ -779,15 +826,17 @@ Source: AVX .. aphvc.pdf</description>
 <pin name="IN1" x="-6.35" y="-3.81" length="short"/>
 <pin name="IN0" x="-6.35" y="-7.62" length="short"/>
 <pin name="!EN" x="-6.35" y="-15.24" length="short"/>
-<pin name="A2" x="15.24" y="16.51" length="short" rot="R180"/>
-<pin name="A1" x="15.24" y="12.7" length="short" rot="R180"/>
-<pin name="A0" x="15.24" y="8.89" length="short" rot="R180"/>
-<pin name="GS" x="15.24" y="3.81" length="short" rot="R180"/>
-<pin name="EO" x="15.24" y="0" length="short" rot="R180"/>
+<pin name="A2" x="19.05" y="16.51" length="short" rot="R180"/>
+<pin name="A1" x="19.05" y="12.7" length="short" rot="R180"/>
+<pin name="A0" x="19.05" y="8.89" length="short" rot="R180"/>
+<pin name="GS" x="19.05" y="3.81" length="short" rot="R180"/>
+<pin name="EO" x="19.05" y="0" length="short" rot="R180"/>
 <wire x1="-3.81" y1="21.59" x2="-3.81" y2="-17.78" width="0.254" layer="94"/>
-<wire x1="-3.81" y1="-17.78" x2="12.7" y2="-17.78" width="0.254" layer="94"/>
-<wire x1="12.7" y1="-17.78" x2="12.7" y2="21.59" width="0.254" layer="94"/>
-<wire x1="12.7" y1="21.59" x2="-3.81" y2="21.59" width="0.254" layer="94"/>
+<wire x1="-3.81" y1="-17.78" x2="16.51" y2="-17.78" width="0.254" layer="94"/>
+<wire x1="16.51" y1="-17.78" x2="16.51" y2="21.59" width="0.254" layer="94"/>
+<wire x1="16.51" y1="21.59" x2="-3.81" y2="21.59" width="0.254" layer="94"/>
+<pin name="VCC" x="6.35" y="-20.32" length="short" rot="R90"/>
+<pin name="GND" x="11.43" y="-20.32" length="short" rot="R90"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -1149,6 +1198,64 @@ Medium Power Linear Switch
 <attribute name="DIGIKEY" value="TIP120TUFS-ND" constant="no"/>
 <attribute name="MFG" value="Fairchild" constant="no"/>
 </technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="SN74HC148">
+<description>&lt;b&gt; 8-Line to 3-Line Priority Encoder&lt;/b&gt;
+&lt;p&gt;
+Features priority decoding of the inputs to ensure that only the highest-order 
+dataline is encoded&lt;/p&gt;
+Source: http://www.ti.com/lit/ds/symlink/sn74hc148.pdf</description>
+<gates>
+<gate name="G$1" symbol="SN74HC148" x="-6.35" y="-3.81"/>
+</gates>
+<devices>
+<device name="" package="DIL16">
+<connects>
+<connect gate="G$1" pin="!EN" pad="5"/>
+<connect gate="G$1" pin="A0" pad="9"/>
+<connect gate="G$1" pin="A1" pad="7"/>
+<connect gate="G$1" pin="A2" pad="6"/>
+<connect gate="G$1" pin="EO" pad="15"/>
+<connect gate="G$1" pin="GND" pad="8"/>
+<connect gate="G$1" pin="GS" pad="14"/>
+<connect gate="G$1" pin="IN0" pad="10"/>
+<connect gate="G$1" pin="IN1" pad="11"/>
+<connect gate="G$1" pin="IN2" pad="12"/>
+<connect gate="G$1" pin="IN3" pad="13"/>
+<connect gate="G$1" pin="IN4" pad="1"/>
+<connect gate="G$1" pin="IN5" pad="2"/>
+<connect gate="G$1" pin="IN6" pad="3"/>
+<connect gate="G$1" pin="IN7" pad="4"/>
+<connect gate="G$1" pin="VCC" pad="16"/>
+</connects>
+<technologies>
+<technology name="N"/>
+</technologies>
+</device>
+<device name="DR" package="SO16">
+<connects>
+<connect gate="G$1" pin="!EN" pad="5"/>
+<connect gate="G$1" pin="A0" pad="9"/>
+<connect gate="G$1" pin="A1" pad="7"/>
+<connect gate="G$1" pin="A2" pad="6"/>
+<connect gate="G$1" pin="EO" pad="15"/>
+<connect gate="G$1" pin="GND" pad="8"/>
+<connect gate="G$1" pin="GS" pad="14"/>
+<connect gate="G$1" pin="IN0" pad="10"/>
+<connect gate="G$1" pin="IN1" pad="11"/>
+<connect gate="G$1" pin="IN2" pad="12"/>
+<connect gate="G$1" pin="IN3" pad="13"/>
+<connect gate="G$1" pin="IN4" pad="1"/>
+<connect gate="G$1" pin="IN5" pad="2"/>
+<connect gate="G$1" pin="IN6" pad="3"/>
+<connect gate="G$1" pin="IN7" pad="4"/>
+<connect gate="G$1" pin="VCC" pad="16"/>
+</connects>
+<technologies>
+<technology name=""/>
 </technologies>
 </device>
 </devices>
