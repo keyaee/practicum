@@ -564,6 +564,33 @@ Source: AVX .. aphvc.pdf</description>
 <rectangle x1="1.905" y1="-8.89" x2="3.175" y2="-5.0292" layer="21"/>
 <rectangle x1="2.0828" y1="-9.906" x2="2.9972" y2="-8.8392" layer="21"/>
 </package>
+<package name="DIL16">
+<description>&lt;b&gt;Dual In Line Package&lt;/b&gt;</description>
+<wire x1="10.16" y1="2.921" x2="-10.16" y2="2.921" width="0.3048" layer="21"/>
+<wire x1="-10.16" y1="-2.921" x2="10.16" y2="-2.921" width="0.3048" layer="21"/>
+<wire x1="10.16" y1="2.921" x2="10.16" y2="-2.921" width="0.3048" layer="21"/>
+<wire x1="-10.16" y1="2.921" x2="-10.16" y2="1.016" width="0.3048" layer="21"/>
+<wire x1="-10.16" y1="-2.921" x2="-10.16" y2="-1.016" width="0.3048" layer="21"/>
+<wire x1="-10.16" y1="-1.016" x2="-10.16" y2="1.016" width="0.3048" layer="21" curve="180"/>
+<pad name="1" x="-8.89" y="-3.81" drill="0.8128" shape="long" rot="R90"/>
+<pad name="2" x="-6.35" y="-3.81" drill="0.8128" shape="long" rot="R90"/>
+<pad name="3" x="-3.81" y="-3.81" drill="0.8128" shape="long" rot="R90"/>
+<pad name="4" x="-1.27" y="-3.81" drill="0.8128" shape="long" rot="R90"/>
+<pad name="5" x="1.27" y="-3.81" drill="0.8128" shape="long" rot="R90"/>
+<pad name="6" x="3.81" y="-3.81" drill="0.8128" shape="long" rot="R90"/>
+<pad name="7" x="6.35" y="-3.81" drill="0.8128" shape="long" rot="R90"/>
+<pad name="8" x="8.89" y="-3.81" drill="0.8128" shape="long" rot="R90"/>
+<pad name="9" x="8.89" y="3.81" drill="0.8128" shape="long" rot="R90"/>
+<pad name="10" x="6.35" y="3.81" drill="0.8128" shape="long" rot="R90"/>
+<pad name="11" x="3.81" y="3.81" drill="0.8128" shape="long" rot="R90"/>
+<pad name="12" x="1.27" y="3.81" drill="0.8128" shape="long" rot="R90"/>
+<pad name="13" x="-1.27" y="3.81" drill="0.8128" shape="long" rot="R90"/>
+<pad name="14" x="-3.81" y="3.81" drill="0.8128" shape="long" rot="R90"/>
+<pad name="15" x="-6.35" y="3.81" drill="0.8128" shape="long" rot="R90"/>
+<pad name="16" x="-8.89" y="3.81" drill="0.8128" shape="long" rot="R90"/>
+<text x="-10.541" y="-2.921" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
+<text x="-7.493" y="-0.635" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
+</package>
 </packages>
 <symbols>
 <symbol name="ATMEGA328">
@@ -633,10 +660,10 @@ Source: AVX .. aphvc.pdf</description>
 <pin name="VOUT" x="-12.7" y="-5.08" length="short"/>
 <pin name="C1+" x="-12.7" y="-8.89" length="short"/>
 <pin name="C1-" x="-12.7" y="-12.7" length="short"/>
-<pin name="A" x="-5.08" y="-22.86" length="short" rot="R90"/>
-<pin name="K-R" x="-1.27" y="-22.86" length="short" rot="R90"/>
-<pin name="K-G" x="2.54" y="-22.86" length="short" rot="R90"/>
-<pin name="K-B" x="6.35" y="-22.86" length="short" rot="R90"/>
+<pin name="A" x="6.35" y="-22.86" length="short" rot="R90"/>
+<pin name="K-R" x="-5.08" y="-22.86" length="short" rot="R90"/>
+<pin name="K-G" x="-1.27" y="-22.86" length="short" rot="R90"/>
+<pin name="K-B" x="2.54" y="-22.86" length="short" rot="R90"/>
 <wire x1="-10.16" y1="17.78" x2="-10.16" y2="-20.32" width="0.254" layer="94"/>
 <wire x1="-10.16" y1="-20.32" x2="8.89" y2="-20.32" width="0.254" layer="94"/>
 <wire x1="8.89" y1="-20.32" x2="8.89" y2="17.78" width="0.254" layer="94"/>
@@ -741,6 +768,26 @@ Source: AVX .. aphvc.pdf</description>
 <wire x1="3.937" y1="0.5842" x2="3.6322" y2="0.5842" width="0.1016" layer="94"/>
 <wire x1="3.6322" y1="0.5842" x2="3.5814" y2="0.635" width="0.1016" layer="94"/>
 <wire x1="3.5814" y1="0.635" x2="3.7846" y2="0.635" width="0.1016" layer="94"/>
+</symbol>
+<symbol name="SN54HC148">
+<pin name="IN7" x="-6.35" y="19.05" length="short"/>
+<pin name="IN6" x="-6.35" y="15.24" length="short"/>
+<pin name="IN5" x="-6.35" y="11.43" length="short"/>
+<pin name="IN4" x="-6.35" y="7.62" length="short"/>
+<pin name="IN3" x="-6.35" y="3.81" length="short"/>
+<pin name="IN2" x="-6.35" y="0" length="short"/>
+<pin name="IN1" x="-6.35" y="-3.81" length="short"/>
+<pin name="IN0" x="-6.35" y="-7.62" length="short"/>
+<pin name="!EN" x="-6.35" y="-15.24" length="short"/>
+<pin name="A2" x="15.24" y="16.51" length="short" rot="R180"/>
+<pin name="A1" x="15.24" y="12.7" length="short" rot="R180"/>
+<pin name="A0" x="15.24" y="8.89" length="short" rot="R180"/>
+<pin name="GS" x="15.24" y="3.81" length="short" rot="R180"/>
+<pin name="EO" x="15.24" y="0" length="short" rot="R180"/>
+<wire x1="-3.81" y1="21.59" x2="-3.81" y2="-17.78" width="0.254" layer="94"/>
+<wire x1="-3.81" y1="-17.78" x2="12.7" y2="-17.78" width="0.254" layer="94"/>
+<wire x1="12.7" y1="-17.78" x2="12.7" y2="21.59" width="0.254" layer="94"/>
+<wire x1="12.7" y1="21.59" x2="-3.81" y2="21.59" width="0.254" layer="94"/>
 </symbol>
 </symbols>
 <devicesets>
