@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -836,6 +836,28 @@ Source: AVX .. aphvc.pdf</description>
 <pin name="VCC" x="6.35" y="-20.32" length="short" direction="pwr" rot="R90"/>
 <pin name="GND" x="11.43" y="-20.32" length="short" direction="pwr" rot="R90"/>
 </symbol>
+<symbol name="3PIN_POWER_JACK">
+<wire x1="-6.35" y1="0" x2="-6.35" y2="1.27" width="0.254" layer="94" curve="-180"/>
+<wire x1="-6.35" y1="1.27" x2="0" y2="1.27" width="0.254" layer="94"/>
+<wire x1="-6.35" y1="0" x2="0" y2="0" width="0.254" layer="94"/>
+<wire x1="0" y1="1.905" x2="0" y2="-0.635" width="0.254" layer="94"/>
+<wire x1="0" y1="-0.635" x2="0.635" y2="-0.635" width="0.254" layer="94"/>
+<wire x1="0.635" y1="-0.635" x2="0.635" y2="0.635" width="0.254" layer="94"/>
+<wire x1="0.635" y1="0.635" x2="0.635" y2="1.905" width="0.254" layer="94"/>
+<wire x1="0.635" y1="1.905" x2="0" y2="1.905" width="0.254" layer="94"/>
+<wire x1="1.905" y1="-1.905" x2="-3.81" y2="-1.905" width="0.254" layer="94"/>
+<wire x1="-3.81" y1="-1.905" x2="-3.81" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="-3.556" y1="-2.54" x2="-4.064" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="-4.064" y1="-2.54" x2="-3.81" y2="-2.794" width="0.254" layer="94"/>
+<wire x1="-3.81" y1="-2.794" x2="-3.556" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="1.905" y1="-3.175" x2="-5.08" y2="-3.175" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="-3.175" x2="-5.715" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="-5.715" y1="-2.54" x2="-6.35" y2="-3.175" width="0.254" layer="94"/>
+<pin name="PWR" x="1.905" y="0.635" visible="pad" length="point" direction="pwr" rot="R180"/>
+<pin name="GND@1" x="1.905" y="-1.905" visible="pad" length="point" direction="pwr" rot="R180"/>
+<pin name="GND@2" x="1.905" y="-3.175" visible="pad" length="point" direction="pwr" rot="R180"/>
+<wire x1="0.635" y1="0.635" x2="1.905" y2="0.635" width="0.254" layer="94"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="ATMEGA328">
@@ -1254,6 +1276,35 @@ Source: http://www.ti.com/lit/ds/symlink/sn74hc148.pdf</description>
 </connects>
 <technologies>
 <technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="PJ_075">
+<description>&lt;b&gt;DC Power Jack&lt;/b&gt;
+&lt;p&gt;Low profile, surface mount, internal switch
+&lt;p&gt;Source: http://www.cui.com/product/resource/pj-075ch-smt.pdf</description>
+<gates>
+<gate name="G$1" symbol="3PIN_POWER_JACK" x="-1.27" y="1.27"/>
+</gates>
+<devices>
+<device name="" package="PWR_JACK">
+<connects>
+<connect gate="G$1" pin="GND@1" pad="3"/>
+<connect gate="G$1" pin="GND@2" pad="2 P$1 P$5"/>
+<connect gate="G$1" pin="PWR" pad="1"/>
+</connects>
+<technologies>
+<technology name="CH">
+<attribute name="CURRENT" value="3.5A" constant="no"/>
+<attribute name="PINDIAMETER" value="1.0mm" constant="no"/>
+<attribute name="VOLTAGE" value="16V" constant="no"/>
+</technology>
+<technology name="DH">
+<attribute name="CURRENT" value="3.5A" constant="no"/>
+<attribute name="PINDIAMETER" value="1.3mm" constant="no"/>
+<attribute name="VOLTAGE" value="16V" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>
