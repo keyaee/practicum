@@ -174,12 +174,12 @@ Note: The pads on the left are 3mm pitch and blade type. .3mm thick and ~1.5mm w
 <pad name="P$3" x="3" y="-16.2" drill="0.6"/>
 <pad name="P$2" x="5" y="-16.2" drill="0.6"/>
 <pad name="P$1" x="7" y="-16.2" drill="0.6"/>
-<wire x1="-35.8" y1="10.3" x2="35.8" y2="10.3" width="0.127" layer="20"/>
-<wire x1="35.8" y1="10.3" x2="35.8" y2="-16.8" width="0.127" layer="20"/>
-<wire x1="35.8" y1="-16.8" x2="-35.8" y2="-16.8" width="0.127" layer="20"/>
-<wire x1="-35.8" y1="-16.8" x2="-35.8" y2="10.3" width="0.127" layer="20"/>
-<dimension x1="-35.8" y1="-16.8" x2="-35.8" y2="10.3" x3="38.1" y3="-3.25" textsize="1.27" layer="20"/>
-<dimension x1="35.8" y1="-16.8" x2="-35.8" y2="-16.8" x3="0" y3="15.24" textsize="1.27" layer="20"/>
+<wire x1="-35.8" y1="10.3" x2="35.8" y2="10.3" width="0.127" layer="21"/>
+<wire x1="35.8" y1="10.3" x2="35.8" y2="-16.8" width="0.127" layer="21"/>
+<wire x1="35.8" y1="-16.8" x2="-35.8" y2="-16.8" width="0.127" layer="21"/>
+<wire x1="-35.8" y1="-16.8" x2="-35.8" y2="10.3" width="0.127" layer="21"/>
+<dimension x1="-35.8" y1="-16.8" x2="-35.8" y2="10.3" x3="38.1" y3="-3.25" textsize="1.27" layer="48"/>
+<dimension x1="35.8" y1="-16.8" x2="-35.8" y2="-16.8" x3="0" y3="15.24" textsize="1.27" layer="51"/>
 <pad name="P$RK" x="-38.55" y="4.5" drill="0.8" diameter="1.27" shape="long" rot="R270"/>
 <pad name="P$GK" x="-38.55" y="1.5" drill="0.8" diameter="1.27" shape="long" rot="R270"/>
 <pad name="P$BK" x="-38.55" y="-1.5" drill="0.8" diameter="1.27" shape="long" rot="R270"/>
