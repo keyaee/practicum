@@ -1042,7 +1042,6 @@ Source: http://www.ti.com/lit/ds/symlink/sn74hc148.pdf</description>
 <part name="J5" library="LockBox" deviceset="PAD+SQUARE" device="-1.5X1.5"/>
 <part name="J6" library="LockBox" deviceset="PAD+SQUARE" device="-1.5X1.5"/>
 <part name="J7" library="LockBox" deviceset="PAD+SQUARE" device="-1.5X1.5"/>
-<part name="J8" library="LockBox" deviceset="PAD+SQUARE" device="-1.5X1.5"/>
 <part name="J9" library="LockBox" deviceset="PAD+SQUARE" device="-1.5X1.5"/>
 <part name="J10" library="LockBox" deviceset="PAD+SQUARE" device="-1.5X1.5"/>
 <part name="J11" library="LockBox" deviceset="PAD+SQUARE" device="-1.5X1.5"/>
@@ -1065,7 +1064,6 @@ Source: http://www.ti.com/lit/ds/symlink/sn74hc148.pdf</description>
 <instance part="J5" gate="PAD" x="-41.91" y="13.97"/>
 <instance part="J6" gate="PAD" x="-41.91" y="10.16"/>
 <instance part="J7" gate="PAD" x="-41.91" y="6.35"/>
-<instance part="J8" gate="PAD" x="-41.91" y="2.54"/>
 <instance part="J9" gate="PAD" x="11.43" y="26.67" rot="R180"/>
 <instance part="J10" gate="PAD" x="11.43" y="22.86" rot="R180"/>
 <instance part="J11" gate="PAD" x="11.43" y="19.05" rot="R180"/>
@@ -1078,13 +1076,19 @@ Source: http://www.ti.com/lit/ds/symlink/sn74hc148.pdf</description>
 <net name="N$1" class="0">
 <segment>
 <pinref part="U$1" gate="G$1" pin="VCC"/>
-<wire x1="-13.97" y1="-10.16" x2="-13.97" y2="-19.05" width="0.1524" layer="91"/>
+<wire x1="-13.97" y1="-10.16" x2="-13.97" y2="-13.97" width="0.1524" layer="91"/>
+<wire x1="-13.97" y1="-13.97" x2="-13.97" y2="-19.05" width="0.1524" layer="91"/>
 <wire x1="-13.97" y1="-19.05" x2="-15.24" y2="-20.32" width="0.1524" layer="91"/>
 <pinref part="C1" gate="G$1" pin="2"/>
 <wire x1="-15.24" y1="-20.32" x2="-15.24" y2="-25.4" width="0.1524" layer="91"/>
 <wire x1="-15.24" y1="-25.4" x2="-15.24" y2="-31.75" width="0.1524" layer="91"/>
 <junction x="-15.24" y="-25.4"/>
 <pinref part="VCC" gate="PAD" pin="PAD"/>
+<pinref part="U$1" gate="G$1" pin="IN0"/>
+<wire x1="-29.21" y1="2.54" x2="-26.67" y2="2.54" width="0.1524" layer="91"/>
+<wire x1="-13.97" y1="-13.97" x2="-29.21" y2="-13.97" width="0.1524" layer="91"/>
+<wire x1="-29.21" y1="-13.97" x2="-29.21" y2="2.54" width="0.1524" layer="91"/>
+<junction x="-13.97" y="-13.97"/>
 </segment>
 </net>
 <net name="N$3" class="0">
@@ -1134,13 +1138,6 @@ Source: http://www.ti.com/lit/ds/symlink/sn74hc148.pdf</description>
 <pinref part="J7" gate="PAD" pin="PAD"/>
 <pinref part="U$1" gate="G$1" pin="IN1"/>
 <wire x1="-39.37" y1="6.35" x2="-26.67" y2="6.35" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$10" class="0">
-<segment>
-<pinref part="U$1" gate="G$1" pin="IN0"/>
-<pinref part="J8" gate="PAD" pin="PAD"/>
-<wire x1="-26.67" y1="2.54" x2="-39.37" y2="2.54" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="GND" class="0">

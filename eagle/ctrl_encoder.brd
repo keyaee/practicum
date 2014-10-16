@@ -387,7 +387,6 @@
 <element name="J5" library="LockBox" package="PAD-1.5X1.5" value="PAD+SQUARE-1.5X1.5" x="2.05" y="12.92"/>
 <element name="J6" library="LockBox" package="PAD-1.5X1.5" value="PAD+SQUARE-1.5X1.5" x="1.94" y="15.82"/>
 <element name="J7" library="LockBox" package="PAD-1.5X1.5" value="PAD+SQUARE-1.5X1.5" x="1.93" y="18.72"/>
-<element name="J8" library="LockBox" package="PAD-1.5X1.5" value="PAD+SQUARE-1.5X1.5" x="1.92" y="21.52"/>
 <element name="J9" library="LockBox" package="PAD-1.5X1.5" value="PAD+SQUARE-1.5X1.5" x="22.46" y="15.33"/>
 <element name="J10" library="LockBox" package="PAD-1.5X1.5" value="PAD+SQUARE-1.5X1.5" x="22.4" y="13.23"/>
 <element name="J11" library="LockBox" package="PAD-1.5X1.5" value="PAD+SQUARE-1.5X1.5" x="22.42" y="10.83"/>
@@ -402,7 +401,17 @@
 <wire x1="14.49" y1="19.81" x2="14.39" y2="17.81" width="0.4064" layer="1"/>
 <wire x1="14.39" y1="17.81" x2="14.01" y2="17.33" width="0.4064" layer="1"/>
 <wire x1="14.01" y1="17.33" x2="14.0284" y2="17.33" width="0.4064" layer="1"/>
-<wire x1="14.0284" y1="17.33" x2="16.1534" y2="15.205" width="0.4064" layer="1"/>
+<wire x1="14.0284" y1="17.33" x2="15.6792" y2="15.6792" width="0.4064" layer="1"/>
+<contactref element="U$1" pad="10"/>
+<wire x1="15.6792" y1="15.6792" x2="16.1534" y2="15.205" width="0.4064" layer="1"/>
+<wire x1="16.1534" y1="7.585" x2="15.115" y2="7.585" width="0.4064" layer="1"/>
+<wire x1="15.115" y1="7.585" x2="14.2" y2="8.5" width="0.4064" layer="1"/>
+<wire x1="14.2" y1="8.5" x2="14.2" y2="14.5" width="0.4064" layer="1"/>
+<wire x1="14.2" y1="14.5" x2="14.7" y2="15" width="0.4064" layer="1"/>
+<wire x1="14.7" y1="15" x2="14.8" y2="15" width="0.4064" layer="1"/>
+<wire x1="14.8" y1="15" x2="15.1" y2="15.3" width="0.4064" layer="1"/>
+<wire x1="15.1" y1="15.3" x2="15.3" y2="15.3" width="0.4064" layer="1"/>
+<wire x1="15.3" y1="15.3" x2="15.6792" y2="15.6792" width="0.4064" layer="1"/>
 </signal>
 <signal name="N$3">
 <contactref element="J1" pad="PAD"/>
@@ -497,18 +506,6 @@
 <wire x1="4.5" y1="19.7" x2="3.6" y2="18.8" width="0.4064" layer="1"/>
 <wire x1="3.6" y1="18.8" x2="2.01" y2="18.8" width="0.4064" layer="1"/>
 <wire x1="2.01" y1="18.8" x2="1.93" y2="18.72" width="0.4064" layer="1"/>
-</signal>
-<signal name="N$10">
-<contactref element="U$1" pad="10"/>
-<contactref element="J8" pad="PAD"/>
-<wire x1="16.1534" y1="7.585" x2="18.085" y2="7.585" width="0.4064" layer="1"/>
-<wire x1="18.085" y1="7.585" x2="20.6" y2="10.1" width="0.4064" layer="1"/>
-<wire x1="20.6" y1="10.1" x2="20.6" y2="21.6" width="0.4064" layer="1"/>
-<wire x1="20.6" y1="21.6" x2="18.4" y2="23.8" width="0.4064" layer="1"/>
-<wire x1="18.4" y1="23.8" x2="6.3" y2="23.8" width="0.4064" layer="1"/>
-<wire x1="6.3" y1="23.8" x2="4" y2="21.5" width="0.4064" layer="1"/>
-<wire x1="4" y1="21.5" x2="1.94" y2="21.5" width="0.4064" layer="1"/>
-<wire x1="1.94" y1="21.5" x2="1.92" y2="21.52" width="0.4064" layer="1"/>
 </signal>
 <signal name="GND">
 <contactref element="U$1" pad="5"/>
