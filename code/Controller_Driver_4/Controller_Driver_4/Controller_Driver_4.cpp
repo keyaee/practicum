@@ -38,6 +38,11 @@ while(1)
 	return 0;
 	
 }
+
+/*This function takes the current state of the encoder and outputs 
+the corresponding hex value to print out the user input to the LCD
+Input: current state of encoder
+Output: Hex value that will be sent to LCD*/
 unsigned char Button_Press(unsigned char Button_Value)
 {
 	unsigned char Output=0x00;
