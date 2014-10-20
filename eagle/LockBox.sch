@@ -195,33 +195,6 @@
 <rectangle x1="1.905" y1="-8.89" x2="3.175" y2="-5.0292" layer="21"/>
 <rectangle x1="2.0828" y1="-9.906" x2="2.9972" y2="-8.8392" layer="21"/>
 </package>
-<package name="NHD-C0220BIZ-LCD">
-<description>Footprint to the LDC screen. 
-&lt;p&gt;
-&lt;b&gt;
-Note: The pads on the left are 3mm pitch and blade type. .3mm thick and ~1.5mm wide&lt;/b&gt;</description>
-<wire x1="-1.6" y1="-16.8" x2="2.5" y2="-16.8" width="0.127" layer="21"/>
-<pad name="P$8" x="-7" y="-16.2" drill="0.6"/>
-<pad name="P$7" x="-5" y="-16.2" drill="0.6"/>
-<pad name="P$6" x="-3" y="-16.2" drill="0.6"/>
-<pad name="P$5" x="-1" y="-16.2" drill="0.6"/>
-<pad name="P$4" x="1" y="-16.2" drill="0.6"/>
-<pad name="P$3" x="3" y="-16.2" drill="0.6"/>
-<pad name="P$2" x="5" y="-16.2" drill="0.6"/>
-<pad name="P$1" x="7" y="-16.2" drill="0.6"/>
-<wire x1="-35.8" y1="10.3" x2="35.8" y2="10.3" width="0.127" layer="21"/>
-<wire x1="35.8" y1="10.3" x2="35.8" y2="-16.8" width="0.127" layer="21"/>
-<wire x1="35.8" y1="-16.8" x2="-35.8" y2="-16.8" width="0.127" layer="21"/>
-<wire x1="-35.8" y1="-16.8" x2="-35.8" y2="10.3" width="0.127" layer="21"/>
-<dimension x1="-35.8" y1="-16.8" x2="-35.8" y2="10.3" x3="38.1" y3="-3.25" textsize="1.27" layer="48"/>
-<dimension x1="35.8" y1="-16.8" x2="-35.8" y2="-16.8" x3="0" y3="15.24" textsize="1.27" layer="51"/>
-<pad name="P$RK" x="-38.55" y="4.5" drill="0.8" diameter="1.27" shape="long" rot="R270"/>
-<pad name="P$GK" x="-38.55" y="1.5" drill="0.8" diameter="1.27" shape="long" rot="R270"/>
-<pad name="P$BK" x="-38.55" y="-1.5" drill="0.8" diameter="1.27" shape="long" rot="R270"/>
-<pad name="P$A" x="-38.58" y="-4.54" drill="0.8" diameter="1.27" shape="long" rot="R270"/>
-<text x="-13.97" y="11.43" size="1.27" layer="25" font="vector">&gt;NAME</text>
-<text x="7.62" y="11.43" size="1.27" layer="27" font="vector">&gt;Value</text>
-</package>
 <package name="C0201">
 <description>Source: http://www.avxcorp.com/docs/catalogs/cx5r.pdf</description>
 <rectangle x1="-0.3" y1="-0.15" x2="-0.15" y2="0.15" layer="51"/>
@@ -2105,6 +2078,33 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <rectangle x1="-1.4" y1="-1.6" x2="-1.1" y2="1.6" layer="51"/>
 <rectangle x1="1.1" y1="-1.6" x2="1.4" y2="1.6" layer="51" rot="R180"/>
 </package>
+<package name="NHD-C0220BIZ-LCD">
+<description>Footprint to the LDC screen. 
+&lt;p&gt;
+&lt;b&gt;
+Note: The pads on the left are 3mm pitch and blade type. .3mm thick and ~1.5mm wide&lt;/b&gt;</description>
+<wire x1="-1.6" y1="-16.8" x2="2.5" y2="-16.8" width="0.127" layer="21"/>
+<pad name="P$8" x="-7" y="-16.2" drill="0.6"/>
+<pad name="P$7" x="-5" y="-16.2" drill="0.6"/>
+<pad name="P$6" x="-3" y="-16.2" drill="0.6"/>
+<pad name="P$5" x="-1" y="-16.2" drill="0.6"/>
+<pad name="P$4" x="1" y="-16.2" drill="0.6"/>
+<pad name="P$3" x="3" y="-16.2" drill="0.6"/>
+<pad name="P$2" x="5" y="-16.2" drill="0.6"/>
+<pad name="P$1" x="7" y="-16.2" drill="0.6"/>
+<wire x1="-35.8" y1="10.3" x2="35.8" y2="10.3" width="0.127" layer="21"/>
+<wire x1="35.8" y1="10.3" x2="35.8" y2="-16.8" width="0.127" layer="21"/>
+<wire x1="35.8" y1="-16.8" x2="-35.8" y2="-16.8" width="0.127" layer="21"/>
+<wire x1="-35.8" y1="-16.8" x2="-35.8" y2="10.3" width="0.127" layer="21"/>
+<dimension x1="-35.8" y1="-16.8" x2="-35.8" y2="10.3" x3="38.1" y3="-3.25" textsize="1.27" layer="48"/>
+<dimension x1="35.8" y1="-16.8" x2="-35.8" y2="-16.8" x3="0" y3="15.24" textsize="1.27" layer="51"/>
+<pad name="P$RK" x="-38.55" y="4.5" drill="0.8" diameter="1.27" shape="long" rot="R270"/>
+<pad name="P$GK" x="-38.55" y="1.5" drill="0.8" diameter="1.27" shape="long" rot="R270"/>
+<pad name="P$BK" x="-38.55" y="-1.5" drill="0.8" diameter="1.27" shape="long" rot="R270"/>
+<pad name="P$A" x="-38.58" y="-4.54" drill="0.8" diameter="1.27" shape="long" rot="R270"/>
+<text x="-13.97" y="11.43" size="1.27" layer="25" font="vector">&gt;NAME</text>
+<text x="7.62" y="11.43" size="1.27" layer="27" font="vector">&gt;Value</text>
+</package>
 </packages>
 <symbols>
 <symbol name="LETTER_L">
@@ -2250,26 +2250,6 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <wire x1="3.6322" y1="0.5842" x2="3.5814" y2="0.635" width="0.1016" layer="94"/>
 <wire x1="3.5814" y1="0.635" x2="3.7846" y2="0.635" width="0.1016" layer="94"/>
 </symbol>
-<symbol name="NHD-C0220BIZ-FS(RGB)-FBW-3VM">
-<pin name="!RST" x="-12.7" y="13.97" length="short" direction="in" function="dot"/>
-<pin name="SCL" x="-12.7" y="10.16" length="short" function="clk"/>
-<pin name="SDA" x="-12.7" y="6.35" length="short"/>
-<pin name="GND" x="-12.7" y="2.54" length="short" direction="pwr"/>
-<pin name="VDD" x="-12.7" y="-1.27" length="short" direction="pwr"/>
-<pin name="VOUT" x="-12.7" y="-5.08" length="short"/>
-<pin name="C1+" x="-12.7" y="-8.89" length="short"/>
-<pin name="C1-" x="-12.7" y="-12.7" length="short"/>
-<pin name="A" x="6.35" y="-22.86" length="short" rot="R90"/>
-<pin name="K-R" x="-5.08" y="-22.86" length="short" rot="R90"/>
-<pin name="K-G" x="-1.27" y="-22.86" length="short" rot="R90"/>
-<pin name="K-B" x="2.54" y="-22.86" length="short" rot="R90"/>
-<wire x1="-10.16" y1="17.78" x2="-10.16" y2="-20.32" width="0.254" layer="94"/>
-<wire x1="-10.16" y1="-20.32" x2="8.89" y2="-20.32" width="0.254" layer="94"/>
-<wire x1="8.89" y1="-20.32" x2="8.89" y2="17.78" width="0.254" layer="94"/>
-<wire x1="8.89" y1="17.78" x2="-10.16" y2="17.78" width="0.254" layer="94"/>
-<text x="-5.08" y="19.05" size="1.778" layer="96">&gt;VALUE</text>
-<text x="-5.08" y="21.59" size="1.778" layer="104">&gt;NAME</text>
-</symbol>
 <symbol name="C">
 <rectangle x1="-2.032" y1="-2.032" x2="2.032" y2="-1.524" layer="94"/>
 <rectangle x1="-2.032" y1="-1.016" x2="2.032" y2="-0.508" layer="94"/>
@@ -2368,6 +2348,26 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <pin name="2" x="5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1" rot="R180"/>
 <pin name="1" x="-5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1"/>
 </symbol>
+<symbol name="NHD-C0220BIZ-FS(RGB)-FBW-3VM">
+<pin name="!RST" x="-12.7" y="6.35" length="short" direction="in" function="dot"/>
+<pin name="SCL" x="-12.7" y="13.97" length="short" function="clk"/>
+<pin name="SDA" x="-12.7" y="10.16" length="short"/>
+<pin name="GND" x="-12.7" y="-5.08" length="short" direction="pwr"/>
+<pin name="VDD" x="-12.7" y="2.54" length="short" direction="pwr"/>
+<pin name="VOUT" x="-12.7" y="-1.27" length="short"/>
+<pin name="C1+" x="-12.7" y="-8.89" length="short"/>
+<pin name="C1-" x="-12.7" y="-12.7" length="short"/>
+<pin name="A" x="6.35" y="-22.86" length="short" rot="R90"/>
+<pin name="K-R" x="-5.08" y="-22.86" length="short" rot="R90"/>
+<pin name="K-G" x="-1.27" y="-22.86" length="short" rot="R90"/>
+<pin name="K-B" x="2.54" y="-22.86" length="short" rot="R90"/>
+<wire x1="-10.16" y1="17.78" x2="-10.16" y2="-20.32" width="0.254" layer="94"/>
+<wire x1="-10.16" y1="-20.32" x2="8.89" y2="-20.32" width="0.254" layer="94"/>
+<wire x1="8.89" y1="-20.32" x2="8.89" y2="17.78" width="0.254" layer="94"/>
+<wire x1="8.89" y1="17.78" x2="-10.16" y2="17.78" width="0.254" layer="94"/>
+<text x="-5.08" y="19.05" size="1.778" layer="96">&gt;VALUE</text>
+<text x="-5.08" y="21.59" size="1.778" layer="104">&gt;NAME</text>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="FRAME-LETTER" prefix="FRAME">
@@ -2455,40 +2455,6 @@ Medium Power Linear Switch
 <technology name="">
 <attribute name="DIGIKEY" value="TIP120TUFS-ND" constant="no"/>
 <attribute name="MFG" value="Fairchild" constant="no"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="NHD-C0220BIZ-FS(RGB)-FBW-3VM">
-<description>&lt;b&gt;NHD-C0220Biz&lt;/b&gt;
- - Character Liquid Crystal DIsplay Module
-&lt;p&gt;
-Source: http://www.newhavendisplay.com/specs/NHD-C0220BiZ-FSRGB-FBW-3VM.pdf</description>
-<gates>
-<gate name="G$1" symbol="NHD-C0220BIZ-FS(RGB)-FBW-3VM" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="NHD-C0220BIZ-LCD">
-<connects>
-<connect gate="G$1" pin="!RST" pad="P$1"/>
-<connect gate="G$1" pin="A" pad="P$A"/>
-<connect gate="G$1" pin="C1+" pad="P$7"/>
-<connect gate="G$1" pin="C1-" pad="P$8"/>
-<connect gate="G$1" pin="GND" pad="P$4"/>
-<connect gate="G$1" pin="K-B" pad="P$BK"/>
-<connect gate="G$1" pin="K-G" pad="P$GK"/>
-<connect gate="G$1" pin="K-R" pad="P$RK"/>
-<connect gate="G$1" pin="SCL" pad="P$2"/>
-<connect gate="G$1" pin="SDA" pad="P$3"/>
-<connect gate="G$1" pin="VDD" pad="P$5"/>
-<connect gate="G$1" pin="VOUT" pad="P$6"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="COG" value="2x20" constant="no"/>
-<attribute name="INTERFACE" value="I2C" constant="no"/>
-<attribute name="VOLTS" value="3.3V" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -3575,6 +3541,40 @@ source: http://www.atmel.com/images/atmel-8271-8-bit-avr-microcontroller-atmega4
 </device>
 </devices>
 </deviceset>
+<deviceset name="NHD-C0220BIZ">
+<description>&lt;b&gt;NHD-C0220Biz&lt;/b&gt;
+ - Character Liquid Crystal DIsplay Module
+&lt;p&gt;
+Source: http://www.newhavendisplay.com/specs/NHD-C0220BiZ-FSRGB-FBW-3VM.pdf</description>
+<gates>
+<gate name="G$1" symbol="NHD-C0220BIZ-FS(RGB)-FBW-3VM" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="NHD-C0220BIZ-LCD">
+<connects>
+<connect gate="G$1" pin="!RST" pad="P$1"/>
+<connect gate="G$1" pin="A" pad="P$A"/>
+<connect gate="G$1" pin="C1+" pad="P$7"/>
+<connect gate="G$1" pin="C1-" pad="P$8"/>
+<connect gate="G$1" pin="GND" pad="P$4"/>
+<connect gate="G$1" pin="K-B" pad="P$BK"/>
+<connect gate="G$1" pin="K-G" pad="P$GK"/>
+<connect gate="G$1" pin="K-R" pad="P$RK"/>
+<connect gate="G$1" pin="SCL" pad="P$2"/>
+<connect gate="G$1" pin="SDA" pad="P$3"/>
+<connect gate="G$1" pin="VDD" pad="P$5"/>
+<connect gate="G$1" pin="VOUT" pad="P$6"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="COG" value="2x20" constant="no"/>
+<attribute name="INTERFACE" value="I2C" constant="no"/>
+<attribute name="VOLTS" value="3.3V" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 </libraries>
@@ -3591,7 +3591,6 @@ source: http://www.atmel.com/images/atmel-8271-8-bit-avr-microcontroller-atmega4
 <part name="U$2" library="LockBox" deviceset="LD29150" device="" technology="DT33R"/>
 <part name="U$3" library="LockBox" deviceset="PJ_075" device="" technology="DH"/>
 <part name="U$4" library="LockBox" deviceset="TIP120" device=""/>
-<part name="U$5" library="LockBox" deviceset="NHD-C0220BIZ-FS(RGB)-FBW-3VM" device=""/>
 <part name="C1" library="LockBox" deviceset="C" device="" value="330pF"/>
 <part name="C2" library="LockBox" deviceset="C" device="" value="10uF"/>
 <part name="GND1" library="LockBox" deviceset="GND" device=""/>
@@ -3611,6 +3610,9 @@ source: http://www.atmel.com/images/atmel-8271-8-bit-avr-microcontroller-atmega4
 <part name="R1" library="LockBox" deviceset="R-US_" device="M0805" value="4.7k"/>
 <part name="R2" library="LockBox" deviceset="R-US_" device="M0805" value="4.7k"/>
 <part name="V3" library="LockBox" deviceset="V3.3" device=""/>
+<part name="GND4" library="LockBox" deviceset="GND" device=""/>
+<part name="C5" library="LockBox" deviceset="C" device="" value="1uF"/>
+<part name="U$5" library="LockBox" deviceset="NHD-C0220BIZ" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -3627,7 +3629,6 @@ source: http://www.atmel.com/images/atmel-8271-8-bit-avr-microcontroller-atmega4
 <instance part="U$2" gate="G$1" x="55.88" y="151.13"/>
 <instance part="U$3" gate="G$1" x="26.035" y="151.765"/>
 <instance part="U$4" gate="G$1" x="113.03" y="67.31"/>
-<instance part="U$5" gate="G$1" x="199.39" y="135.89"/>
 <instance part="C1" gate="G$1" x="41.148" y="146.812"/>
 <instance part="C2" gate="G$1" x="74.93" y="146.558"/>
 <instance part="GND1" gate="1" x="59.69" y="134.62"/>
@@ -3644,9 +3645,21 @@ source: http://www.atmel.com/images/atmel-8271-8-bit-avr-microcontroller-atmega4
 <instance part="GND3" gate="1" x="21.59" y="69.85"/>
 <instance part="V2" gate="G1" x="21.59" y="90.17"/>
 <instance part="C4" gate="G$1" x="168.91" y="125.73"/>
-<instance part="R1" gate="G$1" x="176.53" y="153.67" rot="R90"/>
-<instance part="R2" gate="G$1" x="168.91" y="153.67" rot="R90"/>
-<instance part="V3" gate="G1" x="172.72" y="163.83"/>
+<instance part="R1" gate="G$1" x="175.26" y="157.48" smashed="yes" rot="R90">
+<attribute name="NAME" x="177.8" y="156.4386" size="1.778" layer="95"/>
+<attribute name="VALUE" x="176.53" y="154.178" size="1.778" layer="96"/>
+</instance>
+<instance part="R2" gate="G$1" x="167.64" y="157.48" smashed="yes" rot="R90">
+<attribute name="NAME" x="162.56" y="156.4386" size="1.778" layer="95"/>
+<attribute name="VALUE" x="161.29" y="154.178" size="1.778" layer="96"/>
+</instance>
+<instance part="V3" gate="G1" x="171.45" y="167.64"/>
+<instance part="GND4" gate="1" x="153.67" y="127"/>
+<instance part="C5" gate="G$1" x="170.18" y="134.62" smashed="yes" rot="R90">
+<attribute name="NAME" x="169.926" y="136.779" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="176.276" y="136.779" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="U$5" gate="G$1" x="199.39" y="135.89"/>
 </instances>
 <busses>
 <bus name="I2C_BUS:SCL,SDA">
@@ -3656,9 +3669,9 @@ source: http://www.atmel.com/images/atmel-8271-8-bit-avr-microcontroller-atmega4
 <label x="118.11" y="88.9" size="2.032" layer="95" rot="R90"/>
 </segment>
 <segment>
-<wire x1="157.48" y1="153.67" x2="158.75" y2="152.4" width="0.762" layer="92"/>
-<wire x1="158.75" y1="152.4" x2="158.75" y2="142.24" width="0.762" layer="92"/>
-<label x="158.75" y="140.97" size="2.032" layer="95" rot="R90"/>
+<wire x1="156.21" y1="157.48" x2="157.48" y2="156.21" width="0.762" layer="92"/>
+<wire x1="157.48" y1="156.21" x2="157.48" y2="146.05" width="0.762" layer="92"/>
+<label x="157.48" y="144.78" size="2.032" layer="95" rot="R90"/>
 </segment>
 </bus>
 <bus name="CTRL_IN:A0,A1,A2">
@@ -3716,6 +3729,17 @@ source: http://www.atmel.com/images/atmel-8271-8-bit-avr-microcontroller-atmega4
 <wire x1="21.59" y1="74.93" x2="21.59" y2="72.39" width="0.1524" layer="91"/>
 <junction x="21.59" y="74.93"/>
 </segment>
+<segment>
+<wire x1="153.67" y1="130.81" x2="153.67" y2="129.54" width="0.1524" layer="91"/>
+<pinref part="GND4" gate="1" pin="GND"/>
+<wire x1="186.69" y1="130.81" x2="163.83" y2="130.81" width="0.1524" layer="91"/>
+<pinref part="C5" gate="G$1" pin="1"/>
+<wire x1="163.83" y1="130.81" x2="153.67" y2="130.81" width="0.1524" layer="91"/>
+<wire x1="167.64" y1="134.62" x2="163.83" y2="134.62" width="0.1524" layer="91"/>
+<wire x1="163.83" y1="134.62" x2="163.83" y2="130.81" width="0.1524" layer="91"/>
+<junction x="163.83" y="130.81"/>
+<pinref part="U$5" gate="G$1" pin="GND"/>
+</segment>
 </net>
 <net name="P$1" class="0">
 <segment>
@@ -3740,13 +3764,13 @@ source: http://www.atmel.com/images/atmel-8271-8-bit-avr-microcontroller-atmega4
 </segment>
 <segment>
 <pinref part="R2" gate="G$1" pin="2"/>
-<wire x1="168.91" y1="158.75" x2="168.91" y2="161.29" width="0.1524" layer="91"/>
-<wire x1="168.91" y1="161.29" x2="172.72" y2="161.29" width="0.1524" layer="91"/>
+<wire x1="167.64" y1="162.56" x2="167.64" y2="165.1" width="0.1524" layer="91"/>
+<wire x1="167.64" y1="165.1" x2="171.45" y2="165.1" width="0.1524" layer="91"/>
 <pinref part="R1" gate="G$1" pin="2"/>
-<wire x1="172.72" y1="161.29" x2="176.53" y2="161.29" width="0.1524" layer="91"/>
-<wire x1="176.53" y1="161.29" x2="176.53" y2="158.75" width="0.1524" layer="91"/>
+<wire x1="171.45" y1="165.1" x2="175.26" y2="165.1" width="0.1524" layer="91"/>
+<wire x1="175.26" y1="165.1" x2="175.26" y2="162.56" width="0.1524" layer="91"/>
 <pinref part="V3" gate="G1" pin="P$1"/>
-<junction x="172.72" y="161.29"/>
+<junction x="171.45" y="165.1"/>
 </segment>
 </net>
 <net name="SCL" class="0">
@@ -3756,12 +3780,12 @@ source: http://www.atmel.com/images/atmel-8271-8-bit-avr-microcontroller-atmega4
 <label x="93.98" y="96.52" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$5" gate="G$1" pin="SCL"/>
-<wire x1="158.75" y1="146.05" x2="168.91" y2="146.05" width="0.1524" layer="91"/>
+<wire x1="157.48" y1="149.86" x2="167.64" y2="149.86" width="0.1524" layer="91"/>
 <pinref part="R2" gate="G$1" pin="1"/>
-<wire x1="168.91" y1="146.05" x2="186.69" y2="146.05" width="0.1524" layer="91"/>
-<wire x1="168.91" y1="146.05" x2="168.91" y2="148.59" width="0.1524" layer="91"/>
-<junction x="168.91" y="146.05"/>
+<wire x1="167.64" y1="149.86" x2="167.64" y2="152.4" width="0.1524" layer="91"/>
+<wire x1="167.64" y1="149.86" x2="186.69" y2="149.86" width="0.1524" layer="91"/>
+<junction x="167.64" y="149.86"/>
+<pinref part="U$5" gate="G$1" pin="SCL"/>
 </segment>
 </net>
 <net name="SDA" class="0">
@@ -3771,12 +3795,12 @@ source: http://www.atmel.com/images/atmel-8271-8-bit-avr-microcontroller-atmega4
 <label x="93.98" y="93.98" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$5" gate="G$1" pin="SDA"/>
-<wire x1="158.75" y1="142.24" x2="176.53" y2="142.24" width="0.1524" layer="91"/>
+<wire x1="157.48" y1="146.05" x2="175.26" y2="146.05" width="0.1524" layer="91"/>
 <pinref part="R1" gate="G$1" pin="1"/>
-<wire x1="176.53" y1="142.24" x2="186.69" y2="142.24" width="0.1524" layer="91"/>
-<wire x1="176.53" y1="142.24" x2="176.53" y2="148.59" width="0.1524" layer="91"/>
-<junction x="176.53" y="142.24"/>
+<wire x1="175.26" y1="146.05" x2="175.26" y2="152.4" width="0.1524" layer="91"/>
+<wire x1="175.26" y1="146.05" x2="186.69" y2="146.05" width="0.1524" layer="91"/>
+<junction x="175.26" y="146.05"/>
+<pinref part="U$5" gate="G$1" pin="SDA"/>
 </segment>
 </net>
 <net name="A0" class="0">
@@ -3802,22 +3826,29 @@ source: http://www.atmel.com/images/atmel-8271-8-bit-avr-microcontroller-atmega4
 </net>
 <net name="N$2" class="0">
 <segment>
-<pinref part="U$5" gate="G$1" pin="C1+"/>
 <wire x1="186.69" y1="127" x2="175.26" y2="127" width="0.1524" layer="91"/>
 <wire x1="175.26" y1="127" x2="175.26" y2="129.54" width="0.1524" layer="91"/>
 <wire x1="175.26" y1="129.54" x2="168.91" y2="129.54" width="0.1524" layer="91"/>
 <pinref part="C4" gate="G$1" pin="1"/>
 <wire x1="168.91" y1="129.54" x2="168.91" y2="128.27" width="0.1524" layer="91"/>
+<pinref part="U$5" gate="G$1" pin="C1+"/>
 </segment>
 </net>
 <net name="N$3" class="0">
 <segment>
-<pinref part="U$5" gate="G$1" pin="C1-"/>
 <wire x1="186.69" y1="123.19" x2="175.26" y2="123.19" width="0.1524" layer="91"/>
 <wire x1="175.26" y1="123.19" x2="175.26" y2="119.38" width="0.1524" layer="91"/>
 <wire x1="175.26" y1="119.38" x2="168.91" y2="119.38" width="0.1524" layer="91"/>
 <pinref part="C4" gate="G$1" pin="2"/>
 <wire x1="168.91" y1="119.38" x2="168.91" y2="120.65" width="0.1524" layer="91"/>
+<pinref part="U$5" gate="G$1" pin="C1-"/>
+</segment>
+</net>
+<net name="N$4" class="0">
+<segment>
+<pinref part="C5" gate="G$1" pin="2"/>
+<wire x1="186.69" y1="134.62" x2="175.26" y2="134.62" width="0.1524" layer="91"/>
+<pinref part="U$5" gate="G$1" pin="VOUT"/>
 </segment>
 </net>
 </nets>

@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -2295,12 +2295,12 @@ Broken pins may require receptacle replacement</description>
 <text x="2.54" y="-22.225" size="1.27" layer="95">&gt;PD7</text>
 </symbol>
 <symbol name="NHD-C0220BIZ-FS(RGB)-FBW-3VM">
-<pin name="!RST" x="-12.7" y="13.97" length="short" direction="in" function="dot"/>
-<pin name="SCL" x="-12.7" y="10.16" length="short" function="clk"/>
-<pin name="SDA" x="-12.7" y="6.35" length="short"/>
-<pin name="GND" x="-12.7" y="2.54" length="short" direction="pwr"/>
-<pin name="VDD" x="-12.7" y="-1.27" length="short" direction="pwr"/>
-<pin name="VOUT" x="-12.7" y="-5.08" length="short"/>
+<pin name="!RST" x="-12.7" y="6.35" length="short" direction="in" function="dot"/>
+<pin name="SCL" x="-12.7" y="13.97" length="short" function="clk"/>
+<pin name="SDA" x="-12.7" y="10.16" length="short"/>
+<pin name="GND" x="-12.7" y="-5.08" length="short" direction="pwr"/>
+<pin name="VDD" x="-12.7" y="2.54" length="short" direction="pwr"/>
+<pin name="VOUT" x="-12.7" y="-1.27" length="short"/>
 <pin name="C1+" x="-12.7" y="-8.89" length="short"/>
 <pin name="C1-" x="-12.7" y="-12.7" length="short"/>
 <pin name="A" x="6.35" y="-22.86" length="short" rot="R90"/>
@@ -2578,7 +2578,7 @@ source: http://www.atmel.com/images/atmel-8271-8-bit-avr-microcontroller-atmega4
 </device>
 </devices>
 </deviceset>
-<deviceset name="NHD-C0220BIZ-FS(RGB)-FBW-3VM">
+<deviceset name="NHD-C0220BIZ">
 <description>&lt;b&gt;NHD-C0220Biz&lt;/b&gt;
  - Character Liquid Crystal DIsplay Module
 &lt;p&gt;
