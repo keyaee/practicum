@@ -3622,6 +3622,11 @@ Source: http://www.newhavendisplay.com/specs/NHD-C0220BiZ-FSRGB-FBW-3VM.pdf</des
 <wire x1="11.43" y1="128.27" x2="11.43" y2="180.34" width="0.635" layer="97"/>
 <wire x1="11.43" y1="180.34" x2="91.44" y2="180.34" width="0.635" layer="97"/>
 <text x="15.24" y="173.99" size="3.81" layer="97">Power Supply - 3.3V, 1.5A LDO</text>
+<wire x1="220.98" y1="180.34" x2="220.98" y2="104.14" width="0.635" layer="97"/>
+<wire x1="220.98" y1="180.34" x2="147.32" y2="180.34" width="0.635" layer="97"/>
+<wire x1="147.32" y1="180.34" x2="147.32" y2="104.14" width="0.635" layer="97"/>
+<wire x1="147.32" y1="104.14" x2="220.98" y2="104.14" width="0.635" layer="97"/>
+<text x="170.18" y="173.99" size="3.81" layer="97">LCD Screen</text>
 </plain>
 <instances>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
@@ -3739,6 +3744,18 @@ Source: http://www.newhavendisplay.com/specs/NHD-C0220BiZ-FSRGB-FBW-3VM.pdf</des
 <wire x1="163.83" y1="134.62" x2="163.83" y2="130.81" width="0.1524" layer="91"/>
 <junction x="163.83" y="130.81"/>
 <pinref part="U$5" gate="G$1" pin="GND"/>
+<pinref part="U$5" gate="G$1" pin="K-B"/>
+<wire x1="201.93" y1="113.03" x2="201.93" y2="109.22" width="0.1524" layer="91"/>
+<pinref part="U$5" gate="G$1" pin="K-G"/>
+<wire x1="198.12" y1="113.03" x2="198.12" y2="109.22" width="0.1524" layer="91"/>
+<pinref part="U$5" gate="G$1" pin="K-R"/>
+<wire x1="198.12" y1="109.22" x2="194.31" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="194.31" y1="109.22" x2="194.31" y2="113.03" width="0.1524" layer="91"/>
+<wire x1="201.93" y1="109.22" x2="198.12" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="194.31" y1="109.22" x2="163.83" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="163.83" y1="109.22" x2="163.83" y2="130.81" width="0.1524" layer="91"/>
+<junction x="194.31" y="109.22"/>
+<junction x="198.12" y="109.22"/>
 </segment>
 </net>
 <net name="P$1" class="0">
@@ -3771,6 +3788,14 @@ Source: http://www.newhavendisplay.com/specs/NHD-C0220BiZ-FSRGB-FBW-3VM.pdf</des
 <wire x1="175.26" y1="165.1" x2="175.26" y2="162.56" width="0.1524" layer="91"/>
 <pinref part="V3" gate="G1" pin="P$1"/>
 <junction x="171.45" y="165.1"/>
+<pinref part="U$5" gate="G$1" pin="VDD"/>
+<wire x1="186.69" y1="138.43" x2="171.45" y2="138.43" width="0.1524" layer="91"/>
+<wire x1="171.45" y1="138.43" x2="171.45" y2="165.1" width="0.1524" layer="91"/>
+<wire x1="175.26" y1="165.1" x2="213.36" y2="165.1" width="0.1524" layer="91"/>
+<wire x1="213.36" y1="165.1" x2="213.36" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="213.36" y1="109.22" x2="205.74" y2="109.22" width="0.1524" layer="91"/>
+<pinref part="U$5" gate="G$1" pin="A"/>
+<wire x1="205.74" y1="109.22" x2="205.74" y2="113.03" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="SCL" class="0">
@@ -3849,6 +3874,12 @@ Source: http://www.newhavendisplay.com/specs/NHD-C0220BiZ-FSRGB-FBW-3VM.pdf</des
 <pinref part="C5" gate="G$1" pin="2"/>
 <wire x1="186.69" y1="134.62" x2="175.26" y2="134.62" width="0.1524" layer="91"/>
 <pinref part="U$5" gate="G$1" pin="VOUT"/>
+</segment>
+</net>
+<net name="N$6" class="0">
+<segment>
+<pinref part="U$5" gate="G$1" pin="!RST"/>
+<wire x1="186.69" y1="142.24" x2="151.13" y2="142.24" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
