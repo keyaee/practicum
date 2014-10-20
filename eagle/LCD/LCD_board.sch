@@ -4235,7 +4235,7 @@ naming: grid - package width</description>
 <attribute name="VALUE" x="69.85" y="73.66" size="1.778" layer="96" rot="R180"/>
 <attribute name="DATALINES" x="63.5" y="63.5" size="1.778" layer="96" rot="R180" display="off"/>
 </instance>
-<instance part="C1" gate="G$1" x="78.74" y="27.94" rot="R270"/>
+<instance part="C1" gate="G$1" x="81.28" y="31.75" rot="R270"/>
 <instance part="C2" gate="G$1" x="81.28" y="12.7" rot="R270"/>
 <instance part="CN1" gate="G$1" x="68.58" y="-2.54" rot="R180"/>
 <instance part="R1" gate="G$1" x="99.06" y="73.66" rot="R90"/>
@@ -4263,18 +4263,6 @@ naming: grid - package width</description>
 <wire x1="88.9" y1="15.24" x2="88.9" y2="24.13" width="0.1524" layer="91"/>
 <wire x1="91.44" y1="24.13" x2="88.9" y2="24.13" width="0.1524" layer="91"/>
 <pinref part="U$1" gate="G$1" pin="C1+"/>
-</segment>
-</net>
-<net name="N$3" class="0">
-<segment>
-<wire x1="91.44" y1="27.94" x2="83.82" y2="27.94" width="0.1524" layer="91"/>
-<pinref part="C1" gate="G$1" pin="1"/>
-<wire x1="83.82" y1="27.94" x2="81.28" y2="27.94" width="0.1524" layer="91"/>
-<junction x="83.82" y="27.94"/>
-<pinref part="U$1" gate="G$1" pin="GND"/>
-<pinref part="U$1" gate="G$1" pin="VOUT"/>
-<wire x1="91.44" y1="31.75" x2="83.82" y2="31.75" width="0.1524" layer="91"/>
-<wire x1="83.82" y1="31.75" x2="83.82" y2="27.94" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="RST" class="0">
@@ -4363,9 +4351,14 @@ naming: grid - package width</description>
 </segment>
 <segment>
 <pinref part="C1" gate="G$1" pin="2"/>
+<wire x1="76.2" y1="31.75" x2="73.66" y2="31.75" width="0.1524" layer="91"/>
+<wire x1="73.66" y1="31.75" x2="73.66" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="73.66" y1="27.94" x2="91.44" y2="27.94" width="0.1524" layer="91"/>
 <wire x1="73.66" y1="27.94" x2="69.85" y2="27.94" width="0.1524" layer="91"/>
 <junction x="69.85" y="27.94"/>
 <label x="67.31" y="25.4" size="1.778" layer="95" rot="R180"/>
+<pinref part="U$1" gate="G$1" pin="GND"/>
+<junction x="73.66" y="27.94"/>
 </segment>
 </net>
 <net name="A" class="0">
@@ -4404,6 +4397,13 @@ naming: grid - package width</description>
 <wire x1="110.49" y1="10.16" x2="110.49" y2="-5.08" width="0.1524" layer="91"/>
 <junction x="110.49" y="-5.08"/>
 <pinref part="U$1" gate="G$1" pin="A"/>
+</segment>
+</net>
+<net name="N$5" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="VOUT"/>
+<wire x1="91.44" y1="31.75" x2="83.82" y2="31.75" width="0.1524" layer="91"/>
+<pinref part="C1" gate="G$1" pin="1"/>
 </segment>
 </net>
 </nets>
