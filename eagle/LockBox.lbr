@@ -2234,6 +2234,10 @@ Broken pins may require receptacle replacement</description>
 <description>IDI S0 Pogo Pins, use receptacles if easy replacement is required. Pin is 0.027" diameter, hole is 0.029" (standard available drill).</description>
 <pad name="PAD" x="0" y="0" drill="0.7366"/>
 </package>
+<package name="TEST_PAD">
+<description>Through Hole Test Pad .6mm Drill</description>
+<pad name="P$1" x="0" y="0" drill="0.6"/>
+</package>
 </packages>
 <symbols>
 <symbol name="ATMEGA328">
@@ -3888,6 +3892,24 @@ Standard 8.5x11 US Letter frame</description>
 <device name="">
 <technologies>
 <technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="PAD">
+<description>Through hole test pad</description>
+<gates>
+<gate name="G$1" symbol="PAD+NAME" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="TEST_PAD">
+<connects>
+<connect gate="G$1" pin="PAD" pad="P$1"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIAM" value="0.6mm" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>
