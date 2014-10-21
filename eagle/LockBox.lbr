@@ -2238,6 +2238,22 @@ Broken pins may require receptacle replacement</description>
 <description>Through Hole Test Pad .6mm Drill</description>
 <pad name="P$1" x="0" y="0" drill="0.6"/>
 </package>
+<package name="MODJACK8">
+<wire x1="7.65" y1="0" x2="-7.65" y2="0" width="0.127" layer="21"/>
+<wire x1="-7.65" y1="0" x2="-7.65" y2="17.8" width="0.127" layer="21"/>
+<wire x1="-7.65" y1="17.8" x2="7.65" y2="17.8" width="0.127" layer="21"/>
+<wire x1="7.65" y1="17.8" x2="7.65" y2="0" width="0.127" layer="21"/>
+<hole x="5.71" y="7.58" drill="3.2"/>
+<hole x="-5.7" y="7.55" drill="3.2"/>
+<pad name="P$1" x="4.45" y="16.5" drill="0.76"/>
+<pad name="P$2" x="3.18" y="13.96" drill="0.76"/>
+<pad name="P$3" x="1.91" y="16.5" drill="0.76"/>
+<pad name="P$4" x="0.64" y="13.96" drill="0.76"/>
+<pad name="P$5" x="-0.63" y="16.5" drill="0.76"/>
+<pad name="P$6" x="-1.9" y="13.96" drill="0.76"/>
+<pad name="P$7" x="-3.17" y="16.5" drill="0.76"/>
+<pad name="P$8" x="-4.44" y="13.96" drill="0.76"/>
+</package>
 </packages>
 <symbols>
 <symbol name="ATMEGA328">
@@ -2529,6 +2545,22 @@ Broken pins may require receptacle replacement</description>
 <wire x1="-0.508" y1="1.27" x2="0.508" y2="1.27" width="0.254" layer="94"/>
 <wire x1="0" y1="1.778" x2="0" y2="0.762" width="0.254" layer="94"/>
 <text x="0" y="2.54" size="1.524" layer="96" ratio="20">&gt;VALUE</text>
+</symbol>
+<symbol name="8PIN">
+<description>8 pin connector</description>
+<pin name="P$1" x="-2.54" y="10.16" length="short"/>
+<pin name="P$2" x="-2.54" y="7.62" length="short"/>
+<pin name="P$3" x="-2.54" y="5.08" length="short"/>
+<pin name="P$4" x="-2.54" y="2.54" length="short"/>
+<pin name="P$5" x="-2.54" y="0" length="short"/>
+<pin name="P$6" x="-2.54" y="-2.54" length="short"/>
+<pin name="P$7" x="-2.54" y="-5.08" length="short"/>
+<pin name="P$8" x="-2.54" y="-7.62" length="short"/>
+<text x="7.62" y="2.54" size="1.778" layer="95">&gt;NAME</text>
+<text x="7.62" y="-1.27" size="1.778" layer="96">&gt;VALUE</text>
+<wire x1="1.27" y1="11.43" x2="0" y2="11.43" width="0.254" layer="94"/>
+<wire x1="0" y1="11.43" x2="0" y2="-8.89" width="0.254" layer="94"/>
+<wire x1="0" y1="-8.89" x2="1.27" y2="-8.89" width="0.254" layer="94"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -3910,6 +3942,29 @@ Standard 8.5x11 US Letter frame</description>
 <technology name="">
 <attribute name="DIAM" value="0.6mm" constant="no"/>
 </technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="ETHERNET_JACK">
+<description>8-Pin eithernet jack</description>
+<gates>
+<gate name="G$1" symbol="8PIN" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="MODJACK8">
+<connects>
+<connect gate="G$1" pin="P$1" pad="P$1"/>
+<connect gate="G$1" pin="P$2" pad="P$2"/>
+<connect gate="G$1" pin="P$3" pad="P$3"/>
+<connect gate="G$1" pin="P$4" pad="P$4"/>
+<connect gate="G$1" pin="P$5" pad="P$5"/>
+<connect gate="G$1" pin="P$6" pad="P$6"/>
+<connect gate="G$1" pin="P$7" pad="P$7"/>
+<connect gate="G$1" pin="P$8" pad="P$8"/>
+</connects>
+<technologies>
+<technology name=""/>
 </technologies>
 </device>
 </devices>
