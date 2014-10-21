@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.5" unitdist="mm" unit="mm" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -488,62 +488,9 @@ Source: AVX .. aphvc.pdf</description>
 <text x="-1.905" y="3.81" size="1.27" layer="25">&gt;NAME</text>
 <text x="-1.905" y="-5.08" size="1.27" layer="27">&gt;VALUE</text>
 </package>
-<package name="PAD-1.0/0.5">
-<description>Plated through hole (pad) 0.5mm drill, 1mm annular diameter</description>
-<circle x="0" y="0" radius="0.57" width="0.1" layer="51"/>
-<pad name="PAD" x="0" y="0" drill="0.5" diameter="1"/>
-<text x="-1.37" y="0.724" size="1.27" layer="25" font="vector" ratio="10">&gt;NAME</text>
-</package>
-<package name="PAD-1.5X1.5">
-<description>SMT Pad 1.5 x 1.5 mm</description>
-<smd name="PAD" x="0" y="0" dx="1.5" dy="1.5" layer="1"/>
-<text x="-1.37" y="0.724" size="1.27" layer="25" font="vector" ratio="10">&gt;NAME</text>
-</package>
-<package name="PAD-1.5X1.0">
-<description>SMT Pad 1.5 x 1.0 mm</description>
-<smd name="PAD" x="0" y="0" dx="1.5" dy="1" layer="1"/>
-<text x="-1.37" y="0.724" size="1.27" layer="25" font="vector" ratio="10">&gt;NAME</text>
-</package>
-<package name="PAD-1.5X1.3">
-<description>SMT Pad 1.5 x 1.3 mm</description>
-<smd name="PAD" x="0" y="0" dx="1.5" dy="1.3" layer="1"/>
-<text x="-1.37" y="0.724" size="1.27" layer="25" font="vector" ratio="10">&gt;NAME</text>
-</package>
-<package name="PIN_POGO_SS30">
-<description>Pogo Pin Series SS-30 &lt;br&gt; 
-IDI &lt;br&gt;  
-1/2" long, .020"body &lt;br&gt;
-http://www.idinet.com/_FileLibrary/PDF/pg38.pdf &lt;br&gt;
-In use with boards from sunstone. Fit is good.</description>
-<pad name="PAD" x="0" y="0" drill="0.508" diameter="0.8128"/>
-<text x="-1" y="1" size="0.8" layer="25" font="vector" ratio="20">&gt;NAME</text>
-<circle x="0" y="0" radius="0.508" width="0.127" layer="21"/>
-</package>
-<package name="PIN_POGO_SS50">
-<description>Pogo Pin Series SS-50 &lt;br&gt; 
-IDI &lt;br&gt;  
-0.61" long, 0.027"body. &lt;br&gt;
-http://www.idinet.com/_FileLibrary/PDF/pg43.pdf &lt;br&gt;
-In use with boards from sunstone. Fit is good.</description>
-<pad name="PAD" x="0" y="0" drill="0.7" diameter="1.016"/>
-</package>
-<package name="PIN_POGO_R100_RECEPTACLE">
-<description>Desire .074 hole, but .08 is closest standard drill.</description>
-<pad name="PAD" x="0" y="0" drill="2.032" diameter="2.54"/>
-</package>
-<package name="PIN_POGO_S100">
-<description>Desired Hole is 0.054inch, next larger standard hole is 0.061"&lt;br&gt;
-Note: Pin sits too loose, and is hard to solder without board damage</description>
-<pad name="PAD" x="0" y="0" drill="1.5494"/>
-</package>
-<package name="PIN_POGO_R0_RECEPTACLE">
-<description>Use of receptacle allows easy bent pin replacement. &lt;br&gt;
-Broken pins may require receptacle replacement</description>
-<pad name="PAD" x="0" y="0" drill="1.016"/>
-</package>
-<package name="PIN_POGO_S0">
-<description>IDI S0 Pogo Pins, use receptacles if easy replacement is required. Pin is 0.027" diameter, hole is 0.029" (standard available drill).</description>
-<pad name="PAD" x="0" y="0" drill="0.7366"/>
+<package name="TEST_PAD">
+<description>Through Hole Test Pad .6mm Drill</description>
+<pad name="P$1" x="0" y="0" drill="0.6"/>
 </package>
 </packages>
 <symbols>
@@ -932,90 +879,20 @@ Source: http://www.ti.com/lit/ds/symlink/sn74hc148.pdf</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="PAD+SQUARE" prefix="J">
-<description>Pad connection</description>
+<deviceset name="PAD">
+<description>Through hole test pad</description>
 <gates>
-<gate name="PAD" symbol="PAD+NAME" x="0" y="0"/>
+<gate name="G$1" symbol="PAD+NAME" x="0" y="0"/>
 </gates>
 <devices>
-<device name="-1.0/0.5" package="PAD-1.0/0.5">
+<device name="" package="TEST_PAD">
 <connects>
-<connect gate="PAD" pin="PAD" pad="PAD"/>
+<connect gate="G$1" pin="PAD" pad="P$1"/>
 </connects>
 <technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="-1.5X1.5" package="PAD-1.5X1.5">
-<connects>
-<connect gate="PAD" pin="PAD" pad="PAD"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="-1.5X1.0" package="PAD-1.5X1.0">
-<connects>
-<connect gate="PAD" pin="PAD" pad="PAD"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="-1.5X1.3" package="PAD-1.5X1.3">
-<connects>
-<connect gate="PAD" pin="PAD" pad="PAD"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="POGO-SS30" package="PIN_POGO_SS30">
-<connects>
-<connect gate="PAD" pin="PAD" pad="PAD"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="POGO-SS50" package="PIN_POGO_SS50">
-<connects>
-<connect gate="PAD" pin="PAD" pad="PAD"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="POGO-R100-RECEPTACLE" package="PIN_POGO_R100_RECEPTACLE">
-<connects>
-<connect gate="PAD" pin="PAD" pad="PAD"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="POGO-S100" package="PIN_POGO_S100">
-<connects>
-<connect gate="PAD" pin="PAD" pad="PAD"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="POGO-R0-RECEPTACLE" package="PIN_POGO_R0_RECEPTACLE">
-<connects>
-<connect gate="PAD" pin="PAD" pad="PAD"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="POGO-S0" package="PIN_POGO_S0">
-<connects>
-<connect gate="PAD" pin="PAD" pad="PAD"/>
-</connects>
-<technologies>
-<technology name=""/>
+<technology name="">
+<attribute name="DIAM" value="0.6mm" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>
@@ -1035,18 +912,18 @@ Source: http://www.ti.com/lit/ds/symlink/sn74hc148.pdf</description>
 <part name="FRAME1" library="LockBox" deviceset="FRAME-LETTER" device=""/>
 <part name="U$1" library="LockBox" deviceset="SN74HC148" device="DR"/>
 <part name="C1" library="LockBox" deviceset="C" device=""/>
-<part name="J1" library="LockBox" deviceset="PAD+SQUARE" device="-1.5X1.5"/>
-<part name="J2" library="LockBox" deviceset="PAD+SQUARE" device="-1.5X1.5"/>
-<part name="J3" library="LockBox" deviceset="PAD+SQUARE" device="-1.5X1.5"/>
-<part name="J4" library="LockBox" deviceset="PAD+SQUARE" device="-1.5X1.5"/>
-<part name="J5" library="LockBox" deviceset="PAD+SQUARE" device="-1.5X1.5"/>
-<part name="J6" library="LockBox" deviceset="PAD+SQUARE" device="-1.5X1.5"/>
-<part name="J7" library="LockBox" deviceset="PAD+SQUARE" device="-1.5X1.5"/>
-<part name="J9" library="LockBox" deviceset="PAD+SQUARE" device="-1.5X1.5"/>
-<part name="J10" library="LockBox" deviceset="PAD+SQUARE" device="-1.5X1.5"/>
-<part name="J11" library="LockBox" deviceset="PAD+SQUARE" device="-1.5X1.5"/>
-<part name="GND" library="LockBox" deviceset="PAD+SQUARE" device="-1.5X1.5"/>
-<part name="VCC" library="LockBox" deviceset="PAD+SQUARE" device="-1.5X1.5"/>
+<part name="J1" library="LockBox" deviceset="PAD" device=""/>
+<part name="J2" library="LockBox" deviceset="PAD" device=""/>
+<part name="J3" library="LockBox" deviceset="PAD" device=""/>
+<part name="J4" library="LockBox" deviceset="PAD" device=""/>
+<part name="J5" library="LockBox" deviceset="PAD" device=""/>
+<part name="J6" library="LockBox" deviceset="PAD" device=""/>
+<part name="J7" library="LockBox" deviceset="PAD" device=""/>
+<part name="J9" library="LockBox" deviceset="PAD" device=""/>
+<part name="J10" library="LockBox" deviceset="PAD" device=""/>
+<part name="J11" library="LockBox" deviceset="PAD" device=""/>
+<part name="GND" library="LockBox" deviceset="PAD" device=""/>
+<part name="VCC" library="LockBox" deviceset="PAD" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -1057,18 +934,18 @@ Source: http://www.ti.com/lit/ds/symlink/sn74hc148.pdf</description>
 <instance part="FRAME1" gate="G$2" x="17.78" y="-99.06"/>
 <instance part="U$1" gate="G$1" x="-20.32" y="10.16"/>
 <instance part="C1" gate="G$1" x="-10.16" y="-25.4" rot="R270"/>
-<instance part="J1" gate="PAD" x="-41.91" y="29.21"/>
-<instance part="J2" gate="PAD" x="-41.91" y="25.4"/>
-<instance part="J3" gate="PAD" x="-41.91" y="21.59"/>
-<instance part="J4" gate="PAD" x="-41.91" y="17.78"/>
-<instance part="J5" gate="PAD" x="-41.91" y="13.97"/>
-<instance part="J6" gate="PAD" x="-41.91" y="10.16"/>
-<instance part="J7" gate="PAD" x="-41.91" y="6.35"/>
-<instance part="J9" gate="PAD" x="11.43" y="26.67" rot="R180"/>
-<instance part="J10" gate="PAD" x="11.43" y="22.86" rot="R180"/>
-<instance part="J11" gate="PAD" x="11.43" y="19.05" rot="R180"/>
-<instance part="GND" gate="PAD" x="-7.62" y="-34.29" rot="R90"/>
-<instance part="VCC" gate="PAD" x="-15.24" y="-34.29" rot="R90"/>
+<instance part="J1" gate="G$1" x="-41.91" y="29.21"/>
+<instance part="J2" gate="G$1" x="-41.91" y="25.4"/>
+<instance part="J3" gate="G$1" x="-41.91" y="21.59"/>
+<instance part="J4" gate="G$1" x="-41.91" y="17.78"/>
+<instance part="J5" gate="G$1" x="-41.91" y="13.97"/>
+<instance part="J6" gate="G$1" x="-41.91" y="10.16"/>
+<instance part="J7" gate="G$1" x="-41.91" y="6.35"/>
+<instance part="J9" gate="G$1" x="11.43" y="26.67" rot="R180"/>
+<instance part="J10" gate="G$1" x="11.43" y="22.86" rot="R180"/>
+<instance part="J11" gate="G$1" x="11.43" y="19.05" rot="R180"/>
+<instance part="GND" gate="G$1" x="-7.62" y="-34.29" rot="R90"/>
+<instance part="VCC" gate="G$1" x="-15.24" y="-34.29" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -1083,7 +960,7 @@ Source: http://www.ti.com/lit/ds/symlink/sn74hc148.pdf</description>
 <wire x1="-15.24" y1="-20.32" x2="-15.24" y2="-25.4" width="0.1524" layer="91"/>
 <wire x1="-15.24" y1="-25.4" x2="-15.24" y2="-31.75" width="0.1524" layer="91"/>
 <junction x="-15.24" y="-25.4"/>
-<pinref part="VCC" gate="PAD" pin="PAD"/>
+<pinref part="VCC" gate="G$1" pin="PAD"/>
 <pinref part="U$1" gate="G$1" pin="IN0"/>
 <wire x1="-29.21" y1="2.54" x2="-26.67" y2="2.54" width="0.1524" layer="91"/>
 <wire x1="-13.97" y1="-13.97" x2="-29.21" y2="-13.97" width="0.1524" layer="91"/>
@@ -1093,7 +970,7 @@ Source: http://www.ti.com/lit/ds/symlink/sn74hc148.pdf</description>
 </net>
 <net name="N$3" class="0">
 <segment>
-<pinref part="J1" gate="PAD" pin="PAD"/>
+<pinref part="J1" gate="G$1" pin="PAD"/>
 <pinref part="U$1" gate="G$1" pin="IN7"/>
 <wire x1="-39.37" y1="29.21" x2="-26.67" y2="29.21" width="0.1524" layer="91"/>
 </segment>
@@ -1101,13 +978,13 @@ Source: http://www.ti.com/lit/ds/symlink/sn74hc148.pdf</description>
 <net name="N$4" class="0">
 <segment>
 <pinref part="U$1" gate="G$1" pin="IN6"/>
-<pinref part="J2" gate="PAD" pin="PAD"/>
+<pinref part="J2" gate="G$1" pin="PAD"/>
 <wire x1="-26.67" y1="25.4" x2="-39.37" y2="25.4" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$5" class="0">
 <segment>
-<pinref part="J3" gate="PAD" pin="PAD"/>
+<pinref part="J3" gate="G$1" pin="PAD"/>
 <pinref part="U$1" gate="G$1" pin="IN5"/>
 <wire x1="-39.37" y1="21.59" x2="-26.67" y2="21.59" width="0.1524" layer="91"/>
 </segment>
@@ -1115,13 +992,13 @@ Source: http://www.ti.com/lit/ds/symlink/sn74hc148.pdf</description>
 <net name="N$6" class="0">
 <segment>
 <pinref part="U$1" gate="G$1" pin="IN4"/>
-<pinref part="J4" gate="PAD" pin="PAD"/>
+<pinref part="J4" gate="G$1" pin="PAD"/>
 <wire x1="-26.67" y1="17.78" x2="-39.37" y2="17.78" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$7" class="0">
 <segment>
-<pinref part="J5" gate="PAD" pin="PAD"/>
+<pinref part="J5" gate="G$1" pin="PAD"/>
 <pinref part="U$1" gate="G$1" pin="IN3"/>
 <wire x1="-39.37" y1="13.97" x2="-26.67" y2="13.97" width="0.1524" layer="91"/>
 </segment>
@@ -1129,13 +1006,13 @@ Source: http://www.ti.com/lit/ds/symlink/sn74hc148.pdf</description>
 <net name="N$8" class="0">
 <segment>
 <pinref part="U$1" gate="G$1" pin="IN2"/>
-<pinref part="J6" gate="PAD" pin="PAD"/>
+<pinref part="J6" gate="G$1" pin="PAD"/>
 <wire x1="-26.67" y1="10.16" x2="-39.37" y2="10.16" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$9" class="0">
 <segment>
-<pinref part="J7" gate="PAD" pin="PAD"/>
+<pinref part="J7" gate="G$1" pin="PAD"/>
 <pinref part="U$1" gate="G$1" pin="IN1"/>
 <wire x1="-39.37" y1="6.35" x2="-26.67" y2="6.35" width="0.1524" layer="91"/>
 </segment>
@@ -1154,7 +1031,7 @@ Source: http://www.ti.com/lit/ds/symlink/sn74hc148.pdf</description>
 <wire x1="-7.62" y1="-20.32" x2="-7.62" y2="-25.4" width="0.1524" layer="91"/>
 <wire x1="-7.62" y1="-25.4" x2="-7.62" y2="-31.75" width="0.1524" layer="91"/>
 <junction x="-7.62" y="-25.4"/>
-<pinref part="GND" gate="PAD" pin="PAD"/>
+<pinref part="GND" gate="G$1" pin="PAD"/>
 <wire x1="-5.08" y1="-31.75" x2="-7.62" y2="-31.75" width="0.1524" layer="91"/>
 <junction x="-7.62" y="-31.75"/>
 </segment>
@@ -1162,21 +1039,21 @@ Source: http://www.ti.com/lit/ds/symlink/sn74hc148.pdf</description>
 <net name="N$2" class="0">
 <segment>
 <pinref part="U$1" gate="G$1" pin="A2"/>
-<pinref part="J9" gate="PAD" pin="PAD"/>
+<pinref part="J9" gate="G$1" pin="PAD"/>
 <wire x1="-1.27" y1="26.67" x2="8.89" y2="26.67" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$11" class="0">
 <segment>
 <pinref part="U$1" gate="G$1" pin="A1"/>
-<pinref part="J10" gate="PAD" pin="PAD"/>
+<pinref part="J10" gate="G$1" pin="PAD"/>
 <wire x1="-1.27" y1="22.86" x2="8.89" y2="22.86" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$12" class="0">
 <segment>
 <pinref part="U$1" gate="G$1" pin="A0"/>
-<pinref part="J11" gate="PAD" pin="PAD"/>
+<pinref part="J11" gate="G$1" pin="PAD"/>
 <wire x1="-1.27" y1="19.05" x2="8.89" y2="19.05" width="0.1524" layer="91"/>
 </segment>
 </net>
