@@ -36,7 +36,7 @@ SUBDIRS :=
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
-../Controller_Driver_4.cpp
+../Controller_Timer.cpp
 
 
 PREPROCESSING_SRCS += 
@@ -46,20 +46,20 @@ ASM_SRCS +=
 
 
 OBJS +=  \
-Controller_Driver_4.o
+Controller_Timer.o
 
 OBJS_AS_ARGS +=  \
-Controller_Driver_4.o
+Controller_Timer.o
 
 C_DEPS +=  \
-Controller_Driver_4.d
+Controller_Timer.d
 
 C_DEPS_AS_ARGS +=  \
-Controller_Driver_4.d
+Controller_Timer.d
 
-OUTPUT_FILE_PATH +=Controller_Driver_4.elf
+OUTPUT_FILE_PATH +=Controller_Timer.elf
 
-OUTPUT_FILE_PATH_AS_ARGS +=Controller_Driver_4.elf
+OUTPUT_FILE_PATH_AS_ARGS +=Controller_Timer.elf
 
 ADDITIONAL_DEPENDENCIES:=
 
@@ -103,13 +103,13 @@ all: $(OUTPUT_FILE_PATH) $(ADDITIONAL_DEPENDENCIES)
 $(OUTPUT_FILE_PATH): $(OBJS) $(USER_OBJS) $(OUTPUT_FILE_DEP) $(LIB_DEP)
 	@echo Building target: $@
 	@echo Invoking: AVR8/GNU Linker : 4.8.1
-	$(QUOTE)C:\Program Files\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.1056\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -o$(OUTPUT_FILE_PATH_AS_ARGS) $(OBJS_AS_ARGS) $(USER_OBJS) $(LIBS) -Wl,-Map="Controller_Driver_4.map" -Wl,--start-group -Wl,-lm  -Wl,--end-group -Wl,--gc-sections -mmcu=atmega328p  
+	$(QUOTE)C:\Program Files\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.1056\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -o$(OUTPUT_FILE_PATH_AS_ARGS) $(OBJS_AS_ARGS) $(USER_OBJS) $(LIBS) -Wl,-Map="Controller_Timer.map" -Wl,--start-group -Wl,-lm  -Wl,--end-group -Wl,--gc-sections -mmcu=atmega328p  
 	@echo Finished building target: $@
-	"C:\Program Files\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.1056\avr8-gnu-toolchain\bin\avr-objcopy.exe" -O ihex -R .eeprom -R .fuse -R .lock -R .signature -R .user_signatures  "Controller_Driver_4.elf" "Controller_Driver_4.hex"
-	"C:\Program Files\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.1056\avr8-gnu-toolchain\bin\avr-objcopy.exe" -j .eeprom  --set-section-flags=.eeprom=alloc,load --change-section-lma .eeprom=0  --no-change-warnings -O ihex "Controller_Driver_4.elf" "Controller_Driver_4.eep" || exit 0
-	"C:\Program Files\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.1056\avr8-gnu-toolchain\bin\avr-objdump.exe" -h -S "Controller_Driver_4.elf" > "Controller_Driver_4.lss"
-	"C:\Program Files\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.1056\avr8-gnu-toolchain\bin\avr-objcopy.exe" -O srec -R .eeprom -R .fuse -R .lock -R .signature -R .user_signatures "Controller_Driver_4.elf" "Controller_Driver_4.srec"
-	"C:\Program Files\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.1056\avr8-gnu-toolchain\bin\avr-size.exe" "Controller_Driver_4.elf"
+	"C:\Program Files\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.1056\avr8-gnu-toolchain\bin\avr-objcopy.exe" -O ihex -R .eeprom -R .fuse -R .lock -R .signature -R .user_signatures  "Controller_Timer.elf" "Controller_Timer.hex"
+	"C:\Program Files\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.1056\avr8-gnu-toolchain\bin\avr-objcopy.exe" -j .eeprom  --set-section-flags=.eeprom=alloc,load --change-section-lma .eeprom=0  --no-change-warnings -O ihex "Controller_Timer.elf" "Controller_Timer.eep" || exit 0
+	"C:\Program Files\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.1056\avr8-gnu-toolchain\bin\avr-objdump.exe" -h -S "Controller_Timer.elf" > "Controller_Timer.lss"
+	"C:\Program Files\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.1056\avr8-gnu-toolchain\bin\avr-objcopy.exe" -O srec -R .eeprom -R .fuse -R .lock -R .signature -R .user_signatures "Controller_Timer.elf" "Controller_Timer.srec"
+	"C:\Program Files\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.1056\avr8-gnu-toolchain\bin\avr-size.exe" "Controller_Timer.elf"
 	
 	
 
@@ -121,5 +121,5 @@ $(OUTPUT_FILE_PATH): $(OBJS) $(USER_OBJS) $(OUTPUT_FILE_DEP) $(LIB_DEP)
 clean:
 	-$(RM) $(OBJS_AS_ARGS) $(EXECUTABLES)  
 	-$(RM) $(C_DEPS_AS_ARGS)   
-	rm -rf "Controller_Driver_4.elf" "Controller_Driver_4.a" "Controller_Driver_4.hex" "Controller_Driver_4.lss" "Controller_Driver_4.eep" "Controller_Driver_4.map" "Controller_Driver_4.srec" "Controller_Driver_4.usersignatures"
+	rm -rf "Controller_Timer.elf" "Controller_Timer.a" "Controller_Timer.hex" "Controller_Timer.lss" "Controller_Timer.eep" "Controller_Timer.map" "Controller_Timer.srec" "Controller_Timer.usersignatures"
 	

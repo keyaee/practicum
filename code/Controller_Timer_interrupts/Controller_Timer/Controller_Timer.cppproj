@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>6.2</ProjectVersion>
     <ToolchainName>com.Atmel.AVRGCC8.CPP</ToolchainName>
-    <ProjectGuid>{0b20cf05-577a-45d2-9d26-e26eedecfce3}</ProjectGuid>
+    <ProjectGuid>{0cb03c30-ade3-4479-9552-ca6de6054054}</ProjectGuid>
     <avrdevice>ATmega328P</avrdevice>
     <avrdeviceseries>none</avrdeviceseries>
     <OutputType>Executable</OutputType>
@@ -12,9 +12,9 @@
     <OutputFileName>$(MSBuildProjectName)</OutputFileName>
     <OutputFileExtension>.elf</OutputFileExtension>
     <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
-    <AssemblyName>Controller_Driver_4</AssemblyName>
-    <Name>Controller_Driver_4</Name>
-    <RootNamespace>Controller_Driver_4</RootNamespace>
+    <AssemblyName>Controller_Timer</AssemblyName>
+    <Name>Controller_Timer</Name>
+    <RootNamespace>Controller_Timer</RootNamespace>
     <ToolchainFlavour>Native</ToolchainFlavour>
     <KeepTimersRunning>true</KeepTimersRunning>
     <OverrideVtor>false</OverrideVtor>
@@ -118,7 +118,7 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Controller_Driver_4.cpp">
+    <Compile Include="Controller_Timer.cpp">
       <SubType>compile</SubType>
     </Compile>
   </ItemGroup>
