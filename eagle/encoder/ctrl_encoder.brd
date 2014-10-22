@@ -193,8 +193,8 @@
 <text x="-1.27" y="-2.54" size="1.27" layer="27">&gt;VALUE</text>
 </package>
 <package name="TEST_PAD">
-<description>Through Hole Test Pad .6mm Drill</description>
-<pad name="P$1" x="0" y="0" drill="0.6"/>
+<description>Through Hole Test Pad 1.1mm Drill</description>
+<pad name="P$1" x="0" y="0" drill="1.1"/>
 </package>
 </packages>
 </library>

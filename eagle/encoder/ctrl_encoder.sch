@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.5" unitdist="mm" unit="mm" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -489,8 +489,8 @@ Source: AVX .. aphvc.pdf</description>
 <text x="-1.905" y="-5.08" size="1.27" layer="27">&gt;VALUE</text>
 </package>
 <package name="TEST_PAD">
-<description>Through Hole Test Pad .6mm Drill</description>
-<pad name="P$1" x="0" y="0" drill="0.6"/>
+<description>Through Hole Test Pad 1.1mm Drill</description>
+<pad name="P$1" x="0" y="0" drill="1.1"/>
 </package>
 </packages>
 <symbols>
@@ -560,8 +560,6 @@ Source: AVX .. aphvc.pdf</description>
 <pin name="2" x="0" y="-5.08" visible="off" length="short" direction="pas" swaplevel="1" rot="R90"/>
 <text x="1.524" y="0.381" size="1.778" layer="95">&gt;NAME</text>
 <text x="1.524" y="-4.699" size="1.778" layer="96">&gt;VALUE</text>
-<text x="0" y="2.54" size="0.4064" layer="99" align="center">SpiceOrder 1</text>
-<text x="0" y="-5.08" size="0.4064" layer="99" align="center">SpiceOrder 2</text>
 </symbol>
 <symbol name="PAD+NAME">
 <text x="-0.635" y="0.635" size="1.778" layer="95" rot="R180">&gt;NAME</text>
