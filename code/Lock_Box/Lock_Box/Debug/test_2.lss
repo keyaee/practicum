@@ -1,0 +1,632 @@
+
+test_2.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000018  00800100  00000320  000003b4  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000320  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000008  00800118  00800118  000003cc  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  000003cc  2**0
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000058  00000000  00000000  000003fc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   0000042f  00000000  00000000  00000454  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000001c0  00000000  00000000  00000883  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000228  00000000  00000000  00000a43  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  000000d0  00000000  00000000  00000c6c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    0000032d  00000000  00000000  00000d3c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    000002ed  00000000  00000000  00001069  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000048  00000000  00000000  00001356  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 34 00 	jmp	0x68	; 0x68 <__ctors_end>
+   4:	0c 94 53 00 	jmp	0xa6	; 0xa6 <__vector_1>
+   8:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+   c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  10:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  14:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  18:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  1c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  20:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  24:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  28:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  2c:	0c 94 7a 00 	jmp	0xf4	; 0xf4 <__vector_11>
+  30:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  34:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  38:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  3c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  40:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  44:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  48:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  4c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  50:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  54:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  58:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  5c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  60:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  64:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+
+00000068 <__ctors_end>:
+  68:	11 24       	eor	r1, r1
+  6a:	1f be       	out	0x3f, r1	; 63
+  6c:	cf ef       	ldi	r28, 0xFF	; 255
+  6e:	d8 e0       	ldi	r29, 0x08	; 8
+  70:	de bf       	out	0x3e, r29	; 62
+  72:	cd bf       	out	0x3d, r28	; 61
+
+00000074 <__do_copy_data>:
+  74:	11 e0       	ldi	r17, 0x01	; 1
+  76:	a0 e0       	ldi	r26, 0x00	; 0
+  78:	b1 e0       	ldi	r27, 0x01	; 1
+  7a:	e0 e2       	ldi	r30, 0x20	; 32
+  7c:	f3 e0       	ldi	r31, 0x03	; 3
+  7e:	02 c0       	rjmp	.+4      	; 0x84 <__do_copy_data+0x10>
+  80:	05 90       	lpm	r0, Z+
+  82:	0d 92       	st	X+, r0
+  84:	a8 31       	cpi	r26, 0x18	; 24
+  86:	b1 07       	cpc	r27, r17
+  88:	d9 f7       	brne	.-10     	; 0x80 <__do_copy_data+0xc>
+
+0000008a <__do_clear_bss>:
+  8a:	21 e0       	ldi	r18, 0x01	; 1
+  8c:	a8 e1       	ldi	r26, 0x18	; 24
+  8e:	b1 e0       	ldi	r27, 0x01	; 1
+  90:	01 c0       	rjmp	.+2      	; 0x94 <.do_clear_bss_start>
+
+00000092 <.do_clear_bss_loop>:
+  92:	1d 92       	st	X+, r1
+
+00000094 <.do_clear_bss_start>:
+  94:	a0 32       	cpi	r26, 0x20	; 32
+  96:	b2 07       	cpc	r27, r18
+  98:	e1 f7       	brne	.-8      	; 0x92 <.do_clear_bss_loop>
+  9a:	0e 94 38 01 	call	0x270	; 0x270 <main>
+  9e:	0c 94 8e 01 	jmp	0x31c	; 0x31c <_exit>
+
+000000a2 <__bad_interrupt>:
+  a2:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000a6 <__vector_1>:
+to home screen also after a determined time out the program will return to home screen.
+while in home screen the user must press select to begin the unlocking process. in this interrupt
+function the user input will be enable and the timer interrupt will also be enabled.*/
+// toggles arbitrary LED on and off for debug
+ISR(INT0_vect)
+{
+  a6:	1f 92       	push	r1
+  a8:	0f 92       	push	r0
+  aa:	0f b6       	in	r0, 0x3f	; 63
+  ac:	0f 92       	push	r0
+  ae:	11 24       	eor	r1, r1
+  b0:	8f 93       	push	r24
+  b2:	9f 93       	push	r25
+  b4:	ef 93       	push	r30
+  b6:	ff 93       	push	r31
+	int k=0;
+	//debug++++++++++++++++++++++++++++++
+	PORTB |= (1<<PORTB3); //turn red LED on to signify in user input mode
+  b8:	2b 9a       	sbi	0x05, 3	; 5
+	PORTB &= ~(1<<PORTB4);// turn blue LED off
+  ba:	2c 98       	cbi	0x05, 4	; 5
+    //++++++++++++++++++++++++++++++++++++++++++
+	
+	EIMSK &= ~(1<<INT0); //disable interrupt on INT0
+  bc:	e8 98       	cbi	0x1d, 0	; 29
+	TCNT1 = 0; //reset timer counter to 0
+  be:	10 92 85 00 	sts	0x0085, r1
+  c2:	10 92 84 00 	sts	0x0084, r1
+	TIFR1 |= (1<<OCF1A); //clear timer interrupt flag
+  c6:	b1 9a       	sbi	0x16, 1	; 22
+	
+	User_Input=true; // enable User input from NES controller
+  c8:	81 e0       	ldi	r24, 0x01	; 1
+  ca:	80 93 1c 01 	sts	0x011C, r24
+  ce:	88 ee       	ldi	r24, 0xE8	; 232
+  d0:	93 e0       	ldi	r25, 0x03	; 3
+  d2:	01 97       	sbiw	r24, 0x01	; 1
+	
+	//counter for debounce
+	for (k=0;k<1000;k++);
+  d4:	00 97       	sbiw	r24, 0x00	; 0
+  d6:	e9 f7       	brne	.-6      	; 0xd2 <__vector_1+0x2c>
+	TIMSK1 |= 1<<OCIE1A; //enable interrupt for counter
+  d8:	ef e6       	ldi	r30, 0x6F	; 111
+  da:	f0 e0       	ldi	r31, 0x00	; 0
+  dc:	80 81       	ld	r24, Z
+  de:	82 60       	ori	r24, 0x02	; 2
+  e0:	80 83       	st	Z, r24
+	/*to add
+
+		restart all counter i.e. Input_Index,Match, Combiantion_Match_counter, Cont_Match_Check 	*/
+	
+	
+}
+  e2:	ff 91       	pop	r31
+  e4:	ef 91       	pop	r30
+  e6:	9f 91       	pop	r25
+  e8:	8f 91       	pop	r24
+  ea:	0f 90       	pop	r0
+  ec:	0f be       	out	0x3f, r0	; 63
+  ee:	0f 90       	pop	r0
+  f0:	1f 90       	pop	r1
+  f2:	18 95       	reti
+
+000000f4 <__vector_11>:
+/*interrupt routine for internal counter.this will be used as our 
+time out counter. after a determined time out the pregram will return to home screen were 
+user input is disabled. to enable user input the user must press SELECT which in turn causes
+an interrupt described above*/
+ISR(TIMER1_COMPA_vect)
+{
+  f4:	1f 92       	push	r1
+  f6:	0f 92       	push	r0
+  f8:	0f b6       	in	r0, 0x3f	; 63
+  fa:	0f 92       	push	r0
+  fc:	11 24       	eor	r1, r1
+  fe:	8f 93       	push	r24
+ 100:	ef 93       	push	r30
+ 102:	ff 93       	push	r31
+	//for debug-toggle LED on PB4++++++++++++++++++++++++++++++++++++++++++
+	PORTB |= (1<<PORTB4); //turn blue LED on to signify we are in at home screen
+ 104:	2c 9a       	sbi	0x05, 4	; 5
+	PORTB &= ~(1<<PORTB3); //turn red LED off
+ 106:	2b 98       	cbi	0x05, 3	; 5
+	//++++++++++++++++++++++++++++++++++++++++++
+	
+	EIMSK |= (1<<INT0); //enable interrupt on INT0
+ 108:	e8 9a       	sbi	0x1d, 0	; 29
+	TIMSK1 &= ~(1<<OCIE1A); // disable interrupt for counter
+ 10a:	ef e6       	ldi	r30, 0x6F	; 111
+ 10c:	f0 e0       	ldi	r31, 0x00	; 0
+ 10e:	80 81       	ld	r24, Z
+ 110:	8d 7f       	andi	r24, 0xFD	; 253
+ 112:	80 83       	st	Z, r24
+	
+	//disable user input from NES controller and return to home screen 
+	User_Input=false;	
+ 114:	10 92 1c 01 	sts	0x011C, r1
+	
+	/*to add
+		 all counter i.e. Input_Index,Match, Combiantion_Match_counter, Cont_Match_Check */	
+					User_Input=false;
+ 118:	10 92 1c 01 	sts	0x011C, r1
+					Combiantion_Match_counter=0;
+ 11c:	10 92 19 01 	sts	0x0119, r1
+ 120:	10 92 18 01 	sts	0x0118, r1
+					Input_Index=0;
+ 124:	10 92 1b 01 	sts	0x011B, r1
+ 128:	10 92 1a 01 	sts	0x011A, r1
+					Cont_Match_Check =true;
+ 12c:	81 e0       	ldi	r24, 0x01	; 1
+ 12e:	80 93 00 01 	sts	0x0100, r24
+}
+ 132:	ff 91       	pop	r31
+ 134:	ef 91       	pop	r30
+ 136:	8f 91       	pop	r24
+ 138:	0f 90       	pop	r0
+ 13a:	0f be       	out	0x3f, r0	; 63
+ 13c:	0f 90       	pop	r0
+ 13e:	1f 90       	pop	r1
+ 140:	18 95       	reti
+
+00000142 <_Z21Button_Press_Detectedh>:
+/*This function takes the current state of the encoder and outputs 
+the corresponding hex value to print out the user input to the LCD
+Input: current state of encoder
+Output: Hex value that will be sent to LCD*/
+unsigned char Button_Press_Detected(unsigned char Button_Value)
+{
+ 142:	e8 e1       	ldi	r30, 0x18	; 24
+ 144:	f1 e0       	ldi	r31, 0x01	; 1
+ 146:	af e0       	ldi	r26, 0x0F	; 15
+ 148:	b1 e0       	ldi	r27, 0x01	; 1
+ 14a:	20 e1       	ldi	r18, 0x10	; 16
+ 14c:	31 e0       	ldi	r19, 0x01	; 1
+	unsigned char Button_Pressed=0x00;
+ 14e:	40 e0       	ldi	r20, 0x00	; 0
+	int i;
+	/*step through all possible values of the encoder output 
+	and match it to a button being pressed or not*/
+	for (i=7;i>=0;i--)
+	{
+		if (Button_Value==Buttons[i])
+ 150:	92 91       	ld	r25, -Z
+ 152:	98 13       	cpse	r25, r24
+ 154:	08 c0       	rjmp	.+16     	; 0x166 <_Z21Button_Press_Detectedh+0x24>
+		{
+			/*this block of code is only for debug purposes in the final code
+			we do not have to output the value to GPIO pins we just need to output
+			a desired value that uniquely identifies a button*/
+			PORTB = PORTB & 0b11111000; //masking other values of PORTB
+ 156:	95 b1       	in	r25, 0x05	; 5
+ 158:	98 7f       	andi	r25, 0xF8	; 248
+ 15a:	95 b9       	out	0x05, r25	; 5
+			PORTB = PORTB | Output_Debug_LED[i]; //writing to PRTB0-2
+ 15c:	45 b1       	in	r20, 0x05	; 5
+ 15e:	9c 91       	ld	r25, X
+ 160:	94 2b       	or	r25, r20
+ 162:	95 b9       	out	0x05, r25	; 5
+			Button_Pressed = Output_Debug_LED[i];
+ 164:	4c 91       	ld	r20, X
+ 166:	11 97       	sbiw	r26, 0x01	; 1
+{
+	unsigned char Button_Pressed=0x00;
+	int i;
+	/*step through all possible values of the encoder output 
+	and match it to a button being pressed or not*/
+	for (i=7;i>=0;i--)
+ 168:	e2 17       	cp	r30, r18
+ 16a:	f3 07       	cpc	r31, r19
+ 16c:	89 f7       	brne	.-30     	; 0x150 <_Z21Button_Press_Detectedh+0xe>
+			
+			
+		}
+	}
+	return Button_Pressed;
+}
+ 16e:	84 2f       	mov	r24, r20
+ 170:	08 95       	ret
+
+00000172 <_Z14PollControllerv>:
+Input:  none
+Output: Hex value that will be sent to LCD and for combination match*/
+unsigned char PollController()
+{
+		unsigned char Button_Pressed=0x00;
+		Current_Read=PINC; //reading pins
+ 172:	86 b1       	in	r24, 0x06	; 6
+		
+		/********************************
+		*********************************
+		masking pins that don't matter
+		will need to unmask bit4 if we want to detect SELECT being pressed*/
+		Current_Read= Current_Read & 0b00000111; 
+ 174:	87 70       	andi	r24, 0x07	; 7
+ 176:	80 93 1f 01 	sts	0x011F, r24
+		
+		//this check will check the previous status of the pins for debouncing 
+		if (Current_Read==Previous_Read)
+ 17a:	90 91 01 01 	lds	r25, 0x0101
+ 17e:	89 13       	cpse	r24, r25
+ 180:	14 c0       	rjmp	.+40     	; 0x1aa <_Z14PollControllerv+0x38>
+		{
+			//if the previous state equals current increase confidence level else so nothing
+			Confidence_Level++;
+ 182:	20 91 1d 01 	lds	r18, 0x011D
+ 186:	30 91 1e 01 	lds	r19, 0x011E
+ 18a:	2f 5f       	subi	r18, 0xFF	; 255
+ 18c:	3f 4f       	sbci	r19, 0xFF	; 255
+ 18e:	30 93 1e 01 	sts	0x011E, r19
+ 192:	20 93 1d 01 	sts	0x011D, r18
+			if(Confidence_Level>200) //arbitrary confidence level
+ 196:	29 3c       	cpi	r18, 0xC9	; 201
+ 198:	31 05       	cpc	r19, r1
+ 19a:	4c f0       	brlt	.+18     	; 0x1ae <_Z14PollControllerv+0x3c>
+			{
+				Button_Pressed=Button_Press_Detected(Current_Read);
+ 19c:	0e 94 a1 00 	call	0x142	; 0x142 <_Z21Button_Press_Detectedh>
+				Confidence_Level=0; //reset counter
+ 1a0:	10 92 1e 01 	sts	0x011E, r1
+ 1a4:	10 92 1d 01 	sts	0x011D, r1
+ 1a8:	03 c0       	rjmp	.+6      	; 0x1b0 <_Z14PollControllerv+0x3e>
+a match of correct combination.
+Input:  none
+Output: Hex value that will be sent to LCD and for combination match*/
+unsigned char PollController()
+{
+		unsigned char Button_Pressed=0x00;
+ 1aa:	80 e0       	ldi	r24, 0x00	; 0
+ 1ac:	01 c0       	rjmp	.+2      	; 0x1b0 <_Z14PollControllerv+0x3e>
+ 1ae:	80 e0       	ldi	r24, 0x00	; 0
+				Button_Pressed=Button_Press_Detected(Current_Read);
+				Confidence_Level=0; //reset counter
+				
+			}
+		}
+		Previous_Read=Current_Read; //store current state	
+ 1b0:	90 91 1f 01 	lds	r25, 0x011F
+ 1b4:	90 93 01 01 	sts	0x0101, r25
+	
+	return Button_Pressed;
+}
+ 1b8:	08 95       	ret
+
+000001ba <_Z15Check_For_Matchh>:
+
+void Check_For_Match(unsigned char Button_Pressed)
+{
+	/*if the button that was pressed matches to the correct combination
+	given the index the we will increase the "correctness counter*/
+	if (Button_Pressed == Combination[Input_Index])
+ 1ba:	e0 91 1a 01 	lds	r30, 0x011A
+ 1be:	f0 91 1b 01 	lds	r31, 0x011B
+ 1c2:	ee 5f       	subi	r30, 0xFE	; 254
+ 1c4:	fe 4f       	sbci	r31, 0xFE	; 254
+ 1c6:	90 81       	ld	r25, Z
+ 1c8:	98 13       	cpse	r25, r24
+ 1ca:	0a c0       	rjmp	.+20     	; 0x1e0 <_Z15Check_For_Matchh+0x26>
+	{
+		Combiantion_Match_counter++; //increase correctness counter
+ 1cc:	80 91 18 01 	lds	r24, 0x0118
+ 1d0:	90 91 19 01 	lds	r25, 0x0119
+ 1d4:	01 96       	adiw	r24, 0x01	; 1
+ 1d6:	90 93 19 01 	sts	0x0119, r25
+ 1da:	80 93 18 01 	sts	0x0118, r24
+ 1de:	08 95       	ret
+	/* if the input does not match the correct combination then set the 
+	continue checking variable to false. this will allow us to ignore future inputs. 
+	i.e. makes no sense to check checking if one is already incorrect */
+	else
+	{
+		Cont_Match_Check=false;
+ 1e0:	10 92 00 01 	sts	0x0100, r1
+ 1e4:	08 95       	ret
+
+000001e6 <_Z17Reset_Return_Homev>:
+
+
+
+void Reset_Return_Home()
+{
+	User_Input=false;
+ 1e6:	10 92 1c 01 	sts	0x011C, r1
+	Combiantion_Match_counter=0;
+ 1ea:	10 92 19 01 	sts	0x0119, r1
+ 1ee:	10 92 18 01 	sts	0x0118, r1
+	Input_Index=0;
+ 1f2:	10 92 1b 01 	sts	0x011B, r1
+ 1f6:	10 92 1a 01 	sts	0x011A, r1
+	Cont_Match_Check =true;	
+ 1fa:	81 e0       	ldi	r24, 0x01	; 1
+ 1fc:	80 93 00 01 	sts	0x0100, r24
+	EIMSK |= (1<<INT0); //enable interrupt on INT0
+ 200:	e8 9a       	sbi	0x1d, 0	; 29
+	TCNT1 = 0; //reset timer counter to 0
+ 202:	10 92 85 00 	sts	0x0085, r1
+ 206:	10 92 84 00 	sts	0x0084, r1
+	TIFR1 |= (1<<OCF1A); //clear timer interrupt flag
+ 20a:	b1 9a       	sbi	0x16, 1	; 22
+	TIMSK1 &= ~(1<<OCIE1A); // disable interrupt for counter
+ 20c:	ef e6       	ldi	r30, 0x6F	; 111
+ 20e:	f0 e0       	ldi	r31, 0x00	; 0
+ 210:	80 81       	ld	r24, Z
+ 212:	8d 7f       	andi	r24, 0xFD	; 253
+ 214:	80 83       	st	Z, r24
+ 216:	08 95       	ret
+
+00000218 <_Z17Check_Combinationv>:
+
+
+void Check_Combination()
+{
+	//handle when the user has inputed more than 6 buttons
+	if (Combiantion_Match_counter>=6)
+ 218:	80 91 18 01 	lds	r24, 0x0118
+ 21c:	90 91 19 01 	lds	r25, 0x0119
+ 220:	06 97       	sbiw	r24, 0x06	; 6
+ 222:	84 f0       	brlt	.+32     	; 0x244 <_Z17Check_Combinationv+0x2c>
+		//turn LCD green display "unlocking"
+		//open lock
+			
+			
+		//debug  +++++++++++++++++++++++++++++++
+		PORTB |= 1<<PORTB6; //vibrator on  to signify open lock
+ 224:	2e 9a       	sbi	0x05, 6	; 5
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 226:	2f ef       	ldi	r18, 0xFF	; 255
+ 228:	82 e5       	ldi	r24, 0x52	; 82
+ 22a:	97 e0       	ldi	r25, 0x07	; 7
+ 22c:	21 50       	subi	r18, 0x01	; 1
+ 22e:	80 40       	sbci	r24, 0x00	; 0
+ 230:	90 40       	sbci	r25, 0x00	; 0
+ 232:	e1 f7       	brne	.-8      	; 0x22c <_Z17Check_Combinationv+0x14>
+ 234:	00 c0       	rjmp	.+0      	; 0x236 <_Z17Check_Combinationv+0x1e>
+ 236:	00 00       	nop
+		_delay_ms(300);
+		PORTB &= ~(1<<PORTB6); //LED off
+ 238:	2e 98       	cbi	0x05, 6	; 5
+		PORTB = 0; //all LEDs off
+ 23a:	15 b8       	out	0x05, r1	; 5
+		PORTB |=1<<PORTB4; //blue LED on to signify program is at home screen
+ 23c:	2c 9a       	sbi	0x05, 4	; 5
+		//++++++++++++++++++++++++++++++++++++++
+			
+		Reset_Return_Home();
+ 23e:	0e 94 f3 00 	call	0x1e6	; 0x1e6 <_Z17Reset_Return_Homev>
+ 242:	08 95       	ret
+			
+	}
+	else if (Input_Index>=6)
+ 244:	80 91 1a 01 	lds	r24, 0x011A
+ 248:	90 91 1b 01 	lds	r25, 0x011B
+ 24c:	06 97       	sbiw	r24, 0x06	; 6
+ 24e:	7c f0       	brlt	.+30     	; 0x26e <_Z17Check_Combinationv+0x56>
+		//To do:
+		//turn LCD red display "wrong code"
+			
+			
+		//debug  +++++++++++++++++++++++++++++++
+		PORTB |= 1<<PORTB5; //red LED no to signify code not correct
+ 250:	2d 9a       	sbi	0x05, 5	; 5
+ 252:	2f ef       	ldi	r18, 0xFF	; 255
+ 254:	82 e5       	ldi	r24, 0x52	; 82
+ 256:	97 e0       	ldi	r25, 0x07	; 7
+ 258:	21 50       	subi	r18, 0x01	; 1
+ 25a:	80 40       	sbci	r24, 0x00	; 0
+ 25c:	90 40       	sbci	r25, 0x00	; 0
+ 25e:	e1 f7       	brne	.-8      	; 0x258 <_Z17Check_Combinationv+0x40>
+ 260:	00 c0       	rjmp	.+0      	; 0x262 <_Z17Check_Combinationv+0x4a>
+ 262:	00 00       	nop
+		_delay_ms(300);
+		PORTB &= ~(1<<PORTB5); //LED off
+ 264:	2d 98       	cbi	0x05, 5	; 5
+		PORTB = 0; //all LEDs off
+ 266:	15 b8       	out	0x05, r1	; 5
+		PORTB |=1<<PORTB4; //blue LED on to signify program is at home screen
+ 268:	2c 9a       	sbi	0x05, 4	; 5
+		//++++++++++++++++++++++++++++++++++++++
+			
+		Reset_Return_Home();
+ 26a:	0e 94 f3 00 	call	0x1e6	; 0x1e6 <_Z17Reset_Return_Homev>
+ 26e:	08 95       	ret
+
+00000270 <main>:
+
+
+int main(void)
+{
+    //setting PBC0-PC3 as inputs
+	DDRC &= ~((1<<DDC0)|(1<<DDC1)|(1<<DDC2)|(1<<DDC3));//all port B as inputs
+ 270:	87 b1       	in	r24, 0x07	; 7
+ 272:	80 7f       	andi	r24, 0xF0	; 240
+ 274:	87 b9       	out	0x07, r24	; 7
+	PORTC |= ((1<<PORTC0)|(1<<PORTC1)|(1<<PORTC2)|(1<<PORTC3));//enable pull-ups
+ 276:	88 b1       	in	r24, 0x08	; 8
+ 278:	8f 60       	ori	r24, 0x0F	; 15
+ 27a:	88 b9       	out	0x08, r24	; 8
+
+	
+	DDRB |= ((1<<DDB0)|(1<<DDB1)|(1<<DDB2)|(1<<DDB3)|(1<<DDB4)|(1<<DDB5)|(1<<DDB6)); //pin PB0-PB3 as outputs
+ 27c:	84 b1       	in	r24, 0x04	; 4
+ 27e:	8f 67       	ori	r24, 0x7F	; 127
+ 280:	84 b9       	out	0x04, r24	; 4
+	PORTB = 0x00;// all off
+ 282:	15 b8       	out	0x05, r1	; 5
+	 
+	
+	//configuring interrupt INT0
+	DDRD &= ~(1<<DDD2); //PD2 as input
+ 284:	52 98       	cbi	0x0a, 2	; 10
+	PORTD |= (1<<PORTD2); //enable pull-up on PD2
+ 286:	5a 9a       	sbi	0x0b, 2	; 11
+	EICRA |= (1<<ISC01); //set interrupt on INT0 falling edge
+ 288:	e9 e6       	ldi	r30, 0x69	; 105
+ 28a:	f0 e0       	ldi	r31, 0x00	; 0
+ 28c:	80 81       	ld	r24, Z
+ 28e:	82 60       	ori	r24, 0x02	; 2
+ 290:	80 83       	st	Z, r24
+	EIMSK |= (1<<INT0); //enable interrupt on INT0
+ 292:	e8 9a       	sbi	0x1d, 0	; 29
+	
+	//timer setup
+	//set prescale-divide clock by 1024 and enable clear after match
+	//so counter runs at ~1kHz.
+	TCCR1B |= (1<<CS12 | 1<<CS10 | 1<<WGM12); 
+ 294:	e1 e8       	ldi	r30, 0x81	; 129
+ 296:	f0 e0       	ldi	r31, 0x00	; 0
+ 298:	80 81       	ld	r24, Z
+ 29a:	8d 60       	ori	r24, 0x0D	; 13
+ 29c:	80 83       	st	Z, r24
+	OCR1A = 30000; // set value for counter every 1000=~ 1second
+ 29e:	80 e3       	ldi	r24, 0x30	; 48
+ 2a0:	95 e7       	ldi	r25, 0x75	; 117
+ 2a2:	90 93 89 00 	sts	0x0089, r25
+ 2a6:	80 93 88 00 	sts	0x0088, r24
+	
+	sei(); //enable global interrupts
+ 2aa:	78 94       	sei
+	
+	PORTB |= (1<<PORTB4); //turn blue LED on to signify we are in at home screen
+ 2ac:	2c 9a       	sbi	0x05, 4	; 5
+				//print button pressed to LCD
+				
+				/*this if statement will only be true if the user pressed a button for the
+				firsts time or if a partial match to the combination was made. this will allow us 
+				to skip a matching inputs to the combination if the a wrong value was entered previously.*/
+				if ((Input_Index==0) | Cont_Match_Check)
+ 2ae:	c1 e0       	ldi	r28, 0x01	; 1
+ 2b0:	d0 e0       	ldi	r29, 0x00	; 0
+ 2b2:	2f c0       	rjmp	.+94     	; 0x312 <main+0xa2>
+			/*to do:
+				in this block of code we will have to display the user input into 
+				the LCD and also match the input to the predetermined combination.if 
+				a match is reached we can then move out of this while statement and disable 
+				user input, and open lock*/
+			Button_Pressed = PollController();
+ 2b4:	0e 94 b9 00 	call	0x172	; 0x172 <_Z14PollControllerv>
+			
+			//if encoder output is 0x00 means no buttons have been pressed
+			if (Button_Pressed != 0x00)
+ 2b8:	88 23       	and	r24, r24
+ 2ba:	59 f1       	breq	.+86     	; 0x312 <main+0xa2>
+ 2bc:	ef e3       	ldi	r30, 0x3F	; 63
+ 2be:	fc e9       	ldi	r31, 0x9C	; 156
+ 2c0:	31 97       	sbiw	r30, 0x01	; 1
+ 2c2:	f1 f7       	brne	.-4      	; 0x2c0 <main+0x50>
+ 2c4:	00 c0       	rjmp	.+0      	; 0x2c6 <main+0x56>
+ 2c6:	00 00       	nop
+				//print button pressed to LCD
+				
+				/*this if statement will only be true if the user pressed a button for the
+				firsts time or if a partial match to the combination was made. this will allow us 
+				to skip a matching inputs to the combination if the a wrong value was entered previously.*/
+				if ((Input_Index==0) | Cont_Match_Check)
+ 2c8:	20 91 1a 01 	lds	r18, 0x011A
+ 2cc:	30 91 1b 01 	lds	r19, 0x011B
+ 2d0:	40 91 00 01 	lds	r20, 0x0100
+ 2d4:	9c 2f       	mov	r25, r28
+ 2d6:	23 2b       	or	r18, r19
+ 2d8:	09 f0       	breq	.+2      	; 0x2dc <main+0x6c>
+ 2da:	9d 2f       	mov	r25, r29
+ 2dc:	91 11       	cpse	r25, r1
+ 2de:	02 c0       	rjmp	.+4      	; 0x2e4 <main+0x74>
+ 2e0:	44 23       	and	r20, r20
+ 2e2:	61 f0       	breq	.+24     	; 0x2fc <main+0x8c>
+				{
+					Check_For_Match(Button_Pressed);
+ 2e4:	0e 94 dd 00 	call	0x1ba	; 0x1ba <_Z15Check_For_Matchh>
+					Input_Index++;
+ 2e8:	80 91 1a 01 	lds	r24, 0x011A
+ 2ec:	90 91 1b 01 	lds	r25, 0x011B
+ 2f0:	01 96       	adiw	r24, 0x01	; 1
+ 2f2:	90 93 1b 01 	sts	0x011B, r25
+ 2f6:	80 93 1a 01 	sts	0x011A, r24
+ 2fa:	09 c0       	rjmp	.+18     	; 0x30e <main+0x9e>
+				/* if we get into this else we already now that the combination entered is wrong,
+				so we only need to increment a counter so we can keep track of when to alert
+				 the user the combination is wrong i.e. wait till all user inputs have been entered*/
+				else
+				{
+					Input_Index++;
+ 2fc:	80 91 1a 01 	lds	r24, 0x011A
+ 300:	90 91 1b 01 	lds	r25, 0x011B
+ 304:	01 96       	adiw	r24, 0x01	; 1
+ 306:	90 93 1b 01 	sts	0x011B, r25
+ 30a:	80 93 1a 01 	sts	0x011A, r24
+				}
+				
+				Check_Combination();
+ 30e:	0e 94 0c 01 	call	0x218	; 0x218 <_Z17Check_Combinationv>
+	{
+		
+		//to do:
+		//print to LCD :"Press SELCT to Start" 
+		
+		while (User_Input)
+ 312:	80 91 1c 01 	lds	r24, 0x011C
+ 316:	81 11       	cpse	r24, r1
+ 318:	cd cf       	rjmp	.-102    	; 0x2b4 <main+0x44>
+ 31a:	fb cf       	rjmp	.-10     	; 0x312 <main+0xa2>
+
+0000031c <_exit>:
+ 31c:	f8 94       	cli
+
+0000031e <__stop_program>:
+ 31e:	ff cf       	rjmp	.-2      	; 0x31e <__stop_program>
