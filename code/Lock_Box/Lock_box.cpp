@@ -21,8 +21,10 @@ int  Confidence_Level = 0;
 volatile bool User_Input = false;
 volatile int Input_Index = 0;
 volatile int Combiantion_Match_counter = 0;
-volatile bool Cont_Match_Check =true;
-volatile bool Match = false;
+volatile bool Continue_Match_Check =true;
+volatile bool No_Press_Flag = false;
+volatile char Button_Held = 0x00;
+
 
 
 
@@ -81,7 +83,7 @@ ISR(TIMER1_COMPA_vect)
 					User_Input=false;
 					Combiantion_Match_counter=0;
 					Input_Index=0;
-					Cont_Match_Check =true;
+					Continue_Match_Check =true;
 }
 
 
@@ -91,10 +93,10 @@ int main(void)
 	DDRC &= ~((1<<DDC0)|(1<<DDC1)|(1<<DDC2)|(1<<DDC3));//all port B as inputs
 	PORTC |= ((1<<PORTC0)|(1<<PORTC1)|(1<<PORTC2)|(1<<PORTC3));//enable pull-ups
 
-	
+	//for debug ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	DDRB |= ((1<<DDB0)|(1<<DDB1)|(1<<DDB2)|(1<<DDB3)|(1<<DDB4)|(1<<DDB5)|(1<<DDB6)); //pin PB0-PB3 as outputs
 	PORTB = 0x00;// all off
-	 
+	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 	
 	//configuring interrupt INT0
 	DDRD &= ~(1<<DDD2); //PD2 as input
@@ -131,12 +133,13 @@ int main(void)
 			Button_Pressed = PollController();
 			
 			//if encoder output is 0x00 means no buttons have been pressed
-			if (Button_Pressed != 0x00)
+			if ((Button_Pressed != 0x00) & (Button_Held != Button_Pressed))
 			{
-				
+				Button_Held = Button_Pressed;
+				No_Press_Flag = false;
 				
 				//this delay is to prevent multiply entries of the same button in a short period of time
-				_delay_ms(20);
+				//_delay_ms(10);
 				
 				//to do:
 				//print button pressed to LCD
@@ -144,7 +147,7 @@ int main(void)
 				/*this if statement will only be true if the user pressed a button for the
 				firsts time or if a partial match to the combination was made. this will allow us 
 				to skip a matching inputs to the combination if the a wrong value was entered previously.*/
-				if ((Input_Index==0) | Cont_Match_Check)
+				if ((Input_Index==0) | Continue_Match_Check)
 				{
 					Check_For_Match(Button_Pressed);
 					Input_Index++;
@@ -157,9 +160,22 @@ int main(void)
 					Input_Index++;
 				}
 				
-				Check_Combination();
+				
+				//if the user has pressed a button 6 times lets check if 
+				//the lock needs to open or not and return to home screen
+				if (Input_Index>=6)
+				{
+					Check_Combination();
+				}
+				
 			}
-
+			
+			
+			if (No_Press_Flag)
+			{
+				Button_Held = 0x00;
+			}
+			
 		}
 			
 	}
@@ -192,6 +208,13 @@ unsigned char PollController()
 			{
 				Button_Pressed=Button_Press_Detected(Current_Read);
 				Confidence_Level=0; //reset counter
+				
+				/*this statment is to set a flag varibele when a no press has been detected.
+				this is useful so we can track ewhen teh user has depressed a button.*/
+				if (Button_Pressed==0x00)
+				{
+					No_Press_Flag = true;
+				}
 				
 			}
 		}
@@ -246,7 +269,7 @@ void Check_For_Match(unsigned char Button_Pressed)
 	i.e. makes no sense to check checking if one is already incorrect */
 	else
 	{
-		Cont_Match_Check=false;
+		Continue_Match_Check=false;
 	}
 }
 
@@ -273,7 +296,7 @@ void Check_Combination()
 		Reset_Return_Home();
 			
 	}
-	else if (Input_Index>=6)
+	else
 	{
 		//To do:
 		//turn LCD red display "wrong code"
@@ -299,7 +322,7 @@ void Reset_Return_Home()
 	User_Input=false;
 	Combiantion_Match_counter=0;
 	Input_Index=0;
-	Cont_Match_Check =true;	
+	Continue_Match_Check =true;	
 	EIMSK |= (1<<INT0); //enable interrupt on INT0
 	TCNT1 = 0; //reset timer counter to 0
 	TIFR1 |= (1<<OCF1A); //clear timer interrupt flag
