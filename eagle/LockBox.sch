@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.6.0">
+<eagle version="7.1.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.025" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -3876,6 +3876,7 @@ In this library the device names are the same as the pin names of the symbols, t
 <wire x1="220.98" y1="38.735" x2="220.98" y2="100.965" width="0.635" layer="97"/>
 <text x="167.64" y="95.25" size="3.81" layer="97">Solonoid Driver</text>
 <text x="162.56" y="25.4" size="6.4516" layer="97">G06 - Practicum</text>
+<text x="236.22" y="5.715" size="5.08" layer="97">1.0</text>
 </plain>
 <instances>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
@@ -4042,7 +4043,7 @@ In this library the device names are the same as the pin names of the symbols, t
 <pinref part="GND7" gate="1" pin="GND"/>
 </segment>
 </net>
-<net name="P$1" class="0">
+<net name="3.3V" class="0">
 <segment>
 <pinref part="U$2" gate="G$1" pin="OUT"/>
 <wire x1="70.485" y1="152.4" x2="74.93" y2="152.4" width="0.1524" layer="91"/>
@@ -4055,7 +4056,8 @@ In this library the device names are the same as the pin names of the symbols, t
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="VCC"/>
-<wire x1="43.18" y1="81.28" x2="27.94" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="43.18" y1="81.28" x2="36.83" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="36.83" y1="81.28" x2="27.94" y2="81.28" width="0.1524" layer="91"/>
 <wire x1="27.94" y1="81.28" x2="27.94" y2="85.09" width="0.1524" layer="91"/>
 <wire x1="27.94" y1="85.09" x2="21.59" y2="85.09" width="0.1524" layer="91"/>
 <pinref part="C3" gate="G$1" pin="1"/>
@@ -4063,6 +4065,10 @@ In this library the device names are the same as the pin names of the symbols, t
 <pinref part="V2" gate="G1" pin="P$1"/>
 <wire x1="21.59" y1="85.09" x2="21.59" y2="87.63" width="0.1524" layer="91"/>
 <junction x="21.59" y="85.09"/>
+<pinref part="U$1" gate="G$1" pin="AVCC"/>
+<wire x1="43.18" y1="69.85" x2="36.83" y2="69.85" width="0.1524" layer="91"/>
+<wire x1="36.83" y1="69.85" x2="36.83" y2="81.28" width="0.1524" layer="91"/>
+<junction x="36.83" y="81.28"/>
 </segment>
 <segment>
 <pinref part="R2" gate="G$1" pin="2"/>
