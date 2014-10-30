@@ -29,10 +29,10 @@ volatile char Button_Held = 0x00;
 
 
 
-/*interrupt routine to handle SELECT button press. we will call "home screen" when 
-the LCD displays "press select to begin" at the beginning of the program the LCD will be set
+/*interrupt routine to handle START button press. we will call "home screen" when 
+the LCD displays "press START to begin" at the beginning of the program the LCD will be set
 to home screen also after a determined time out the program will return to home screen.
-while in home screen the user must press select to begin the unlocking process. in this interrupt
+while in home screen the user must press START to begin the unlocking process. in this interrupt
 function the user input will be enable and the timer interrupt will also be enabled.*/
 // toggles arbitrary LED on and off for debug
 ISR(INT0_vect)
@@ -62,8 +62,8 @@ ISR(INT0_vect)
 }
 
 /*interrupt routine for internal counter.this will be used as our 
-time out counter. after a determined time out the pregram will return to home screen were 
-user input is disabled. to enable user input the user must press SELECT which in turn causes
+time out counter. after a determined time out the program will return to home screen were 
+user input is disabled. to enable user input the user must press START which in turn causes
 an interrupt described above*/
 ISR(TIMER1_COMPA_vect)
 {
@@ -196,7 +196,7 @@ unsigned char PollController()
 		/********************************
 		*********************************
 		masking pins that don't matter
-		will need to unmask bit4 if we want to detect SELECT being pressed*/
+		will need to unmask bit4 if we want to detect START being pressed*/
 		Current_Read= Current_Read & 0b00000111; 
 		
 		//this check will check the previous status of the pins for debouncing 
@@ -209,8 +209,8 @@ unsigned char PollController()
 				Button_Pressed=Button_Press_Detected(Current_Read);
 				Confidence_Level=0; //reset counter
 				
-				/*this statment is to set a flag varibele when a no press has been detected.
-				this is useful so we can track ewhen teh user has depressed a button.*/
+				/*this statement is to set a flag variable when a no press has been detected.
+				this is useful so we can track when the user has depressed a button.*/
 				if (Button_Pressed==0x00)
 				{
 					No_Press_Flag = true;
