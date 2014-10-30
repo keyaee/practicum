@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.01" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -191,15 +191,15 @@ Note: The pads on the left are 3mm pitch and blade type. .3mm thick and ~1.5mm w
 <wire x1="-35.8" y1="10.3" x2="35.8" y2="10.3" width="0.127" layer="21"/>
 <wire x1="35.8" y1="10.3" x2="35.8" y2="-16.8" width="0.127" layer="21"/>
 <wire x1="35.8" y1="-16.8" x2="-35.8" y2="-16.8" width="0.127" layer="21"/>
-<wire x1="-35.8" y1="-16.8" x2="-35.8" y2="10.3" width="0.127" layer="21"/>
 <dimension x1="-35.8" y1="-16.8" x2="-35.8" y2="10.3" x3="38.1" y3="-3.25" textsize="1.27" layer="48"/>
 <dimension x1="35.8" y1="-16.8" x2="-35.8" y2="-16.8" x3="0" y3="15.24" textsize="1.27" layer="51"/>
-<pad name="P$RK" x="-38.55" y="4.5" drill="0.8" diameter="1.27" shape="long" rot="R270"/>
-<pad name="P$GK" x="-38.55" y="1.5" drill="0.8" diameter="1.27" shape="long" rot="R270"/>
-<pad name="P$BK" x="-38.55" y="-1.5" drill="0.8" diameter="1.27" shape="long" rot="R270"/>
-<pad name="P$A" x="-38.58" y="-4.54" drill="0.8" diameter="1.27" shape="long" rot="R270"/>
+<pad name="P$RK" x="-38.282" y="4.43" drill="1.524" shape="long"/>
+<pad name="P$GK" x="-38.33" y="1.49" drill="1.524" shape="long"/>
+<pad name="P$BK" x="-38.278" y="-1.45" drill="1.524" shape="long"/>
+<pad name="P$A" x="-38.286" y="-4.52" drill="1.524" shape="long"/>
 <text x="-13.97" y="11.43" size="1.27" layer="25" font="vector">&gt;NAME</text>
 <text x="7.62" y="11.43" size="1.27" layer="27" font="vector">&gt;Value</text>
+<dimension x1="-35.8" y1="10.3" x2="-35.8" y2="0" x3="-41.7" y3="5.15" textsize="1.27" layer="21"/>
 </package>
 </packages>
 </library>
@@ -558,22 +558,22 @@ Note: The pads on the left are 3mm pitch and blade type. .3mm thick and ~1.5mm w
 <signal name="A">
 <contactref element="CN1" pad="4"/>
 <contactref element="U$1" pad="P$RK"/>
-<wire x1="13.55" y1="60.1" x2="3.98" y2="59.46" width="0.4064" layer="16"/>
+<wire x1="13.818" y1="60.03" x2="3.98" y2="59.46" width="0.4064" layer="16"/>
 </signal>
 <signal name="GK">
 <contactref element="CN1" pad="2"/>
 <contactref element="U$1" pad="P$BK"/>
-<wire x1="3.98" y1="54.38" x2="13.55" y2="54.1" width="0.4064" layer="16"/>
+<wire x1="3.98" y1="54.38" x2="13.822" y2="54.15" width="0.4064" layer="16"/>
 </signal>
 <signal name="N$2">
 <contactref element="CN1" pad="3"/>
 <contactref element="U$1" pad="P$GK"/>
-<wire x1="13.55" y1="57.1" x2="3.98" y2="56.92" width="0.4064" layer="16"/>
+<wire x1="13.77" y1="57.09" x2="3.98" y2="56.92" width="0.4064" layer="16"/>
 </signal>
 <signal name="N$4">
 <contactref element="CN1" pad="1"/>
 <contactref element="U$1" pad="P$A"/>
-<wire x1="13.52" y1="51.06" x2="3.98" y2="51.84" width="0.4064" layer="16"/>
+<wire x1="13.814" y1="51.08" x2="3.98" y2="51.84" width="0.4064" layer="16"/>
 </signal>
 <signal name="N$5">
 <contactref element="U$1" pad="P$6"/>
