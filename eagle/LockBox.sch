@@ -4363,18 +4363,12 @@ In this library the device names are the same as the pin names of the symbols, t
 </net>
 <net name="SOL_EN" class="0">
 <segment>
-<pinref part="U$4" gate="GATE" pin="B"/>
-<pinref part="R4" gate="G$1" pin="2"/>
-<wire x1="175.895" y1="64.77" x2="163.83" y2="64.77" width="0.1524" layer="91"/>
-<label x="164.465" y="64.77" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="R4" gate="G$1" pin="1"/>
 <pinref part="U$1" gate="G$1" pin="PD5"/>
-<wire x1="153.67" y1="64.77" x2="151.13" y2="64.77" width="0.1524" layer="91"/>
 <wire x1="151.13" y1="64.77" x2="151.13" y2="71.12" width="0.1524" layer="91"/>
 <wire x1="151.13" y1="71.12" x2="97.79" y2="71.12" width="0.1524" layer="91"/>
 <label x="105.41" y="71.12" size="1.778" layer="95"/>
+<pinref part="R4" gate="G$1" pin="1"/>
+<wire x1="151.13" y1="64.77" x2="153.67" y2="64.77" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="START" class="0">
@@ -4535,6 +4529,13 @@ In this library the device names are the same as the pin names of the symbols, t
 <wire x1="196.215" y1="75.565" x2="196.215" y2="72.39" width="0.1524" layer="91"/>
 <wire x1="192.405" y1="75.565" x2="196.215" y2="75.565" width="0.1524" layer="91"/>
 <junction x="196.215" y="75.565"/>
+</segment>
+</net>
+<net name="N$1" class="0">
+<segment>
+<pinref part="R4" gate="G$1" pin="2"/>
+<pinref part="U$4" gate="GATE" pin="B"/>
+<wire x1="163.83" y1="64.77" x2="175.895" y2="64.77" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
