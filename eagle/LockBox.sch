@@ -2068,15 +2068,13 @@ Note: The pads on the left are 3mm pitch and blade type. .3mm thick and ~1.5mm w
 <wire x1="-35.8" y1="10.3" x2="35.8" y2="10.3" width="0.127" layer="21"/>
 <wire x1="35.8" y1="10.3" x2="35.8" y2="-16.8" width="0.127" layer="21"/>
 <wire x1="35.8" y1="-16.8" x2="-35.8" y2="-16.8" width="0.127" layer="21"/>
-<wire x1="-35.8" y1="-16.8" x2="-35.8" y2="10.3" width="0.127" layer="21"/>
-<dimension x1="-35.8" y1="-16.8" x2="-35.8" y2="10.3" x3="38.1" y3="-3.25" textsize="1.27" layer="48"/>
-<dimension x1="35.8" y1="-16.8" x2="-35.8" y2="-16.8" x3="0" y3="15.24" textsize="1.27" layer="51"/>
-<pad name="P$RK" x="-38.55" y="4.5" drill="0.8" diameter="1.27" shape="long" rot="R270"/>
-<pad name="P$GK" x="-38.55" y="1.5" drill="0.8" diameter="1.27" shape="long" rot="R270"/>
-<pad name="P$BK" x="-38.55" y="-1.5" drill="0.8" diameter="1.27" shape="long" rot="R270"/>
-<pad name="P$A" x="-38.58" y="-4.54" drill="0.8" diameter="1.27" shape="long" rot="R270"/>
+<pad name="P$RK" x="-38.282" y="4.43" drill="1.524" shape="long"/>
+<pad name="P$GK" x="-38.33" y="1.49" drill="1.524" shape="long"/>
+<pad name="P$BK" x="-38.278" y="-1.45" drill="1.524" shape="long"/>
+<pad name="P$A" x="-38.286" y="-4.52" drill="1.524" shape="long"/>
 <text x="-13.97" y="11.43" size="1.27" layer="25" font="vector">&gt;NAME</text>
 <text x="7.62" y="11.43" size="1.27" layer="27" font="vector">&gt;Value</text>
+<wire x1="-35.8" y1="-16.8" x2="-35.8" y2="10.3" width="0.127" layer="21"/>
 </package>
 <package name="T0220-3">
 <description>&lt;b&gt;TO-220&lt;/b&gt;&lt;p&gt;</description>
@@ -4005,7 +4003,7 @@ In this library the device names are the same as the pin names of the symbols, t
 <wire x1="147.32" y1="38.735" x2="220.98" y2="38.735" width="0.635" layer="97"/>
 <wire x1="220.98" y1="38.735" x2="220.98" y2="100.965" width="0.635" layer="97"/>
 <text x="167.64" y="95.25" size="3.81" layer="97">Solonoid Driver</text>
-<text x="162.56" y="25.4" size="6.4516" layer="97">G06 - Practicum</text>
+<text x="162.56" y="25.4" size="6.4516" layer="97">T06 - Practicum</text>
 <text x="236.22" y="5.715" size="5.08" layer="97">1.1</text>
 </plain>
 <instances>
@@ -4428,12 +4426,6 @@ In this library the device names are the same as the pin names of the symbols, t
 </net>
 <net name="EN_GR" class="0">
 <segment>
-<wire x1="44.45" y1="105.41" x2="45.72" y2="104.14" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="PB0"/>
-<wire x1="45.72" y1="104.14" x2="59.69" y2="104.14" width="0.1524" layer="91"/>
-<label x="49.53" y="104.14" size="1.778" layer="95"/>
-</segment>
-<segment>
 <pinref part="U$5" gate="G$1" pin="K-G"/>
 <wire x1="198.12" y1="113.03" x2="198.12" y2="109.22" width="0.1524" layer="91"/>
 <wire x1="198.12" y1="109.22" x2="196.85" y2="107.95" width="0.1524" layer="91"/>
@@ -4441,14 +4433,14 @@ In this library the device names are the same as the pin names of the symbols, t
 <wire x1="153.67" y1="109.22" x2="154.94" y2="107.95" width="0.1524" layer="91"/>
 <label x="170.18" y="107.95" size="1.778" layer="95"/>
 </segment>
-</net>
-<net name="EN_RD" class="0">
 <segment>
 <wire x1="44.45" y1="102.87" x2="45.72" y2="101.6" width="0.1524" layer="91"/>
 <pinref part="U$1" gate="G$1" pin="PB1"/>
 <wire x1="45.72" y1="101.6" x2="59.69" y2="101.6" width="0.1524" layer="91"/>
 <label x="49.53" y="101.6" size="1.778" layer="95"/>
 </segment>
+</net>
+<net name="EN_RD" class="0">
 <segment>
 <pinref part="U$5" gate="G$1" pin="K-R"/>
 <wire x1="194.31" y1="113.03" x2="194.31" y2="111.76" width="0.1524" layer="91"/>
@@ -4456,6 +4448,12 @@ In this library the device names are the same as the pin names of the symbols, t
 <wire x1="193.04" y1="110.49" x2="154.94" y2="110.49" width="0.1524" layer="91"/>
 <wire x1="153.67" y1="111.76" x2="154.94" y2="110.49" width="0.1524" layer="91"/>
 <label x="170.18" y="110.49" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="44.45" y1="105.41" x2="45.72" y2="104.14" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="PB0"/>
+<wire x1="45.72" y1="104.14" x2="59.69" y2="104.14" width="0.1524" layer="91"/>
+<label x="49.53" y="104.14" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="EN_BL" class="0">
