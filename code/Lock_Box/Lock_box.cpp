@@ -1,3 +1,8 @@
+// testing branching
+
+
+
+
 /*
 this code is used to debug the NES controller interface,external interrupts, and timer interrupts.
 LEDs are used for debug and are placed on pin B0-B3 with some resistors in series ~1kohm.
