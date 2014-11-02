@@ -1,7 +1,3 @@
-// testing branching
-
-
-
 
 /*
 this code is used to debug the NES controller interface,external interrupts, and timer interrupts.
