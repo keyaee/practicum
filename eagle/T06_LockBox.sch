@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.025" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -4081,8 +4081,8 @@ In this library the device names are the same as the pin names of the symbols, t
 <part name="U$6" library="T06_Lockbox" deviceset="ETHERNET_JACK" device=""/>
 <part name="V4" library="T06_Lockbox" deviceset="V3.3" device=""/>
 <part name="GND5" library="T06_Lockbox" deviceset="GND" device=""/>
-<part name="C1" library="T06_Lockbox" deviceset="C" device="" value="330pF, 24V"/>
-<part name="C2" library="T06_Lockbox" deviceset="C" device="" value="10uF, 7V"/>
+<part name="C1" library="T06_Lockbox" deviceset="C" device="" value="330pF"/>
+<part name="C2" library="T06_Lockbox" deviceset="C" device="" value="10uF"/>
 <part name="R4" library="T06_Lockbox" deviceset="R-US_" device="M0805" value="1k"/>
 <part name="GND6" library="T06_Lockbox" deviceset="GND" device=""/>
 <part name="JP1" library="T06_Lockbox" deviceset="PINHD-1X2" device="" value="Sol_ctrl"/>
@@ -4114,7 +4114,7 @@ In this library the device names are the same as the pin names of the symbols, t
 <part name="R9" library="T06_Lockbox" deviceset="R-US_" device="R0805" value="4.7k"/>
 <part name="R10" library="T06_Lockbox" deviceset="R-US_" device="R0805" value="4.7k"/>
 <part name="V6" library="T06_Lockbox" deviceset="V3.3" device=""/>
-<part name="C4" library="T06_Lockbox" deviceset="C" device="" value="10uF"/>
+<part name="C4" library="T06_Lockbox" deviceset="C" device="C1206" value="10uF"/>
 <part name="C5" library="T06_Lockbox" deviceset="C" device="" value="1uF"/>
 <part name="JP4" library="T06_Lockbox" deviceset="PINHD-2X4" device="" value="UNUSED"/>
 </parts>
