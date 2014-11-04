@@ -2243,14 +2243,14 @@ Broken pins may require receptacle replacement</description>
 <wire x1="7.65" y1="17.8" x2="7.65" y2="0" width="0.127" layer="21"/>
 <hole x="5.71" y="7.58" drill="3.2"/>
 <hole x="-5.7" y="7.55" drill="3.2"/>
-<pad name="P$1" x="4.45" y="16.5" drill="0.76"/>
-<pad name="P$2" x="3.18" y="13.96" drill="0.76"/>
-<pad name="P$3" x="1.91" y="16.5" drill="0.76"/>
-<pad name="P$4" x="0.64" y="13.96" drill="0.76"/>
-<pad name="P$5" x="-0.63" y="16.5" drill="0.76"/>
-<pad name="P$6" x="-1.9" y="13.96" drill="0.76"/>
-<pad name="P$7" x="-3.17" y="16.5" drill="0.76"/>
-<pad name="P$8" x="-4.44" y="13.96" drill="0.76"/>
+<pad name="P$1" x="4.45" y="16.5" drill="0.9"/>
+<pad name="P$2" x="3.18" y="13.96" drill="0.9"/>
+<pad name="P$3" x="1.91" y="16.5" drill="0.9"/>
+<pad name="P$4" x="0.64" y="13.96" drill="0.9"/>
+<pad name="P$5" x="-0.63" y="16.5" drill="0.9"/>
+<pad name="P$6" x="-1.9" y="13.96" drill="0.9"/>
+<pad name="P$7" x="-3.17" y="16.5" drill="0.9"/>
+<pad name="P$8" x="-4.44" y="13.96" drill="0.9"/>
 </package>
 <package name="1X02">
 <description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
@@ -2629,6 +2629,17 @@ diameter 2.54 mm, horizontal, grid 10.16 mm</description>
 <text x="-2.54" y="3.048" size="1.27" layer="25" ratio="10">&gt;NAME</text>
 <text x="-2.54" y="-3.302" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
 </package>
+<package name="PJ-102A">
+<pad name="P2" x="0" y="3" drill="1.6" shape="long"/>
+<pad name="P1" x="0" y="-3" drill="1.6" shape="long"/>
+<pad name="P3" x="-4.7" y="0" drill="1.6" shape="long" rot="R90"/>
+<wire x1="-4.5" y1="-3" x2="4.5" y2="-3" width="0.127" layer="21"/>
+<wire x1="-4.5" y1="-3" x2="-4.5" y2="11.4" width="0.127" layer="21"/>
+<wire x1="4.5" y1="-3" x2="4.5" y2="11.4" width="0.127" layer="21"/>
+<wire x1="-4.5" y1="11.4" x2="4.5" y2="11.4" width="0.127" layer="21"/>
+<text x="5.08" y="7.62" size="1.27" layer="104" font="vector">&gt;NAME</text>
+<text x="5.08" y="5.08" size="1.27" layer="27" font="vector">&gt;VALUE</text>
+</package>
 </packages>
 <symbols>
 <symbol name="ATMEGA328">
@@ -2826,26 +2837,26 @@ diameter 2.54 mm, horizontal, grid 10.16 mm</description>
 <pin name="GND" x="11.43" y="-20.32" length="short" direction="pwr" rot="R90"/>
 </symbol>
 <symbol name="3PIN_POWER_JACK">
-<wire x1="-6.35" y1="0" x2="-6.35" y2="1.27" width="0.254" layer="94" curve="-180"/>
-<wire x1="-6.35" y1="1.27" x2="0" y2="1.27" width="0.254" layer="94"/>
-<wire x1="-6.35" y1="0" x2="0" y2="0" width="0.254" layer="94"/>
-<wire x1="0" y1="1.905" x2="0" y2="-0.635" width="0.254" layer="94"/>
-<wire x1="0" y1="-0.635" x2="0.635" y2="-0.635" width="0.254" layer="94"/>
-<wire x1="0.635" y1="-0.635" x2="0.635" y2="0.635" width="0.254" layer="94"/>
-<wire x1="0.635" y1="0.635" x2="0.635" y2="1.905" width="0.254" layer="94"/>
-<wire x1="0.635" y1="1.905" x2="0" y2="1.905" width="0.254" layer="94"/>
-<wire x1="1.905" y1="-1.651" x2="-3.81" y2="-1.651" width="0.254" layer="94"/>
-<wire x1="-3.81" y1="-1.651" x2="-3.81" y2="-2.286" width="0.254" layer="94"/>
-<wire x1="-3.556" y1="-2.286" x2="-4.064" y2="-2.286" width="0.254" layer="94"/>
-<wire x1="-4.064" y1="-2.286" x2="-3.81" y2="-2.54" width="0.254" layer="94"/>
-<wire x1="-3.81" y1="-2.54" x2="-3.556" y2="-2.286" width="0.254" layer="94"/>
-<wire x1="1.905" y1="-2.921" x2="-5.08" y2="-2.921" width="0.254" layer="94"/>
-<wire x1="-5.08" y1="-2.921" x2="-5.715" y2="-2.286" width="0.254" layer="94"/>
-<wire x1="-5.715" y1="-2.286" x2="-6.35" y2="-2.921" width="0.254" layer="94"/>
-<pin name="PWR" x="1.905" y="0.635" visible="pad" length="point" direction="pwr" rot="R180"/>
-<pin name="GND@1" x="1.905" y="-1.651" visible="pad" length="point" direction="sup" rot="R180"/>
-<pin name="GND@2" x="1.905" y="-2.921" visible="pad" length="point" direction="sup" rot="R180"/>
-<wire x1="0.635" y1="0.635" x2="1.905" y2="0.635" width="0.254" layer="94"/>
+<wire x1="-5.842" y1="-0.635" x2="-5.842" y2="0.635" width="0.254" layer="94" curve="-180"/>
+<wire x1="-5.842" y1="0.635" x2="0.508" y2="0.635" width="0.254" layer="94"/>
+<wire x1="-5.842" y1="-0.635" x2="0.508" y2="-0.635" width="0.254" layer="94"/>
+<wire x1="0.508" y1="1.27" x2="0.508" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="0.508" y1="-1.27" x2="1.143" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="1.143" y1="-1.27" x2="1.143" y2="0" width="0.254" layer="94"/>
+<wire x1="1.143" y1="0" x2="1.143" y2="1.27" width="0.254" layer="94"/>
+<wire x1="1.143" y1="1.27" x2="0.508" y2="1.27" width="0.254" layer="94"/>
+<wire x1="2.413" y1="-2.54" x2="-3.302" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="-3.302" y1="-2.54" x2="-3.302" y2="-3.175" width="0.254" layer="94"/>
+<wire x1="-3.048" y1="-3.175" x2="-3.556" y2="-3.175" width="0.254" layer="94"/>
+<wire x1="-3.556" y1="-3.175" x2="-3.302" y2="-3.429" width="0.254" layer="94"/>
+<wire x1="-3.302" y1="-3.429" x2="-3.048" y2="-3.175" width="0.254" layer="94"/>
+<wire x1="2.413" y1="-3.81" x2="-4.572" y2="-3.81" width="0.254" layer="94"/>
+<wire x1="-4.572" y1="-3.81" x2="-5.207" y2="-3.175" width="0.254" layer="94"/>
+<wire x1="-5.207" y1="-3.175" x2="-5.842" y2="-3.81" width="0.254" layer="94"/>
+<pin name="PWR" x="2.54" y="0" visible="pad" length="point" direction="pwr" rot="R180"/>
+<pin name="GND@1" x="2.54" y="-2.54" visible="pad" length="point" direction="sup" rot="R180"/>
+<pin name="GND@2" x="2.54" y="-3.81" visible="pad" length="point" direction="sup" rot="R180"/>
+<wire x1="1.143" y1="0" x2="2.413" y2="0" width="0.254" layer="94"/>
 </symbol>
 <symbol name="R-US">
 <wire x1="-2.54" y1="0" x2="-2.159" y2="1.016" width="0.2032" layer="94"/>
@@ -4620,6 +4631,23 @@ general purpose rectifier, 1 A</description>
 <connect gate="G1" pin="B" pad="B"/>
 <connect gate="G1" pin="C" pad="C"/>
 <connect gate="G1" pin="E" pad="E"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="PJ-102A">
+<gates>
+<gate name="G$1" symbol="3PIN_POWER_JACK" x="1.27" y="1.27"/>
+</gates>
+<devices>
+<device name="" package="PJ-102A">
+<connects>
+<connect gate="G$1" pin="GND@1" pad="P3"/>
+<connect gate="G$1" pin="GND@2" pad="P2"/>
+<connect gate="G$1" pin="PWR" pad="P1"/>
 </connects>
 <technologies>
 <technology name=""/>
