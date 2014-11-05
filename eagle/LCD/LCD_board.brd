@@ -138,10 +138,10 @@
 </layers>
 <board>
 <plain>
-<wire x1="0" y1="0" x2="100.5" y2="0" width="0" layer="20"/>
-<wire x1="100.5" y1="0" x2="100.5" y2="81.4" width="0" layer="20"/>
-<wire x1="100.5" y1="81.4" x2="0" y2="81.4" width="0" layer="20"/>
-<wire x1="0" y1="81.4" x2="0" y2="0" width="0" layer="20"/>
+<wire x1="0" y1="0.1" x2="92.9" y2="0.2" width="0" layer="20"/>
+<wire x1="92.9" y1="0.2" x2="93.1" y2="60.1" width="0" layer="20"/>
+<wire x1="93.1" y1="60.1" x2="0" y2="60.2" width="0" layer="20"/>
+<wire x1="0" y1="60.2" x2="0" y2="0.1" width="0" layer="20"/>
 </plain>
 <libraries>
 <library name="LockBox">
@@ -485,102 +485,121 @@ Note: The pads on the left are 3mm pitch and blade type. .3mm thick and ~1.5mm w
 </pass>
 </autorouter>
 <elements>
-<element name="DATALINES" library="adafruit" package="1X06" value="To MPU" x="54.42" y="12.77">
-<attribute name="DATALINES" value="" x="114.11" y="-26.6" size="1.778" layer="27" display="off"/>
+<element name="DATALINES" library="adafruit" package="1X06" value="To MPU" x="55.92" y="6.57" smashed="yes">
+<attribute name="DATALINES" value="" x="115.61" y="-32.8" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="48.2238" y="8.3988" size="1.27" layer="25" ratio="10"/>
+<attribute name="VALUE" x="48.3" y="3.395" size="1.27" layer="27"/>
 </element>
-<element name="C1" library="capacitor-wima" package="C15B8" value="1u" x="45.72" y="22.51"/>
-<element name="C2" library="capacitor-wima" package="C15B8" value="1u" x="39.74" y="31.58"/>
-<element name="CN1" library="adafruit" package="1X04-CLEANBIG" value="1X4-CLEANBIG" x="3.98" y="55.65" rot="R90"/>
-<element name="R1" library="LockBox" package="0204/5" value="4.7k" x="41.1" y="12.6" rot="R90"/>
-<element name="R2" library="LockBox" package="0204/5" value="4.7k" x="43.6" y="12.6" rot="R90"/>
-<element name="U$1" library="LockBox" package="NHD-C0220BIZ-LCD" value="NHD-C0220BIZ" x="52.1" y="55.6">
-<attribute name="COG" value="2x20" x="52.1" y="55.6" size="1.778" layer="27" display="off"/>
-<attribute name="INTERFACE" value="I2C" x="52.1" y="55.6" size="1.778" layer="27" display="off"/>
-<attribute name="VOLTS" value="3.3V" x="52.1" y="55.6" size="1.778" layer="27" display="off"/>
+<element name="C1" library="capacitor-wima" package="C15B8" value="1u" x="47.22" y="16.31" smashed="yes">
+<attribute name="NAME" x="39.727" y="20.628" size="1.397" layer="25" ratio="10"/>
+<attribute name="VALUE" x="43.791" y="13.77" size="1.397" layer="27" ratio="10"/>
+</element>
+<element name="C2" library="capacitor-wima" package="C15B8" value="1u" x="41.24" y="25.38" smashed="yes">
+<attribute name="NAME" x="33.747" y="29.698" size="1.397" layer="25" ratio="10"/>
+<attribute name="VALUE" x="37.811" y="22.84" size="1.397" layer="27" ratio="10"/>
+</element>
+<element name="CN1" library="adafruit" package="1X04-CLEANBIG" value="1X4-CLEANBIG" x="5.48" y="49.45" smashed="yes" rot="R90">
+<attribute name="NAME" x="3.6512" y="46.8338" size="1.27" layer="25" ratio="10" rot="R90"/>
+<attribute name="VALUE" x="8.655" y="46.91" size="1.27" layer="27" rot="R90"/>
+</element>
+<element name="R1" library="LockBox" package="0204/5" value="4.7k" x="42.6" y="6.4" smashed="yes" rot="R90">
+<attribute name="NAME" x="41.4316" y="4.3934" size="0.9906" layer="25" ratio="10" rot="R90"/>
+<attribute name="VALUE" x="44.9114" y="4.2664" size="0.9906" layer="27" ratio="10" rot="R90"/>
+</element>
+<element name="R2" library="LockBox" package="0204/5" value="4.7k" x="45.1" y="6.4" smashed="yes" rot="R90">
+<attribute name="NAME" x="43.9316" y="4.3934" size="0.9906" layer="25" ratio="10" rot="R90"/>
+<attribute name="VALUE" x="47.4114" y="4.2664" size="0.9906" layer="27" ratio="10" rot="R90"/>
+</element>
+<element name="U$1" library="LockBox" package="NHD-C0220BIZ-LCD" value="NHD-C0220BIZ" x="53.6" y="49.4" smashed="yes">
+<attribute name="COG" value="2x20" x="53.6" y="49.4" size="1.778" layer="27" display="off"/>
+<attribute name="INTERFACE" value="I2C" x="53.6" y="49.4" size="1.778" layer="27" display="off"/>
+<attribute name="VOLTS" value="3.3V" x="53.6" y="49.4" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="39.63" y="60.83" size="1.27" layer="25" font="vector"/>
+<attribute name="VALUE" x="61.22" y="60.83" size="1.27" layer="27" font="vector"/>
 </element>
 </elements>
 <signals>
 <signal name="N$1">
 <contactref element="C2" pad="1"/>
 <contactref element="U$1" pad="P$8"/>
-<wire x1="45.1" y1="39.4" x2="32.247" y2="31.58" width="0.4064" layer="16"/>
+<wire x1="46.6" y1="33.2" x2="33.747" y2="25.38" width="0.4064" layer="16"/>
 </signal>
 <signal name="C1+">
 <contactref element="C2" pad="2"/>
 <contactref element="U$1" pad="P$7"/>
-<wire x1="47.1" y1="39.4" x2="47.233" y2="31.58" width="0.4064" layer="16"/>
+<wire x1="48.6" y1="33.2" x2="48.733" y2="25.38" width="0.4064" layer="16"/>
 </signal>
 <signal name="RST">
 <contactref element="DATALINES" pad="6"/>
 <contactref element="U$1" pad="P$1"/>
-<wire x1="59.1" y1="39.4" x2="60.77" y2="12.77" width="0.4064" layer="16"/>
+<wire x1="60.6" y1="33.2" x2="62.27" y2="6.57" width="0.4064" layer="16"/>
 </signal>
 <signal name="SCL">
 <contactref element="DATALINES" pad="5"/>
 <contactref element="R1" pad="1"/>
 <contactref element="U$1" pad="P$2"/>
-<wire x1="57.1" y1="39.4" x2="58.23" y2="12.77" width="0.4064" layer="16"/>
-<wire x1="41.1" y1="10.06" x2="44.048" y2="7.112" width="0.4064" layer="16"/>
-<wire x1="44.048" y1="7.112" x2="54.356" y2="7.112" width="0.4064" layer="16"/>
-<wire x1="54.356" y1="7.112" x2="58.23" y2="10.986" width="0.4064" layer="16"/>
-<wire x1="58.23" y1="10.986" x2="58.23" y2="12.77" width="0.4064" layer="16"/>
+<wire x1="58.6" y1="33.2" x2="59.73" y2="6.57" width="0.4064" layer="16"/>
+<wire x1="42.6" y1="3.86" x2="45.548" y2="0.912" width="0.4064" layer="16"/>
+<wire x1="45.548" y1="0.912" x2="55.856" y2="0.912" width="0.4064" layer="16"/>
+<wire x1="55.856" y1="0.912" x2="59.73" y2="4.786" width="0.4064" layer="16"/>
+<wire x1="59.73" y1="4.786" x2="59.73" y2="6.57" width="0.4064" layer="16"/>
 </signal>
 <signal name="SDA">
 <contactref element="DATALINES" pad="4"/>
 <contactref element="R2" pad="1"/>
 <contactref element="U$1" pad="P$3"/>
-<wire x1="55.1" y1="39.4" x2="55.69" y2="12.77" width="0.4064" layer="16"/>
-<wire x1="43.6" y1="10.06" x2="45.024" y2="8.636" width="0.4064" layer="16"/>
-<wire x1="45.024" y1="8.636" x2="54.102" y2="8.636" width="0.4064" layer="16"/>
-<wire x1="54.102" y1="8.636" x2="55.69" y2="10.224" width="0.4064" layer="16"/>
-<wire x1="55.69" y1="10.224" x2="55.69" y2="12.77" width="0.4064" layer="16"/>
+<wire x1="56.6" y1="33.2" x2="57.19" y2="6.57" width="0.4064" layer="16"/>
+<wire x1="45.1" y1="3.86" x2="46.524" y2="2.436" width="0.4064" layer="16"/>
+<wire x1="46.524" y1="2.436" x2="55.602" y2="2.436" width="0.4064" layer="16"/>
+<wire x1="55.602" y1="2.436" x2="57.19" y2="4.024" width="0.4064" layer="16"/>
+<wire x1="57.19" y1="4.024" x2="57.19" y2="6.57" width="0.4064" layer="16"/>
 </signal>
 <signal name="VDD">
 <contactref element="DATALINES" pad="2"/>
 <contactref element="R1" pad="2"/>
 <contactref element="R2" pad="2"/>
 <contactref element="U$1" pad="P$5"/>
-<wire x1="51.1" y1="39.4" x2="50.68353125" y2="16.76614375" width="0.4064" layer="16"/>
-<wire x1="50.68353125" y1="16.76614375" x2="50.61" y2="12.77" width="0.4064" layer="16"/>
-<wire x1="41.1" y1="15.14" x2="43.6" y2="15.14" width="0.4064" layer="16"/>
-<wire x1="43.6" y1="15.14" x2="45.22614375" y2="16.76614375" width="0.4064" layer="16"/>
-<wire x1="45.22614375" y1="16.76614375" x2="50.68353125" y2="16.76614375" width="0.4064" layer="16"/>
+<wire x1="52.6" y1="33.2" x2="52.18353125" y2="10.56614375" width="0.4064" layer="16"/>
+<wire x1="52.18353125" y1="10.56614375" x2="52.11" y2="6.57" width="0.4064" layer="16"/>
+<wire x1="42.6" y1="8.94" x2="45.1" y2="8.94" width="0.4064" layer="16"/>
+<wire x1="45.1" y1="8.94" x2="46.72614375" y2="10.56614375" width="0.4064" layer="16"/>
+<wire x1="46.72614375" y1="10.56614375" x2="52.18353125" y2="10.56614375" width="0.4064" layer="16"/>
 </signal>
 <signal name="GND">
 <contactref element="DATALINES" pad="1"/>
 <contactref element="DATALINES" pad="3"/>
 <contactref element="C1" pad="2"/>
 <contactref element="U$1" pad="P$4"/>
-<wire x1="53.1" y1="39.4" x2="53.213" y2="22.51" width="0.4064" layer="16"/>
-<wire x1="53.213" y1="22.51" x2="53.15" y2="12.77" width="0.4064" layer="16"/>
-<wire x1="48.07" y1="12.77" x2="53.15" y2="12.77" width="0" layer="19" extent="1-1"/>
+<wire x1="54.6" y1="33.2" x2="54.713" y2="16.31" width="0.4064" layer="16"/>
+<wire x1="54.713" y1="16.31" x2="54.65" y2="6.57" width="0.4064" layer="16"/>
+<wire x1="49.57" y1="6.57" x2="54.65" y2="6.57" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="A">
 <contactref element="CN1" pad="4"/>
 <contactref element="U$1" pad="P$RK"/>
-<wire x1="13.818" y1="60.03" x2="3.98" y2="59.46" width="0.4064" layer="16"/>
+<wire x1="15.318" y1="53.83" x2="5.48" y2="53.26" width="0.4064" layer="16"/>
 </signal>
 <signal name="GK">
 <contactref element="CN1" pad="2"/>
 <contactref element="U$1" pad="P$BK"/>
-<wire x1="3.98" y1="54.38" x2="13.822" y2="54.15" width="0.4064" layer="16"/>
+<wire x1="5.48" y1="48.18" x2="15.322" y2="47.95" width="0.4064" layer="16"/>
 </signal>
 <signal name="N$2">
 <contactref element="CN1" pad="3"/>
 <contactref element="U$1" pad="P$GK"/>
-<wire x1="13.77" y1="57.09" x2="3.98" y2="56.92" width="0.4064" layer="16"/>
+<wire x1="15.27" y1="50.89" x2="5.48" y2="50.72" width="0.4064" layer="16"/>
 </signal>
 <signal name="N$4">
 <contactref element="CN1" pad="1"/>
 <contactref element="U$1" pad="P$A"/>
-<wire x1="13.814" y1="51.08" x2="3.98" y2="51.84" width="0.4064" layer="16"/>
+<wire x1="15.314" y1="44.88" x2="5.48" y2="45.64" width="0.4064" layer="16"/>
 </signal>
 <signal name="N$5">
 <contactref element="U$1" pad="P$6"/>
 <contactref element="C1" pad="1"/>
-<wire x1="49.1" y1="39.4" x2="49.1" y2="27.764" width="0.4064" layer="16"/>
-<wire x1="49.1" y1="27.764" x2="49.022" y2="27.686" width="0.4064" layer="16"/>
-<wire x1="49.022" y1="27.686" x2="38.227" y2="22.51" width="0.4064" layer="16"/>
+<wire x1="50.6" y1="33.2" x2="50.6" y2="21.564" width="0.4064" layer="16"/>
+<wire x1="50.6" y1="21.564" x2="50.522" y2="21.486" width="0.4064" layer="16"/>
+<wire x1="50.522" y1="21.486" x2="39.727" y2="16.31" width="0.4064" layer="16"/>
 </signal>
 </signals>
 </board>
