@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.1.0">
+<eagle version="7.0.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -144,7 +144,7 @@
 <wire x1="0" y1="60.2" x2="0" y2="0.1" width="0" layer="20"/>
 </plain>
 <libraries>
-<library name="T06_LockBox">
+<library name="LockBox">
 <packages>
 <package name="0204/5">
 <description>&lt;b&gt;RESISTOR&lt;/b&gt;&lt;p&gt;
@@ -180,24 +180,26 @@ type 0204, grid 5 mm</description>
 &lt;b&gt;
 Note: The pads on the left are 3mm pitch and blade type. .3mm thick and ~1.5mm wide&lt;/b&gt;</description>
 <wire x1="-1.6" y1="-16.8" x2="2.5" y2="-16.8" width="0.127" layer="21"/>
-<pad name="P$8" x="-7" y="-16.2" drill="0.9" shape="long" rot="R90"/>
-<pad name="P$7" x="-5" y="-16.2" drill="0.9" shape="long" rot="R90"/>
-<pad name="P$6" x="-3" y="-16.2" drill="0.9" shape="long" rot="R90"/>
-<pad name="P$5" x="-1" y="-16.2" drill="0.9" shape="long" rot="R90"/>
-<pad name="P$4" x="1" y="-16.2" drill="0.9" shape="long" rot="R90"/>
-<pad name="P$3" x="3" y="-16.2" drill="0.9" shape="long" rot="R90"/>
-<pad name="P$2" x="5" y="-16.2" drill="0.9" shape="long" rot="R90"/>
-<pad name="P$1" x="7" y="-16.2" drill="0.9" shape="long" rot="R90"/>
+<pad name="P$8" x="-7" y="-16.2" drill="0.6"/>
+<pad name="P$7" x="-5" y="-16.2" drill="0.6"/>
+<pad name="P$6" x="-3" y="-16.2" drill="0.6"/>
+<pad name="P$5" x="-1" y="-16.2" drill="0.6"/>
+<pad name="P$4" x="1" y="-16.2" drill="0.6"/>
+<pad name="P$3" x="3" y="-16.2" drill="0.6"/>
+<pad name="P$2" x="5" y="-16.2" drill="0.6"/>
+<pad name="P$1" x="7" y="-16.2" drill="0.6"/>
 <wire x1="-35.8" y1="10.3" x2="35.8" y2="10.3" width="0.127" layer="21"/>
 <wire x1="35.8" y1="10.3" x2="35.8" y2="-16.8" width="0.127" layer="21"/>
 <wire x1="35.8" y1="-16.8" x2="-35.8" y2="-16.8" width="0.127" layer="21"/>
+<dimension x1="-35.8" y1="-16.8" x2="-35.8" y2="10.3" x3="38.1" y3="-3.25" textsize="1.27" layer="48"/>
+<dimension x1="35.8" y1="-16.8" x2="-35.8" y2="-16.8" x3="0" y3="15.24" textsize="1.27" layer="51"/>
 <pad name="P$RK" x="-38.282" y="4.43" drill="1.524" shape="long"/>
 <pad name="P$GK" x="-38.33" y="1.49" drill="1.524" shape="long"/>
 <pad name="P$BK" x="-38.278" y="-1.45" drill="1.524" shape="long"/>
 <pad name="P$A" x="-38.286" y="-4.52" drill="1.524" shape="long"/>
 <text x="-13.97" y="11.43" size="1.27" layer="25" font="vector">&gt;NAME</text>
 <text x="7.62" y="11.43" size="1.27" layer="27" font="vector">&gt;Value</text>
-<wire x1="-35.8" y1="-16.8" x2="-35.8" y2="10.3" width="0.127" layer="21"/>
+<dimension x1="-35.8" y1="10.3" x2="-35.8" y2="0" x3="-41.7" y3="5.15" textsize="1.27" layer="21"/>
 </package>
 </packages>
 </library>
@@ -500,15 +502,15 @@ Note: The pads on the left are 3mm pitch and blade type. .3mm thick and ~1.5mm w
 <attribute name="NAME" x="3.6512" y="46.8338" size="1.27" layer="25" ratio="10" rot="R90"/>
 <attribute name="VALUE" x="8.655" y="46.91" size="1.27" layer="27" rot="R90"/>
 </element>
-<element name="R1" library="T06_LockBox" package="0204/5" value="4.7k" x="42.6" y="6.4" smashed="yes" rot="R90">
+<element name="R1" library="LockBox" package="0204/5" value="4.7k" x="42.6" y="6.4" smashed="yes" rot="R90">
 <attribute name="NAME" x="41.4316" y="4.3934" size="0.9906" layer="25" ratio="10" rot="R90"/>
 <attribute name="VALUE" x="44.9114" y="4.2664" size="0.9906" layer="27" ratio="10" rot="R90"/>
 </element>
-<element name="R2" library="T06_LockBox" package="0204/5" value="4.7k" x="45.1" y="6.4" smashed="yes" rot="R90">
+<element name="R2" library="LockBox" package="0204/5" value="4.7k" x="45.1" y="6.4" smashed="yes" rot="R90">
 <attribute name="NAME" x="43.9316" y="4.3934" size="0.9906" layer="25" ratio="10" rot="R90"/>
 <attribute name="VALUE" x="47.4114" y="4.2664" size="0.9906" layer="27" ratio="10" rot="R90"/>
 </element>
-<element name="U$1" library="T06_LockBox" package="NHD-C0220BIZ-LCD" value="NHD-C0220BIZ" x="53.6" y="49.4" smashed="yes">
+<element name="U$1" library="LockBox" package="NHD-C0220BIZ-LCD" value="NHD-C0220BIZ" x="53.6" y="49.4" smashed="yes">
 <attribute name="COG" value="2x20" x="53.6" y="49.4" size="1.778" layer="27" display="off"/>
 <attribute name="INTERFACE" value="I2C" x="53.6" y="49.4" size="1.778" layer="27" display="off"/>
 <attribute name="VOLTS" value="3.3V" x="53.6" y="49.4" size="1.778" layer="27" display="off"/>
