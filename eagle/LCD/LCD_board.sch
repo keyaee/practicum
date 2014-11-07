@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -1717,6 +1717,10 @@ Note: The pads on the left are 3mm pitch and blade type. .3mm thick and ~1.5mm w
 <text x="-13.97" y="11.43" size="1.27" layer="25" font="vector">&gt;NAME</text>
 <text x="7.62" y="11.43" size="1.27" layer="27" font="vector">&gt;Value</text>
 <wire x1="-35.8" y1="-16.8" x2="-35.8" y2="10.3" width="0.127" layer="21"/>
+<hole x="33.45" y="-19.6" drill="2.8"/>
+<hole x="33.55" y="13.3" drill="2.8"/>
+<hole x="-33.55" y="13.4" drill="2.8"/>
+<hole x="-33.75" y="-19.7" drill="2.8"/>
 </package>
 <package name="2X04">
 <description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
@@ -3324,13 +3328,13 @@ Source: http://www.newhavendisplay.com/specs/NHD-C0220BiZ-FSRGB-FBW-3VM.pdf</des
 <part name="C2" library="T06_LockBox" deviceset="C" device="" value="1u"/>
 <part name="R1" library="T06_LockBox" deviceset="R-US_" device="M0805" value="4.7k"/>
 <part name="R2" library="T06_LockBox" deviceset="R-US_" device="M0805" value="4.7k"/>
-<part name="VDD1" library="supply1" deviceset="VDD" device=""/>
+<part name="VDD1" library="supply1" deviceset="VDD" device="" value="3.3V"/>
 <part name="U$1" library="T06_LockBox" deviceset="NHD-C0220BIZ" device=""/>
 <part name="GND1" library="T06_LockBox" deviceset="GND" device=""/>
 <part name="GND2" library="T06_LockBox" deviceset="GND" device=""/>
-<part name="VDD2" library="supply1" deviceset="VDD" device=""/>
-<part name="VDD3" library="supply1" deviceset="VDD" device=""/>
-<part name="VDD4" library="supply1" deviceset="VDD" device=""/>
+<part name="VDD2" library="supply1" deviceset="VDD" device="" value="3.3V"/>
+<part name="VDD3" library="supply1" deviceset="VDD" device="" value="3.3V"/>
+<part name="VDD4" library="supply1" deviceset="VDD" device="" value="3.3V"/>
 <part name="R3" library="T06_LockBox" deviceset="R-US_" device="M0805" value="10k"/>
 </parts>
 <sheets>
@@ -3339,8 +3343,6 @@ Source: http://www.newhavendisplay.com/specs/NHD-C0220BiZ-FSRGB-FBW-3VM.pdf</des
 </plain>
 <instances>
 <instance part="DATALINES" gate="A" x="63.5" y="66.04" smashed="yes">
-<attribute name="NAME" x="57.15" y="76.835" size="1.778" layer="95"/>
-<attribute name="VALUE" x="57.15" y="55.88" size="1.778" layer="96"/>
 <attribute name="DATALINES" x="63.5" y="66.04" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="C1" gate="G$1" x="73.66" y="27.94"/>
@@ -3404,45 +3406,7 @@ Source: http://www.newhavendisplay.com/specs/NHD-C0220BiZ-FSRGB-FBW-3VM.pdf</des
 <junction x="80.01" y="66.04"/>
 </segment>
 </net>
-<net name="VDD" class="0">
-<segment>
-<pinref part="R1" gate="G$1" pin="2"/>
-<pinref part="R2" gate="G$1" pin="2"/>
-<wire x1="96.52" y1="82.55" x2="96.52" y2="83.82" width="0.1524" layer="91"/>
-<wire x1="96.52" y1="83.82" x2="101.6" y2="83.82" width="0.1524" layer="91"/>
-<wire x1="111.76" y1="82.55" x2="111.76" y2="83.82" width="0.1524" layer="91"/>
-<wire x1="111.76" y1="83.82" x2="101.6" y2="83.82" width="0.1524" layer="91"/>
-<wire x1="101.6" y1="83.82" x2="101.6" y2="86.36" width="0.1524" layer="91"/>
-<junction x="101.6" y="83.82"/>
-<pinref part="VDD1" gate="G$1" pin="VDD"/>
-<pinref part="R3" gate="G$1" pin="2"/>
-<wire x1="85.09" y1="82.55" x2="85.09" y2="83.82" width="0.1524" layer="91"/>
-<wire x1="96.52" y1="83.82" x2="85.09" y2="83.82" width="0.1524" layer="91"/>
-<junction x="96.52" y="83.82"/>
-</segment>
-<segment>
-<pinref part="U$1" gate="G$1" pin="VDD"/>
-<wire x1="91.44" y1="35.56" x2="69.85" y2="35.56" width="0.1524" layer="91"/>
-<wire x1="69.85" y1="35.56" x2="69.85" y2="39.37" width="0.1524" layer="91"/>
-<pinref part="VDD4" gate="G$1" pin="VDD"/>
-</segment>
-<segment>
-<pinref part="DATALINES" gate="A" pin="1"/>
-<wire x1="60.96" y1="71.12" x2="50.8" y2="71.12" width="0.1524" layer="91"/>
-<wire x1="50.8" y1="71.12" x2="50.8" y2="76.2" width="0.1524" layer="91"/>
-<pinref part="VDD2" gate="G$1" pin="VDD"/>
-</segment>
-<segment>
-<wire x1="110.49" y1="10.16" x2="110.49" y2="-2.54" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="A"/>
-<wire x1="110.49" y1="-2.54" x2="110.49" y2="-3.048" width="0.1524" layer="91"/>
-<wire x1="110.49" y1="-2.54" x2="116.84" y2="-2.54" width="0.1524" layer="91"/>
-<wire x1="116.84" y1="-2.54" x2="116.84" y2="1.27" width="0.1524" layer="91"/>
-<junction x="110.49" y="-2.54"/>
-<pinref part="VDD3" gate="G$1" pin="VDD"/>
-</segment>
-</net>
-<net name="K-B" class="0">
+<net name="EN_BL" class="0">
 <segment>
 <wire x1="106.68" y1="10.16" x2="106.68" y2="-2.54" width="0.1524" layer="91"/>
 <wire x1="106.68" y1="-2.54" x2="38.1" y2="-2.54" width="0.1524" layer="91"/>
@@ -3453,7 +3417,7 @@ Source: http://www.newhavendisplay.com/specs/NHD-C0220BiZ-FSRGB-FBW-3VM.pdf</des
 <wire x1="38.1" y1="68.58" x2="38.1" y2="-2.54" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="K-G" class="0">
+<net name="EN_G" class="0">
 <segment>
 <wire x1="102.87" y1="10.16" x2="102.87" y2="0" width="0.1524" layer="91"/>
 <wire x1="102.87" y1="-0.254" x2="102.87" y2="0" width="0.1524" layer="91"/>
@@ -3465,7 +3429,7 @@ Source: http://www.newhavendisplay.com/specs/NHD-C0220BiZ-FSRGB-FBW-3VM.pdf</des
 <wire x1="40.64" y1="0" x2="102.87" y2="0" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$6" class="0">
+<net name="!LCD_RST" class="0">
 <segment>
 <pinref part="U$1" gate="G$1" pin="!RST"/>
 <wire x1="91.44" y1="39.37" x2="85.09" y2="39.37" width="0.1524" layer="91"/>
@@ -3505,7 +3469,7 @@ Source: http://www.newhavendisplay.com/specs/NHD-C0220BiZ-FSRGB-FBW-3VM.pdf</des
 <junction x="74.93" y="62.23"/>
 </segment>
 </net>
-<net name="K-R" class="0">
+<net name="EN_RD" class="0">
 <segment>
 <pinref part="DATALINES" gate="A" pin="7"/>
 <wire x1="60.96" y1="63.5" x2="43.18" y2="63.5" width="0.1524" layer="91"/>
@@ -3513,6 +3477,44 @@ Source: http://www.newhavendisplay.com/specs/NHD-C0220BiZ-FSRGB-FBW-3VM.pdf</des
 <wire x1="43.18" y1="2.54" x2="99.06" y2="2.54" width="0.1524" layer="91"/>
 <pinref part="U$1" gate="G$1" pin="K-R"/>
 <wire x1="99.06" y1="2.54" x2="99.06" y2="10.16" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="3.3V" class="0">
+<segment>
+<pinref part="DATALINES" gate="A" pin="1"/>
+<wire x1="60.96" y1="71.12" x2="50.8" y2="71.12" width="0.1524" layer="91"/>
+<wire x1="50.8" y1="71.12" x2="50.8" y2="76.2" width="0.1524" layer="91"/>
+<pinref part="VDD2" gate="G$1" pin="VDD"/>
+</segment>
+<segment>
+<pinref part="R1" gate="G$1" pin="2"/>
+<pinref part="R2" gate="G$1" pin="2"/>
+<wire x1="96.52" y1="82.55" x2="96.52" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="96.52" y1="83.82" x2="101.6" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="111.76" y1="82.55" x2="111.76" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="111.76" y1="83.82" x2="101.6" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="101.6" y1="83.82" x2="101.6" y2="86.36" width="0.1524" layer="91"/>
+<junction x="101.6" y="83.82"/>
+<pinref part="VDD1" gate="G$1" pin="VDD"/>
+<pinref part="R3" gate="G$1" pin="2"/>
+<wire x1="85.09" y1="82.55" x2="85.09" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="96.52" y1="83.82" x2="85.09" y2="83.82" width="0.1524" layer="91"/>
+<junction x="96.52" y="83.82"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="VDD"/>
+<wire x1="91.44" y1="35.56" x2="69.85" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="69.85" y1="35.56" x2="69.85" y2="39.37" width="0.1524" layer="91"/>
+<pinref part="VDD4" gate="G$1" pin="VDD"/>
+</segment>
+<segment>
+<wire x1="110.49" y1="10.16" x2="110.49" y2="-2.54" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="A"/>
+<wire x1="110.49" y1="-2.54" x2="110.49" y2="-3.048" width="0.1524" layer="91"/>
+<wire x1="110.49" y1="-2.54" x2="116.84" y2="-2.54" width="0.1524" layer="91"/>
+<wire x1="116.84" y1="-2.54" x2="116.84" y2="1.27" width="0.1524" layer="91"/>
+<junction x="110.49" y="-2.54"/>
+<pinref part="VDD3" gate="G$1" pin="VDD"/>
 </segment>
 </net>
 </nets>
