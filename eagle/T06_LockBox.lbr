@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.05" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -184,6 +184,10 @@ Note: The pads on the left are 3mm pitch and blade type. .3mm thick and ~1.5mm w
 <text x="-13.97" y="11.43" size="1.27" layer="25" font="vector">&gt;NAME</text>
 <text x="7.62" y="11.43" size="1.27" layer="27" font="vector">&gt;Value</text>
 <wire x1="-35.8" y1="-16.8" x2="-35.8" y2="10.3" width="0.127" layer="21"/>
+<hole x="33.45" y="-19.6" drill="2.8"/>
+<hole x="33.55" y="13.3" drill="2.8"/>
+<hole x="-33.55" y="13.4" drill="2.8"/>
+<hole x="-33.75" y="-19.7" drill="2.8"/>
 </package>
 <package name="C0201">
 <description>Source: http://www.avxcorp.com/docs/catalogs/cx5r.pdf</description>
