@@ -116,8 +116,8 @@
 <hole x="71.5" y="4.5" drill="3.2"/>
 <hole x="71.5" y="62" drill="3.2"/>
 <text x="46.355" y="9.017" size="1.778" layer="21">T06 - NES LockBox</text>
-<text x="50.419" y="3.937" size="1.778" layer="21">REV - 1.0 
-11-2-2014</text>
+<text x="50.419" y="3.937" size="1.778" layer="21">REV - 2.0 
+11-7-2014</text>
 <text x="4.318" y="53.594" size="0.6096" layer="21" font="vector">+12V</text>
 <text x="58.674" y="28.448" size="1.778" layer="21" rot="R90">1</text>
 <text x="33.02" y="8.128" size="1.778" layer="21" rot="R90">1</text>
@@ -1196,7 +1196,8 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="37.719" y1="20.127" x2="34.544" y2="20.127" width="1.016" layer="1"/>
 <wire x1="34.544" y1="20.127" x2="32.1478" y2="20.127" width="1.016" layer="1"/>
 <wire x1="32.1478" y1="20.127" x2="32.1208" y2="20.1" width="1.016" layer="1"/>
-<wire x1="37.211" y1="36.068" x2="36.982" y2="40.146" width="0" layer="19" extent="1-1"/>
+<wire x1="37.211" y1="36.068" x2="37.211" y2="39.917" width="1.016" layer="1"/>
+<wire x1="37.211" y1="39.917" x2="36.982" y2="40.146" width="1.016" layer="1"/>
 </signal>
 <signal name="RED">
 <contactref element="U$1" pad="14"/>
