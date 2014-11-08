@@ -5085,6 +5085,12 @@ In this library the device names are the same as the pin names of the symbols, t
 </nets>
 </sheet>
 </sheets>
+<errors>
+<approved hash="104,1,73.66,62.23,U$1,VCC,3.3V,,,"/>
+<approved hash="104,1,73.66,50.8,U$1,AVCC,3.3V,,,"/>
+<approved hash="104,1,16.51,151.13,U$3,PWR,+12V,,,"/>
+<approved hash="113,1,157.48,71.4798,R12,,,,,"/>
+</errors>
 </schematic>
 </drawing>
 </eagle>
