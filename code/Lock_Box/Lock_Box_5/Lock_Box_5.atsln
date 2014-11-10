@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Atmel Studio Solution File, Format Version 11.00
-Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "Controller_Timer", "Controller_Timer\Controller_Timer.cppproj", "{0CB03C30-ADE3-4479-9552-CA6DE6054054}"
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "Lock_Box_5", "Lock_Box_5\Lock_Box_5.cproj", "{98C9227D-CD4F-476C-9054-BDAA921CB297}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +9,10 @@ Global
 		Release|AVR = Release|AVR
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0CB03C30-ADE3-4479-9552-CA6DE6054054}.Debug|AVR.ActiveCfg = Debug|AVR
-		{0CB03C30-ADE3-4479-9552-CA6DE6054054}.Debug|AVR.Build.0 = Debug|AVR
-		{0CB03C30-ADE3-4479-9552-CA6DE6054054}.Release|AVR.ActiveCfg = Release|AVR
-		{0CB03C30-ADE3-4479-9552-CA6DE6054054}.Release|AVR.Build.0 = Release|AVR
+		{98C9227D-CD4F-476C-9054-BDAA921CB297}.Debug|AVR.ActiveCfg = Debug|AVR
+		{98C9227D-CD4F-476C-9054-BDAA921CB297}.Debug|AVR.Build.0 = Debug|AVR
+		{98C9227D-CD4F-476C-9054-BDAA921CB297}.Release|AVR.ActiveCfg = Release|AVR
+		{98C9227D-CD4F-476C-9054-BDAA921CB297}.Release|AVR.Build.0 = Release|AVR
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

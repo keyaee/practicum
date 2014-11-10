@@ -1,20 +1,21 @@
-
 /*
-this code is used to debug the NES controller interface,external interrupts, and timer interrupts.
-LEDs are used for debug and are placed on pin B0-B3 with some resistors in series ~1kohm.
-the input pins from the encoder are PC0-PC3 
-
-I have started to write the main loop for the lock box I have incorporated the code that i had and have left 
-to do comments through out the code. 
-this code is still mainly for debug using LED but does not differ much from the real code we will use
+ * LCD_Atmel1.c
+ *
+ * Created: 10/24/2014 3:29:51 PM
+ *  Author: LuisDavid
+ * still a alpha Version 0.2
  */ 
 
-#define F_CPU 8000000UL
+#define F_CPU 8000000UL // 1MHz internal clock speed of ATmega328
 #include <avr/io.h>
-#include <util/delay.h>
 #include <avr/interrupt.h>
+#include <util/delay.h>
+#include <util/twi.h>
+#include <stdbool.h>
 
-#include "Controller_Driver_3.h"
+#include "TWI_Master.h"
+#include "LCD_Driver.h"
+#include "Controller_Driver.h"
 
 unsigned char Previous_Read = 0x07; //variable to hold encoder status
 unsigned char Current_Read  = 0x00;
@@ -27,9 +28,6 @@ volatile bool No_Press_Flag = false;
 volatile char Button_Held = 0x00;
 
 
-
-
-
 /*interrupt routine to handle START button press. we will call "home screen" when 
 the LCD displays "press START to begin" at the beginning of the program the LCD will be set
 to home screen also after a determined time out the program will return to home screen.
@@ -39,10 +37,6 @@ function the user input will be enable and the timer interrupt will also be enab
 ISR(INT0_vect)
 {
 	int k=0;
-	//debug++++++++++++++++++++++++++++++
-	PORTB |= (1<<PORTB3); //turn red LED on to signify in user input mode
-	PORTB &= ~(1<<PORTB4);// turn blue LED off
-    //++++++++++++++++++++++++++++++++++++++++++
 	
 	EIMSK &= ~(1<<INT0); //disable interrupt on INT0
 	TCNT1 = 0; //reset timer counter to 0
@@ -52,14 +46,7 @@ ISR(INT0_vect)
 	
 	//counter for debounce
 	for (k=0;k<1000;k++);
-	TIMSK1 |= 1<<OCIE1A; //enable interrupt for counter
-	
-
-	/*to add
-
-		restart all counter i.e. Input_Index,Match, Combiantion_Match_counter, Cont_Match_Check 	*/
-	
-	
+	TIMSK1 |= 1<<OCIE1A; //enable interrupt for counter	
 }
 
 /*interrupt routine for internal counter.this will be used as our 
@@ -68,23 +55,17 @@ user input is disabled. to enable user input the user must press START which in 
 an interrupt described above*/
 ISR(TIMER1_COMPA_vect)
 {
-	//for debug-toggle LED on PB4++++++++++++++++++++++++++++++++++++++++++
-	PORTB |= (1<<PORTB4); //turn blue LED on to signify we are in at home screen
-	PORTB &= ~(1<<PORTB3); //turn red LED off
-	//++++++++++++++++++++++++++++++++++++++++++
-	
 	EIMSK |= (1<<INT0); //enable interrupt on INT0
 	TIMSK1 &= ~(1<<OCIE1A); // disable interrupt for counter
 	
 	//disable user input from NES controller and return to home screen 
 	User_Input=false;	
 	
-	/*to add
-		 all counter i.e. Input_Index,Match, Combiantion_Match_counter, Cont_Match_Check */	
-					User_Input=false;
-					Combiantion_Match_counter=0;
-					Input_Index=0;
-					Continue_Match_Check =true;
+	//reseting all variables
+	User_Input=false;
+	Combiantion_Match_counter=0;
+	Input_Index=0;
+	Continue_Match_Check =true;
 }
 
 
@@ -93,11 +74,15 @@ int main(void)
     //setting PBC0-PC3 as inputs
 	DDRC &= ~((1<<DDC0)|(1<<DDC1)|(1<<DDC2)|(1<<DDC3));//all port B as inputs
 	PORTC |= ((1<<PORTC0)|(1<<PORTC1)|(1<<PORTC2)|(1<<PORTC3));//enable pull-ups
+	
+	DDRD |= ((1<<DDD5)|(1<<DDD4)); // setting PD5 and PD4 as output for solenoid and reset for LCD
+	PORTD |= (1<<PORTD4); //set high for LCD reset (reset is active low)
+	
+	DDRB |= ((1<<DDB0)|(1<<DDB1)|(1<<DDB2)); //PB0-PB2 as outputs for LCD LEDs control
+	
+	LEDs(1,1,1); //all on -white
 
-	//for debug ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-	DDRB |= ((1<<DDB0)|(1<<DDB1)|(1<<DDB2)|(1<<DDB3)|(1<<DDB4)|(1<<DDB5)|(1<<DDB6)); //pin PB0-PB3 as outputs
-	PORTB = 0x00;// all off
-	//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+	
 	
 	//configuring interrupt INT0
 	DDRD &= ~(1<<DDD2); //PD2 as input
@@ -113,20 +98,32 @@ int main(void)
 	
 	sei(); //enable global interrupts
 	
-	PORTB |= (1<<PORTB4); //turn blue LED on to signify we are in at home screen
+	
+	 
+	Initialize_LCD();
+	
 	
 	//main program loop
 	while(1)
 	{
 		
-		//to do:
-		//print to LCD :"Press SELCT to Start" 
-		
+		Home_Message();
+		_delay_ms(15);
+	
 		while (User_Input)
 		{
+			LEDs(0,0,1); //blue LED on
+			Enter_Code_Message();
+			Move_Cursor_to(2,1);
+
+			/*this double while loop was an easy way to just print to LCD once
+			without having to worry about more variables*/
+			while (User_Input)
+			{
+				
 			
 			unsigned char Button_Pressed = 0x00;
-			/*to do:
+			/*
 				in this block of code we will have to display the user input into 
 				the LCD and also match the input to the predetermined combination.if 
 				a match is reached we can then move out of this while statement and disable 
@@ -139,12 +136,8 @@ int main(void)
 				Button_Held = Button_Pressed;
 				No_Press_Flag = false;
 				
-				//this delay is to prevent multiply entries of the same button in a short period of time
-				//_delay_ms(10);
-				
-				//to do:
-				//print button pressed to LCD
-				
+				Print_User_Input(&Button_Pressed);
+
 				/*this if statement will only be true if the user pressed a button for the
 				firsts time or if a partial match to the combination was made. this will allow us 
 				to skip a matching inputs to the combination if the a wrong value was entered previously.*/
@@ -164,7 +157,7 @@ int main(void)
 				
 				//if the user has pressed a button 6 times lets check if 
 				//the lock needs to open or not and return to home screen
-				if (Input_Index>=6)
+				if (Input_Index>=10)
 				{
 					Check_Combination();
 				}
@@ -177,6 +170,7 @@ int main(void)
 				Button_Held = 0x00;
 			}
 			
+		}
 		}
 			
 	}
@@ -237,21 +231,15 @@ unsigned char Button_Press_Detected(unsigned char Button_Value)
 	int i;
 	/*step through all possible values of the encoder output 
 	and match it to a button being pressed or not*/
-	for (i=7;i>=0;i--)
+	for (i=6;i>=0;i--)
 	{
 		if (Button_Value==Buttons[i])
 		{
-			/*this block of code is only for debug purposes in the final code
-			we do not have to output the value to GPIO pins we just need to output
-			a desired value that uniquely identifies a button*/
-			PORTB = PORTB & 0b11111000; //masking other values of PORTB
-			PORTB = PORTB | Output_Debug_LED[i]; //writing to PRTB0-2
-			Button_Pressed = Output_Debug_LED[i];
-			
-			// add real code here
-			//Button_Pressed = some_array[i];
-			
-			
+			/*print out the output. this output array conatains the value that
+			will be printed to the LCD and be used to compare to the correct
+			combination*/
+
+			Button_Pressed = Output[i];
 		}
 	}
 	return Button_Pressed;
@@ -275,43 +263,31 @@ void Check_For_Match(unsigned char Button_Pressed)
 }
 
 
-
+/*this function is called when the user has inputed a combination
+if the combination is correct then the lock will be disengaged for~2sec
+after execution of this function teh program will return to home screen
+Input:void
+Output:void*/
 void Check_Combination()
 {
-	//handle when the user has inputed more than 6 buttons
-	if (Combiantion_Match_counter>=6)
+	
+	
+	if (Combiantion_Match_counter>=10)
 	{
-		//To do:
-		//turn LCD green display "unlocking"
-		//open lock
-			
-			
-		//debug  +++++++++++++++++++++++++++++++
-		PORTB |= 1<<PORTB6; //vibrator on  to signify open lock
+		LEDs(1,0,0); //green on
+		Unlock_Message();
+		PORTD |= 1<<PORTD5; // open lock
 		_delay_ms(300);
-		PORTB &= ~(1<<PORTB6); //LED off
-		PORTB = 0; //all LEDs off
-		PORTB |=1<<PORTB4; //blue LED on to signify program is at home screen
-		//++++++++++++++++++++++++++++++++++++++
-			
-		Reset_Return_Home();
+		PORTD &= ~(1<<PORTD5); //lock off
+		Reset_Return_Home(); //function call
 			
 	}
 	else
 	{
-		//To do:
-		//turn LCD red display "wrong code"
-			
-			
-		//debug  +++++++++++++++++++++++++++++++
-		PORTB |= 1<<PORTB5; //red LED no to signify code not correct
+		LEDs(0,1,0); //red on
+		Try_Again_Message(); //print to LCD
 		_delay_ms(300);
-		PORTB &= ~(1<<PORTB5); //LED off
-		PORTB = 0; //all LEDs off
-		PORTB |=1<<PORTB4; //blue LED on to signify program is at home screen
-		//++++++++++++++++++++++++++++++++++++++
-			
-		Reset_Return_Home();
+		Reset_Return_Home();//funtion call
 	}
 }
 
@@ -320,12 +296,38 @@ void Check_Combination()
 
 void Reset_Return_Home()
 {
+	LEDs(1,1,1); //white on
+	//reset all variables
 	User_Input=false;
 	Combiantion_Match_counter=0;
 	Input_Index=0;
 	Continue_Match_Check =true;	
+	EIFR |= (1<<INTF0); //clear interrupts on INT0 if they exists
 	EIMSK |= (1<<INT0); //enable interrupt on INT0
 	TCNT1 = 0; //reset timer counter to 0
 	TIFR1 |= (1<<OCF1A); //clear timer interrupt flag
 	TIMSK1 &= ~(1<<OCIE1A); // disable interrupt for counter
+	
+}
+
+/* this function prints the input from the controller to the LCD after
+A successive input the previous input will be "covered" with a asterisk
+Input :pointer to the user input*
+Output: void*/
+void Print_User_Input(unsigned char *Button_Pressed)
+{
+	/*lets check if this is the first input.
+	this will determine where to place the asterisks*/
+	if (Input_Index==0)
+	{
+		Display_Single(Button_Pressed); //print to LCD
+	}
+	/*if not the first input. now we start to place asterisk on previous inputs*/
+	else
+	{
+		Move_Cursor_to(2,(Input_Index*2-1)); // go back to previous input
+		Display_Single("*");//print *
+		Move_Cursor_to(2,(2*Input_Index+1)); // move forward to next space for current input
+		Display_Single(Button_Pressed); //print current input to LCD
+	}
 }
